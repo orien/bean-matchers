@@ -1,5 +1,6 @@
 package nz.co.adzehill.beanmatchers;
 
+import nz.co.adzehill.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
 
 import java.beans.PropertyDescriptor;
@@ -26,7 +27,7 @@ public class BeanOperationsTest {
         // given
         Object expectedValue = "test value";
         TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
-        bean.setField1((String) expectedValue);
+        bean.setField1(expectedValue);
         PropertyDescriptor propertyDescriptor = propertyDescriptor(bean, "field1");
 
         // when
@@ -39,7 +40,7 @@ public class BeanOperationsTest {
     @Test
     public void canUseSetterToSetPropertyValue() {
         // given
-        String value = "test value";
+        Object value = "test value";
         TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
         PropertyDescriptor propertyDescriptor = propertyDescriptor(bean, "field1");
 

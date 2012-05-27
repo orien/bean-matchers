@@ -1,5 +1,7 @@
 package nz.co.adzehill.beanmatchers;
 
+import nz.co.adzehill.beanmatchers.data.TestBeanWithIntegerProperty;
+import nz.co.adzehill.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -14,20 +16,20 @@ public class JavaBeanTest {
     @Test
     public void canObtainPropertyType() {
         // given
-        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        TestBeanWithIntegerProperty bean = new TestBeanWithIntegerProperty();
         unitUnderTest = new JavaBean(bean);
 
         // when
-        Class type = unitUnderTest.propertyType("field1");
+        Class type = unitUnderTest.propertyType("integerProperty");
 
         // then
-        assertThat(type, is(equalTo(String.class)));
+        assertThat(type, is(equalTo(Integer.class)));
     }
 
     @Test
     public void canSetPropertyOnBean() {
         // given
-        String value = "test value";
+        Object value = "test value";
         TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
         unitUnderTest = new JavaBean(bean);
 
@@ -43,7 +45,7 @@ public class JavaBeanTest {
         // given
         Object expectedValue = "test value";
         TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
-        bean.setField1((String) expectedValue);
+        bean.setField1(expectedValue);
         unitUnderTest = new JavaBean(bean);
 
         // when
