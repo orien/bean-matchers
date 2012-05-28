@@ -1,25 +1,19 @@
 package nz.co.adzehill.beanmatchers;
 
-import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 
-public class HasValidSettersAndGettersMatcher<T> extends BaseMatcher<T> {
-    private TypeBasedValueGenerator valueGenerator;
+public class HasValidSettersAndGettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
     private String[] properties;
 
     public HasValidSettersAndGettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
-        this.valueGenerator = valueGenerator;
+        super(valueGenerator);
         this.properties = properties;
     }
 
     public boolean matches(Object subject) {
         JavaBean bean = new JavaBean(subject);
         for (String property : properties) {
-            Class<?> propertyType = bean.propertyType(property);
-            Object testValue = valueGenerator.generate(propertyType);
-            bean.setProperty(property, testValue);
-            Object result = bean.getProperty(property);
-            if (!testValue.equals(result)) {
+            if (!beanHasValidGetterAndSetterForProperty(bean, property)) {
                 return false;
             }
         }

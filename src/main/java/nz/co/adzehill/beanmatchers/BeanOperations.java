@@ -30,11 +30,17 @@ final class BeanOperations {
 
     public static Object invokeGetter(Object bean, PropertyDescriptor property) {
         Method method = property.getReadMethod();
+        if (method == null) {
+            throw new AccessorMissingException("missing getter for the property " + property.getName());
+        }
         return invokeMethod(bean, method);
     }
 
     public static void invokeSetter(Object bean, PropertyDescriptor property, Object value) {
         Method method = property.getWriteMethod();
+        if (method == null) {
+            throw new AccessorMissingException("missing setter for the property " + property.getName());
+        }
         invokeMethod(bean, method, value);
     }
 

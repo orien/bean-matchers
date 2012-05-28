@@ -1,5 +1,7 @@
 package nz.co.adzehill.beanmatchers;
 
+import nz.co.adzehill.beanmatchers.data.TestBeanWithMissingGetter;
+import nz.co.adzehill.beanmatchers.data.TestBeanWithMissingSetter;
 import nz.co.adzehill.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
 
@@ -37,6 +39,18 @@ public class BeanOperationsTest {
         assertThat(result, is(expectedValue));
     }
 
+    @Test(expectedExceptions = AccessorMissingException.class)
+    public void shouldThrowExceptionIfGetterIsMissing() {
+        // given
+        Object value = "test value";
+        TestBeanWithMissingGetter bean = new TestBeanWithMissingGetter();
+        bean.setBadField(value);
+        PropertyDescriptor propertyDescriptor = propertyDescriptor(bean, "badField");
+
+        // when
+        BeanOperations.invokeGetter(bean, propertyDescriptor);
+    }
+
     @Test
     public void canUseSetterToSetPropertyValue() {
         // given
@@ -49,6 +63,17 @@ public class BeanOperationsTest {
 
         // then
         assertThat(bean.getField1(), is(value));
+    }
+
+    @Test(expectedExceptions = AccessorMissingException.class)
+    public void shouldThrowExceptionIfSetterIsMissing() {
+        // given
+        Object value = "test value";
+        TestBeanWithMissingSetter bean = new TestBeanWithMissingSetter();
+        PropertyDescriptor propertyDescriptor = propertyDescriptor(bean, "badField");
+
+        // when
+        BeanOperations.invokeSetter(bean, propertyDescriptor, value);
     }
 
     private PropertyDescriptor propertyDescriptor(Object bean, String propertyName) {

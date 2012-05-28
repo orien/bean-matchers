@@ -1,8 +1,6 @@
 package nz.co.adzehill.beanmatchers;
 
-import nz.co.adzehill.beanmatchers.data.TestBeanWithBadGetter;
-import nz.co.adzehill.beanmatchers.data.TestBeanWithBadSetter;
-import nz.co.adzehill.beanmatchers.data.TestBeanWithOneProperty;
+import nz.co.adzehill.beanmatchers.data.*;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -55,10 +53,36 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     }
 
     @Test
+    public void beanWithMissingGetterShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        Object bean = new TestBeanWithMissingGetter();
+
+        // when
+        boolean match = unitUnderTest.matches(bean);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
     public void beanWithInvalidSetterShouldNotMatch() {
         // given
         unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithBadSetter();
+
+        // when
+        boolean match = unitUnderTest.matches(bean);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithMissingSetterShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        Object bean = new TestBeanWithMissingSetter();
 
         // when
         boolean match = unitUnderTest.matches(bean);

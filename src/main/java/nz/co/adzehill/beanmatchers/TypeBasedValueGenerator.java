@@ -1,6 +1,6 @@
 package nz.co.adzehill.beanmatchers;
 
-interface TypeBasedValueGenerator {
+public interface TypeBasedValueGenerator {
 
     /**
      * @return A new instance of random value of the specified type.
