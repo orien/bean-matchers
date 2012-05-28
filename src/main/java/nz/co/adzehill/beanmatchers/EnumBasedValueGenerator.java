@@ -1,8 +1,18 @@
 package nz.co.adzehill.beanmatchers;
 
-public class EnumBasedValueGenerator implements TypeBasedValueGenerator {
+import java.util.Random;
+
+class EnumBasedValueGenerator implements TypeBasedValueGenerator {
+
+    private final Random random;
+
+    public EnumBasedValueGenerator(Random random) {
+        this.random = random;
+    }
 
     public <T> T generate(Class<T> type) {
-        return type.getEnumConstants()[0];
+        T[] enumValues = type.getEnumConstants();
+        int enumIndex = random.nextInt(enumValues.length);
+        return enumValues[enumIndex];
     }
 }
