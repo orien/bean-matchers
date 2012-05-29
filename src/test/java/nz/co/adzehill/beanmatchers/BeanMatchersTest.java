@@ -1,12 +1,11 @@
 package nz.co.adzehill.beanmatchers;
 
 import nz.co.adzehill.beanmatchers.data.TestBeanWithBadSetter;
+import nz.co.adzehill.beanmatchers.data.TestBeanWithManyProperties;
 import nz.co.adzehill.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
 
-import static nz.co.adzehill.beanmatchers.BeanMatchers.hasValidSettersAndGetters;
-import static nz.co.adzehill.beanmatchers.BeanMatchers.hasValidSettersAndGettersExcluding;
-import static nz.co.adzehill.beanmatchers.BeanMatchers.hasValidSettersAndGettersFor;
+import static nz.co.adzehill.beanmatchers.BeanMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BeanMatchersTest {
@@ -23,6 +22,6 @@ public class BeanMatchersTest {
 
     @Test
     public void testHasValidSettersAndGetters() {
-        assertThat(new TestBeanWithOneProperty(), hasValidSettersAndGetters());
+        assertThat(new TestBeanWithManyProperties(), hasValidSettersAndGetters());
     }
 }
