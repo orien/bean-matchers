@@ -14,11 +14,17 @@ public class HasValidSettersAndGettersExcludingMatcher<T> extends AbstractBeanAc
         this.excludedProperties = asList(excludedProperties);
     }
 
-    public boolean matches(Object subject) {
-        JavaBean bean = new JavaBean(subject);
+    @Override
+    protected boolean matches(Object item, Description mismatchDescription) {
+        JavaBean bean = new JavaBean(item);
         for (String property : bean.properties()) {
             if (shouldValidateGetterAndSetterForProperty(property)
                     && !beanHasValidGetterAndSetterForProperty(bean, property)) {
+                mismatchDescription
+                        .appendText("bean of type ")
+                        .appendValue(item.getClass().getName())
+                        .appendText(" had an invalid getter/setter for the property ")
+                        .appendValue(property);
                 return false;
             }
         }

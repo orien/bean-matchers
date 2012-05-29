@@ -1,8 +1,8 @@
 package nz.co.adzehill.beanmatchers;
 
-import org.hamcrest.BaseMatcher;
+import org.hamcrest.DiagnosingMatcher;
 
-public abstract class AbstractBeanAccessorMatcher<T> extends BaseMatcher<T> {
+public abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
     protected TypeBasedValueGenerator valueGenerator;
 
     public AbstractBeanAccessorMatcher(TypeBasedValueGenerator valueGenerator) {

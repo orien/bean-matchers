@@ -1,12 +1,16 @@
 package nz.co.adzehill.beanmatchers;
 
 import nz.co.adzehill.beanmatchers.data.*;
+import org.hamcrest.Description;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -20,10 +24,15 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Mock
     private Object value;
 
+    @Mock
+    private Description descriptionMock;
+
     @BeforeMethod
     public void setUp() {
         initMocks(this);
         when(valueGeneratorMock.generate(Object.class)).thenReturn(value);
+        when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
+        when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
     }
 
     @Test
@@ -50,6 +59,22 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
 
         // then
         assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithInvalidGetterShouldBeDiagnosed() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        Object bean = new TestBeanWithBadGetter();
+
+        // when
+        unitUnderTest.matches(bean, descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean of type ");
+        verify(descriptionMock).appendValue(TestBeanWithBadGetter.class.getName());
+        verify(descriptionMock).appendText(" had an invalid getter/setter for the property ");
+        verify(descriptionMock).appendValue("badField");
     }
 
     @Test
