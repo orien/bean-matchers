@@ -26,6 +26,16 @@ public class JavaBeanTest {
         assertThat(type, is(equalTo(Integer.class)));
     }
 
+    @Test(expectedExceptions = BeanMatchersException.class)
+    public void propertyTypeShouldThrowExceptionGivenPropertyDoesNotExistOnBean() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        unitUnderTest.propertyType("propertyThatDoesNotExist");
+    }
+
     @Test
     public void canSetPropertyOnBean() {
         // given
@@ -38,6 +48,16 @@ public class JavaBeanTest {
 
         // then
         assertThat(bean.getField1(), is(value));
+    }
+
+    @Test(expectedExceptions = BeanMatchersException.class)
+    public void setPropertyShouldThrowExceptionGivenPropertyDoesNotExistOnBean() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        unitUnderTest.setProperty("propertyThatDoesNotExist", new Object());
     }
 
     @Test
@@ -53,7 +73,16 @@ public class JavaBeanTest {
 
         // then
         assertThat(value, is(expectedValue));
+    }
 
+    @Test(expectedExceptions = BeanMatchersException.class)
+    public void getPropertyShouldThrowExceptionGivenPropertyDoesNotExistOnBean() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        unitUnderTest.getProperty("propertyThatDoesNotExist");
     }
 
     @Test
