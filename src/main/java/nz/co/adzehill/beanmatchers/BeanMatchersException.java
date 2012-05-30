@@ -1,8 +1,6 @@
 package nz.co.adzehill.beanmatchers;
 
 public class BeanMatchersException extends RuntimeException {
-    public BeanMatchersException() {
-    }
 
     public BeanMatchersException(String message) {
         super(message);
