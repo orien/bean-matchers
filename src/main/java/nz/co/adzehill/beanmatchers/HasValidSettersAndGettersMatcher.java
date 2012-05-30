@@ -27,7 +27,7 @@ public class HasValidSettersAndGettersMatcher<T> extends AbstractBeanAccessorMat
     }
 
     public void describeTo(Description description) {
-        description.appendText("Unable to match setter and getter results for class properties: ");
+        description.appendText("bean with valid setter and getter methods for properties ");
         description.appendValue(properties);
     }
 }

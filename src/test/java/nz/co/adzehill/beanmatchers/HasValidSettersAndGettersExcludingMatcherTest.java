@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static java.util.Collections.singletonList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Matchers.any;
@@ -127,5 +128,30 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
 
         // then
         assertThat(match, is(true));
+    }
+
+    @Test
+    public void shouldDescribeExpectation() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+
+        // when
+        unitUnderTest.describeTo(descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean with valid setter and getter methods for all properties");
+    }
+
+    @Test
+    public void shouldDescribeExpectationForExcludedProperties() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock, "excludedProperty");
+
+        // when
+        unitUnderTest.describeTo(descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean with valid setter and getter methods for all properties excluding ");
+        verify(descriptionMock).appendValue(singletonList("excludedProperty"));
     }
 }

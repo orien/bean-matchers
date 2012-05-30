@@ -91,4 +91,16 @@ public class HasValidSettersAndGettersMatcherTest {
         verify(descriptionMock).appendText(" had an invalid getter/setter for the property ");
         verify(descriptionMock).appendValue("badField");
     }
+
+    @Test
+    public void shouldDescribeExpectation() {
+        // given
+        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock);
+
+        // when
+        unitUnderTest.describeTo(descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean with valid setter and getter methods for properties ");
+    }
 }
