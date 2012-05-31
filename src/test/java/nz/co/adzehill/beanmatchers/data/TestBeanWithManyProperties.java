@@ -8,6 +8,7 @@ public class TestBeanWithManyProperties {
     private String string;
     private Integer integerObject;
     private int integerPrimitive;
+    private int[] integerPrimitiveArray;
     private Date date;
     private EnumWithThreeValues enumProperty;
     private Double doubleObject;
@@ -43,6 +44,14 @@ public class TestBeanWithManyProperties {
 
     public void setIntegerPrimitive(int integerPrimitive) {
         this.integerPrimitive = integerPrimitive;
+    }
+
+    public int[] getIntegerPrimitiveArray() {
+        return integerPrimitiveArray;
+    }
+
+    public void setIntegerPrimitiveArray(int[] integerPrimitiveArray) {
+        this.integerPrimitiveArray = integerPrimitiveArray;
     }
 
     public Date getDate() {
