@@ -1,16 +1,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.google.code.bean-matchers</groupId>
     <artifactId>bean-matchers</artifactId>
     <version>0.1-SNAPSHOT</version>
-
+    <packaging>jar</packaging>
+    <name>Bean Matchers</name>
+    <description>Hamcrest matchers for testing Java beans.</description>
+    <url>http://code.google.com/p/bean-matchers/</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
+    <licenses>
+        <license>
+            <name>New BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://code.google.com/p/bean-matchers/source/browse/</url>
+        <connection>scm:git:https://code.google.com/p/bean-matchers/</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>orien.madgwick</id>
+            <name>Orien Madgwick</name>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
