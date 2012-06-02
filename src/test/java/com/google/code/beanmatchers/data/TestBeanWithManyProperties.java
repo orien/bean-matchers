@@ -18,6 +18,8 @@ public class TestBeanWithManyProperties {
     private boolean booleanPrimitive;
     private Long longObject;
     private long longPrimitive;
+    private Float floatObject;
+    private float floatPrimitive;
 
     public Object getObject() {
         return object;
@@ -129,5 +131,21 @@ public class TestBeanWithManyProperties {
 
     public void setLongPrimitive(long longPrimitive) {
         this.longPrimitive = longPrimitive;
+    }
+
+    public Float getFloatObject() {
+        return floatObject;
+    }
+
+    public void setFloatObject(Float floatObject) {
+        this.floatObject = floatObject;
+    }
+
+    public float getFloatPrimitive() {
+        return floatPrimitive;
+    }
+
+    public void setFloatPrimitive(float floatPrimitive) {
+        this.floatPrimitive = floatPrimitive;
     }
 }
