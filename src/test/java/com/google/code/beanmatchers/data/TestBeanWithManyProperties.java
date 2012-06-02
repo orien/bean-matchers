@@ -7,12 +7,15 @@ public class TestBeanWithManyProperties {
     private Object object;
     private String string;
     private Integer integerObject;
+    private Integer[] integerObjectArray;
     private int integerPrimitive;
     private int[] integerPrimitiveArray;
     private Date date;
     private EnumWithThreeValues enumProperty;
     private Double doubleObject;
     private double doublePrimitive;
+    private Boolean booleanObject;
+    private boolean booleanPrimitive;
 
     public Object getObject() {
         return object;
@@ -36,6 +39,14 @@ public class TestBeanWithManyProperties {
 
     public void setIntegerObject(Integer integerObject) {
         this.integerObject = integerObject;
+    }
+
+    public Integer[] getIntegerObjectArray() {
+        return integerObjectArray;
+    }
+
+    public void setIntegerObjectArray(Integer[] integerObjectArray) {
+        this.integerObjectArray = integerObjectArray;
     }
 
     public int getIntegerPrimitive() {
@@ -84,5 +95,21 @@ public class TestBeanWithManyProperties {
 
     public void setDoublePrimitive(double doublePrimitive) {
         this.doublePrimitive = doublePrimitive;
+    }
+
+    public Boolean getBooleanObject() {
+        return booleanObject;
+    }
+
+    public void setBooleanObject(Boolean booleanObject) {
+        this.booleanObject = booleanObject;
+    }
+
+    public boolean isBooleanPrimitive() {
+        return booleanPrimitive;
+    }
+
+    public void setBooleanPrimitive(boolean booleanPrimitive) {
+        this.booleanPrimitive = booleanPrimitive;
     }
 }
