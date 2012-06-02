@@ -25,7 +25,7 @@ public class LongGeneratorTest {
     }
 
     @Test
-    public void shouldGenerateRandomInteger() {
+    public void shouldGenerateRandomValue() {
         // given
         Long expectedValue = 2342L;
         when(randomMock.nextLong()).thenReturn(expectedValue);

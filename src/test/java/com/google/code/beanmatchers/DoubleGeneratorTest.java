@@ -25,7 +25,7 @@ public class DoubleGeneratorTest {
     }
 
     @Test
-    public void shouldGenerateRandomInteger() {
+    public void shouldGenerateRandomValue() {
         // given
         Double expectedDouble = 743.232;
         when(randomMock.nextDouble()).thenReturn(expectedDouble);

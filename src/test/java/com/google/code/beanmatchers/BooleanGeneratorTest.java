@@ -26,7 +26,7 @@ public class BooleanGeneratorTest {
     }
 
     @Test
-    public void shouldGenerateRandomInteger() {
+    public void shouldGenerateRandomValue() {
         // given
         Boolean expectedValue = TRUE;
         when(randomMock.nextBoolean()).thenReturn(expectedValue);
