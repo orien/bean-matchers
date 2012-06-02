@@ -25,8 +25,9 @@
         </license>
     </licenses>
     <scm>
-        <url>http://code.google.com/p/bean-matchers/source/browse/</url>
         <connection>scm:git:https://code.google.com/p/bean-matchers/</connection>
+        <developerConnection>scm:git:https://code.google.com/p/bean-matchers/</developerConnection>
+        <url>http://code.google.com/p/bean-matchers/source/browse/</url>
     </scm>
     <developers>
         <developer>
