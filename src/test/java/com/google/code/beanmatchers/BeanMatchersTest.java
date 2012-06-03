@@ -1,8 +1,6 @@
 package com.google.code.beanmatchers;
 
-import com.google.code.beanmatchers.data.TestBeanWithBadSetter;
-import com.google.code.beanmatchers.data.TestBeanWithManyProperties;
-import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
+import com.google.code.beanmatchers.data.*;
 import org.testng.annotations.Test;
 
 import static com.google.code.beanmatchers.BeanMatchers.hasValidSettersAndGetters;
@@ -25,5 +23,16 @@ public class BeanMatchersTest {
     @Test
     public void testHasValidSettersAndGetters() {
         assertThat(new TestBeanWithManyProperties(), hasValidSettersAndGetters());
+    }
+
+    @Test(expectedExceptions = BeanMatchersException.class)
+    public void shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() {
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), hasValidSettersAndGetters());
+    }
+
+    @Test(dependsOnMethods = "shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator")
+    public void canRegisterCustomValueGenerator() {
+        BeanMatchers.registerValueGenerator(new CustomValueGenerator(), ObjectNeedingCustomValueGenerator.class);
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), hasValidSettersAndGetters());
     }
 }
