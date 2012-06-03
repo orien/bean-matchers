@@ -44,12 +44,4 @@ public final class BeanMatchers {
     public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(generator, type);
     }
-
-    /**
-     * @return The registered {@code ValueGenerator} or {@code null}
-     *         if no generator has been registered for the given type.
-     */
-    public static <T> ValueGenerator<T> retrieveValueGenerator(Class<T> type) {
-        return VALUE_GENERATOR_REPOSTITORY.retrieveValueGenerator(type);
-    }
 }
