@@ -1,8 +1,9 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Factory;
-
 import java.util.Random;
+
+import org.hamcrest.Factory;
+import org.hamcrest.Matcher;
 
 public final class BeanMatchers {
 
@@ -27,17 +28,17 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static <T> HasValidSettersAndGettersMatcher<T> hasValidSettersAndGettersFor(String... fields) {
+    public static <T> Matcher<T> hasValidSettersAndGettersFor(String... fields) {
         return new HasValidSettersAndGettersMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     @Factory
-    public static <T> HasValidSettersAndGettersExcludingMatcher<T> hasValidSettersAndGettersExcluding(String... fields) {
+    public static <T> Matcher<T> hasValidSettersAndGettersExcluding(String... fields) {
         return new HasValidSettersAndGettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     @Factory
-    public static <T> HasValidSettersAndGettersExcludingMatcher<T> hasValidSettersAndGetters() {
+    public static <T> Matcher<T> hasValidSettersAndGetters() {
         return hasValidSettersAndGettersExcluding();
     }
 
