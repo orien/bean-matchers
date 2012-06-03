@@ -3,6 +3,7 @@ package com.google.code.beanmatchers;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -10,6 +11,25 @@ import static java.beans.Introspector.getBeanInfo;
 
 final class BeanOperations {
     private BeanOperations() {
+    }
+
+    public static <T> T instantiateBean(Class<T> beanClass) {
+        try {
+            Constructor<T> constructor = beanClass.getConstructor();
+            return constructor.newInstance();
+        }
+        catch (NoSuchMethodException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        }
+        catch (InstantiationException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        }
+        catch (IllegalAccessException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        }
+        catch (InvocationTargetException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        }
     }
 
     public static <T> PropertyDescriptor[] propertyDescriptors(T bean) {

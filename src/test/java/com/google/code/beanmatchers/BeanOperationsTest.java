@@ -1,16 +1,25 @@
 package com.google.code.beanmatchers;
 
+import java.beans.PropertyDescriptor;
+
 import com.google.code.beanmatchers.data.TestBeanWithMissingGetter;
 import com.google.code.beanmatchers.data.TestBeanWithMissingSetter;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
 
-import java.beans.PropertyDescriptor;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class BeanOperationsTest {
+
+    @Test
+    public void canInstantiateClassUsingNoArgsConstructor() {
+        // when
+        TestBeanWithOneProperty bean = BeanOperations.instantiateBean(TestBeanWithOneProperty.class);
+
+        // then
+        assertThat(bean, is(notNullValue()));
+    }
 
     @Test
     public void canObtainPropertyDescriptorOfDefinedProperty() {
