@@ -69,7 +69,14 @@ public class DefaultTypeBasedValueGeneratorTest {
         assertThat(value, is(expectedValue));
     }
 
-    @Test(expectedExceptions = BeanMatchersException.class)
+    @Test(expectedExceptions = BeanMatchersException.class, expectedExceptionsMessageRegExp =
+            "Could not create a test value of type java.lang.String.\\n" +
+                    "Please register a ValueGenerator to create the value:\\n" +
+                    "    BeanMatchers.registerValueGenerator\\(new ValueGenerator<String>\\(\\) \\{\\n" +
+                    "        public String generate\\(\\) \\{\\n" +
+                    "            return null;  // Change to generate random instance\\n" +
+                    "        }\\n" +
+                    "    \\}, String.class\\);")
     public void shouldThrowExceptionWhenNoGeneratorRegisteredForTypeAndTypeIsFinal() {
         // given
         when(valueGeneratorRepositoryMock.retrieveValueGenerator(String.class)).thenReturn(null);
