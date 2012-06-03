@@ -9,7 +9,7 @@ import static java.util.Arrays.asList;
 public class HasValidSettersAndGettersExcludingMatcher<T> extends AbstractBeanAccessorMatcher<T> {
     private List<String> excludedProperties;
 
-    public HasValidSettersAndGettersExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+    HasValidSettersAndGettersExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
         super(valueGenerator);
         this.excludedProperties = asList(excludedProperties);
     }

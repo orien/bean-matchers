@@ -3,9 +3,9 @@ package com.google.code.beanmatchers;
 import org.hamcrest.DiagnosingMatcher;
 
 public abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
-    protected TypeBasedValueGenerator valueGenerator;
+    TypeBasedValueGenerator valueGenerator;
 
-    public AbstractBeanAccessorMatcher(TypeBasedValueGenerator valueGenerator) {
+    AbstractBeanAccessorMatcher(TypeBasedValueGenerator valueGenerator) {
         this.valueGenerator = valueGenerator;
     }
 

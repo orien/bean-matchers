@@ -5,7 +5,7 @@ import org.hamcrest.Description;
 public class HasValidSettersAndGettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
     private String[] properties;
 
-    public HasValidSettersAndGettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
+    HasValidSettersAndGettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
         super(valueGenerator);
         this.properties = properties;
     }

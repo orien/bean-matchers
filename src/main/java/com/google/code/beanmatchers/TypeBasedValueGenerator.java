@@ -1,6 +1,6 @@
 package com.google.code.beanmatchers;
 
-public interface TypeBasedValueGenerator {
+interface TypeBasedValueGenerator {
 
     /**
      * @return A new instance of random value of the specified type.
