@@ -11,6 +11,7 @@ public class TestBeanWithManyProperties {
     private int integerPrimitive;
     private int[] integerPrimitiveArray;
     private Date date;
+    private Date[] dateArray;
     private EnumWithThreeValues enumProperty;
     private Double doubleObject;
     private double doublePrimitive;
@@ -77,6 +78,14 @@ public class TestBeanWithManyProperties {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Date[] getDateArray() {
+        return dateArray;
+    }
+
+    public void setDateArray(Date[] dateArray) {
+        this.dateArray = dateArray;
     }
 
     public EnumWithThreeValues getEnumProperty() {
