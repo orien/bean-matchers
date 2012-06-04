@@ -15,20 +15,22 @@ final class BeanOperations {
 
     public static <T> T instantiateBean(Class<T> beanClass) {
         try {
-            Constructor<T> constructor = beanClass.getConstructor();
+            Constructor<T> constructor = noArgsConstructor(beanClass);
             return constructor.newInstance();
-        }
-        catch (NoSuchMethodException e) {
+        } catch (InstantiationException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        } catch (IllegalAccessException e) {
+            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+        } catch (InvocationTargetException e) {
             throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
         }
-        catch (InstantiationException e) {
-            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
-        }
-        catch (IllegalAccessException e) {
-            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
-        }
-        catch (InvocationTargetException e) {
-            throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+    }
+
+    public static <T> Constructor<T> noArgsConstructor(Class<T> beanClass) {
+        try {
+            return beanClass.getConstructor();
+        } catch (NoSuchMethodException e) {
+            throw new BeanMatchersException("Bean does not have no-args constructor", e);
         }
     }
 

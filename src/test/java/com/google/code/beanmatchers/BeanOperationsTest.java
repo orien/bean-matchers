@@ -1,11 +1,12 @@
 package com.google.code.beanmatchers;
 
-import java.beans.PropertyDescriptor;
-
 import com.google.code.beanmatchers.data.TestBeanWithMissingGetter;
 import com.google.code.beanmatchers.data.TestBeanWithMissingSetter;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import org.testng.annotations.Test;
+
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -19,6 +20,15 @@ public class BeanOperationsTest {
 
         // then
         assertThat(bean, is(notNullValue()));
+    }
+
+    @Test
+    public void canObtainNoArgsConstructor() {
+        // when
+        Constructor<TestBeanWithOneProperty> constructor = BeanOperations.noArgsConstructor(TestBeanWithOneProperty.class);
+
+        // then
+        assertThat(constructor, is(notNullValue()));
     }
 
     @Test
