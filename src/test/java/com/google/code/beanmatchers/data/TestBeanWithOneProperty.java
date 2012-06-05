@@ -11,4 +11,9 @@ public class TestBeanWithOneProperty {
     public void setField1(Object field1) {
         this.field1 = field1;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{field1=" + field1 + "}";
+    }
 }

@@ -3,12 +3,15 @@ package com.google.code.beanmatchers;
 import com.google.code.beanmatchers.data.*;
 import org.testng.annotations.Test;
 
-import static com.google.code.beanmatchers.BeanMatchers.hasValidSettersAndGetters;
-import static com.google.code.beanmatchers.BeanMatchers.hasValidSettersAndGettersExcluding;
-import static com.google.code.beanmatchers.BeanMatchers.hasValidSettersAndGettersFor;
+import static com.google.code.beanmatchers.BeanMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BeanMatchersTest {
+
+    @Test
+    public void testHasValidBeanConstructor() {
+        assertThat(TestBeanWithOneProperty.class, hasValidBeanConstructor());
+    }
 
     @Test
     public void testHasValidSettersAndGettersFor() {
@@ -23,6 +26,11 @@ public class BeanMatchersTest {
     @Test
     public void testHasValidSettersAndGetters() {
         assertThat(new TestBeanWithManyProperties(), hasValidSettersAndGetters());
+    }
+
+    @Test
+    public void testHasValidToString() {
+        assertThat(TestBeanWithManyProperties.class, hasValidToString());
     }
 
     @Test(expectedExceptions = BeanMatchersException.class)

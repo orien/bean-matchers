@@ -20,12 +20,13 @@ public final class BeanMatchers {
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new LongGenerator(random), Long.class, Long.TYPE);
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new FloatGenerator(random), Float.class, Float.TYPE);
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new ByteGenerator(random), Byte.class, Byte.TYPE);
+        ArrayTypeBasedValueGenerator arrayValueGenerator = new ArrayTypeBasedValueGenerator();
         TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(VALUE_GENERATOR_REPOSTITORY,
-                new MockingTypeBasedValueGenerator(), new EnumBasedValueGenerator(random), new ArrayTypeBasedValueGenerator());
+                new MockingTypeBasedValueGenerator(), new EnumBasedValueGenerator(random), arrayValueGenerator);
+        arrayValueGenerator.setTypeBaseValueGenerator(TYPE_BASED_VALUE_GENERATOR);
     }
 
-    private BeanMatchers() {
-    }
+    private BeanMatchers() {}
 
     @Factory
     public static <T> Matcher<T> hasValidSettersAndGettersFor(String... fields) {
@@ -43,8 +44,13 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static <T> Matcher<Class<T>> hasValidBeanConstructor() {
-        return hasValidSettersAndGettersExcluding();
+    public static Matcher<Class> hasValidBeanConstructor() {
+        return new HasValidBeanConstructorMatcher();
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidToString() {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
     }
 
     public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {

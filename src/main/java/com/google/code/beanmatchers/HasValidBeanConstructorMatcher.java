@@ -5,10 +5,10 @@ import org.hamcrest.TypeSafeDiagnosingMatcher;
 
 import static com.google.code.beanmatchers.BeanOperations.noArgsConstructor;
 
-public class HasValidBeanConstructorMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
+public class HasValidBeanConstructorMatcher extends TypeSafeDiagnosingMatcher<Class> {
 
     @Override
-    protected boolean matchesSafely(Class<T> item, Description mismatchDescription) {
+    protected boolean matchesSafely(Class item, Description mismatchDescription) {
         try {
             noArgsConstructor(item);
             return true;

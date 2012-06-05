@@ -1,12 +1,9 @@
 package com.google.code.beanmatchers;
 
 import java.beans.PropertyDescriptor;
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
-import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
-import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
+import static com.google.code.beanmatchers.BeanOperations.*;
 
 class JavaBean {
 
@@ -16,6 +13,10 @@ class JavaBean {
     public JavaBean(Object targetBean) {
         this.targetBean = targetBean;
         descriptors = propertyDescriptors(targetBean);
+    }
+
+    public JavaBean(Class targetBeanType) {
+        this(instantiateBean(targetBeanType));
     }
 
     public Class<?> propertyType(String propertyName) {
@@ -40,11 +41,10 @@ class JavaBean {
     }
 
     public List<String> properties() {
-        List<String> properties = new ArrayList<String>(descriptors.length);
-        for (PropertyDescriptor descriptor : descriptors) {
-            properties.add(descriptor.getName());
-        }
-        properties.remove("class");
-        return properties;
+        return BeanOperations.properties(descriptors);
+    }
+
+    public String toString() {
+        return targetBean.toString();
     }
 }

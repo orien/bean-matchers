@@ -2,6 +2,8 @@ package com.google.code.beanmatchers.data;
 
 import java.util.Date;
 
+import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+
 public class TestBeanWithManyProperties {
 
     private Object object;
@@ -174,5 +176,10 @@ public class TestBeanWithManyProperties {
 
     public void setBytePrimitive(byte bytePrimitive) {
         this.bytePrimitive = bytePrimitive;
+    }
+
+    @Override
+    public String toString() {
+        return reflectionToString(this);
     }
 }
