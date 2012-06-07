@@ -2,6 +2,7 @@ package com.google.code.beanmatchers.data;
 
 import java.util.Date;
 
+import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 
 public class TestBeanWithManyProperties {
@@ -176,6 +177,11 @@ public class TestBeanWithManyProperties {
 
     public void setBytePrimitive(byte bytePrimitive) {
         this.bytePrimitive = bytePrimitive;
+    }
+
+    @Override
+    public int hashCode() {
+        return reflectionHashCode(this);
     }
 
     @Override

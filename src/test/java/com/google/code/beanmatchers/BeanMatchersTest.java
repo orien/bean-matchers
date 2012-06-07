@@ -29,6 +29,11 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanHashCode() {
+        assertThat(TestBeanWithManyProperties.class, hasValidBeanHashCode());
+    }
+
+    @Test
     public void testHasValidToString() {
         assertThat(TestBeanWithManyProperties.class, hasValidToString());
     }

@@ -47,4 +47,18 @@ class JavaBean {
     public String toString() {
         return targetBean.toString();
     }
+
+    @Override
+    public int hashCode() {
+        return targetBean.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof JavaBean) {
+            return targetBean.equals(((JavaBean) object).targetBean);
+        } else {
+            return targetBean.equals(object);
+        }
+    }
 }

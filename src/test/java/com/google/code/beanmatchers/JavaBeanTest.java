@@ -98,4 +98,91 @@ public class JavaBeanTest {
         assertThat(properties, hasSize(1));
         assertThat(properties, hasItem("field1"));
     }
+
+    @Test
+    public void toStringShouldObtainTheToStringValueFromTargetBean() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        String toString = unitUnderTest.toString();
+
+        // then
+        assertThat(toString, is(equalTo(bean.toString())));
+    }
+
+    @Test
+    public void hashCodeShouldObtainTheHashCodeValueFromTargetBean() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        int hashCode = unitUnderTest.hashCode();
+
+        // then
+        assertThat(hashCode, is(equalTo(bean.hashCode())));
+    }
+
+    @Test
+    public void equalsShouldCompareToTargetBeanAndReturnTrueGivenBeansAreEqual() {
+        // given
+        TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        boolean equal = unitUnderTest.equals(bean);
+
+        // then
+        assertThat(equal, is(true));
+    }
+
+    @Test
+    public void equalsShouldCompareToTargetBeanAndReturnFalseGivenBeansAreNotEqual() {
+        // given
+        TestBeanWithOneProperty bean1 = new TestBeanWithOneProperty();
+        bean1.setField1("1");
+        TestBeanWithOneProperty bean2 = new TestBeanWithOneProperty();
+        bean2.setField1("2");
+        unitUnderTest = new JavaBean(bean1);
+
+        // when
+        boolean equal = unitUnderTest.equals(bean2);
+
+        // then
+        assertThat(equal, is(false));
+    }
+
+    @Test
+    public void equalsShouldCompareToTargetBeansAndReturnTrueGivenJavaBeanAndTargetBeansAreEqual() {
+        // given
+        TestBeanWithOneProperty bean1 = new TestBeanWithOneProperty();
+        bean1.setField1("1");
+        TestBeanWithOneProperty bean2 = new TestBeanWithOneProperty();
+        bean2.setField1("1");
+        unitUnderTest = new JavaBean(bean1);
+
+        // when
+        boolean equal = unitUnderTest.equals(new JavaBean(bean2));
+
+        // then
+        assertThat(equal, is(true));
+    }
+
+    @Test
+    public void equalsShouldCompareToTargetBeansAndReturnFalseGivenJavaBeanAndTargetBeansAreNotEqual() {
+        // given
+        TestBeanWithOneProperty bean1 = new TestBeanWithOneProperty();
+        bean1.setField1("1");
+        TestBeanWithOneProperty bean2 = new TestBeanWithOneProperty();
+        bean2.setField1("2");
+        unitUnderTest = new JavaBean(bean1);
+
+        // when
+        boolean equal = unitUnderTest.equals(new JavaBean(bean2));
+
+        // then
+        assertThat(equal, is(false));
+    }
 }

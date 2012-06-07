@@ -49,6 +49,11 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static Matcher<Class> hasValidBeanHashCode() {
+        return new HasValidBeanHashCodeExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidToString() {
         return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
     }
