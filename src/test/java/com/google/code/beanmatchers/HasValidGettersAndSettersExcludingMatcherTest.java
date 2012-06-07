@@ -15,9 +15,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class HasValidSettersAndGettersExcludingMatcherTest {
+public class HasValidGettersAndSettersExcludingMatcherTest {
 
-    private HasValidSettersAndGettersExcludingMatcher unitUnderTest;
+    private HasValidGettersAndSettersExcludingMatcher unitUnderTest;
 
     @Mock
     private TypeBasedValueGenerator valueGeneratorMock;
@@ -40,7 +40,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     public void beanWithValidGettersAndSettersShouldMatch() {
         // given
         Object bean = new TestBeanWithOneProperty();
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
 
         // when
         boolean match = unitUnderTest.matches(bean);
@@ -52,7 +52,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithInvalidGetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithBadGetter();
 
         // when
@@ -65,7 +65,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithInvalidGetterShouldBeDiagnosed() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithBadGetter();
 
         // when
@@ -81,7 +81,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithMissingGetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithMissingGetter();
 
         // when
@@ -94,7 +94,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithInvalidSetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithBadSetter();
 
         // when
@@ -107,7 +107,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithMissingSetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
         Object bean = new TestBeanWithMissingSetter();
 
         // when
@@ -120,7 +120,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void beanWithInvalidSetterShouldMatchIfBadPropertyIsExcluded() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock, "badField");
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock, "badField");
         Object bean = new TestBeanWithBadSetter();
 
         // when
@@ -133,7 +133,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void shouldDescribeExpectation() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
 
         // when
         unitUnderTest.describeTo(descriptionMock);
@@ -145,7 +145,7 @@ public class HasValidSettersAndGettersExcludingMatcherTest {
     @Test
     public void shouldDescribeExpectationForExcludedProperties() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersExcludingMatcher(valueGeneratorMock, "excludedProperty");
+        unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock, "excludedProperty");
 
         // when
         unitUnderTest.describeTo(descriptionMock);

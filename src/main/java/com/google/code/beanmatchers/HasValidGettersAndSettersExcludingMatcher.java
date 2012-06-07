@@ -6,10 +6,10 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 
-public class HasValidSettersAndGettersExcludingMatcher<T> extends AbstractBeanAccessorMatcher<T> {
+public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAccessorMatcher<T> {
     private List<String> excludedProperties;
 
-    HasValidSettersAndGettersExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+    HasValidGettersAndSettersExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
         super(valueGenerator);
         this.excludedProperties = asList(excludedProperties);
     }

@@ -2,10 +2,10 @@ package com.google.code.beanmatchers;
 
 import org.hamcrest.Description;
 
-public class HasValidSettersAndGettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
+public class HasValidGettersAndSettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
     private String[] properties;
 
-    HasValidSettersAndGettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
+    HasValidGettersAndSettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
         super(valueGenerator);
         this.properties = properties;
     }

@@ -16,9 +16,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class HasValidSettersAndGettersMatcherTest {
+public class HasValidGettersAndSettersMatcherTest {
 
-    private HasValidSettersAndGettersMatcher unitUnderTest;
+    private HasValidGettersAndSettersMatcher unitUnderTest;
 
     @Mock
     private TypeBasedValueGenerator valueGeneratorMock;
@@ -41,7 +41,7 @@ public class HasValidSettersAndGettersMatcherTest {
     public void beanWithValidGettersAndSettersShouldMatch() {
         // given
         Object bean = new TestBeanWithOneProperty();
-        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock, "field1");
+        unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "field1");
 
         // when
         boolean match = unitUnderTest.matches(bean);
@@ -53,7 +53,7 @@ public class HasValidSettersAndGettersMatcherTest {
     @Test
     public void beanWithInvalidGetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock, "goodField", "badField");
+        unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "goodField", "badField");
         Object bean = new TestBeanWithBadGetter();
 
         // when
@@ -66,7 +66,7 @@ public class HasValidSettersAndGettersMatcherTest {
     @Test
     public void beanWithInvalidSetterShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock, "goodField", "badField");
+        unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "goodField", "badField");
         Object bean = new TestBeanWithBadSetter();
 
         // when
@@ -79,7 +79,7 @@ public class HasValidSettersAndGettersMatcherTest {
     @Test
     public void beanWithInvalidGetterShouldBeDiagnosed() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock, "goodField", "badField");
+        unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "goodField", "badField");
         Object bean = new TestBeanWithBadGetter();
 
         // when
@@ -95,7 +95,7 @@ public class HasValidSettersAndGettersMatcherTest {
     @Test
     public void shouldDescribeExpectation() {
         // given
-        unitUnderTest = new HasValidSettersAndGettersMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock);
 
         // when
         unitUnderTest.describeTo(descriptionMock);
