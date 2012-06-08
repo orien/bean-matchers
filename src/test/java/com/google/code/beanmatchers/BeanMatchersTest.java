@@ -34,6 +34,11 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanEquals() {
+        assertThat(TestBeanWithManyProperties.class, hasValidBeanEquals());
+    }
+
+    @Test
     public void testHasValidToString() {
         assertThat(TestBeanWithManyProperties.class, hasValidToString());
     }

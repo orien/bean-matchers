@@ -1,7 +1,6 @@
 package com.google.code.beanmatchers;
 
 import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -29,7 +28,7 @@ final class BeanOperations {
 
     public static <T> Constructor<T> noArgsConstructor(Class<T> beanClass) {
         try {
-            return beanClass.getConstructor();
+            return beanClass.getDeclaredConstructor();
         } catch (NoSuchMethodException e) {
             throw new BeanMatchersException("Bean does not have no-args constructor", e);
         }
@@ -59,7 +58,7 @@ final class BeanOperations {
     private static BeanInfo beanInfo(Class targetClass) {
         try {
             return getBeanInfo(targetClass);
-        } catch (IntrospectionException e) {
+        } catch (Exception e) {
             throw new BeanMatchersException(e);
         }
     }
@@ -83,9 +82,7 @@ final class BeanOperations {
     private static Object invokeMethod(Object bean, Method method, Object... args) {
         try {
             return method.invoke(bean, args);
-        } catch (IllegalAccessException e) {
-            throw new BeanMatchersException(e);
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             throw new BeanMatchersException(e);
         }
     }

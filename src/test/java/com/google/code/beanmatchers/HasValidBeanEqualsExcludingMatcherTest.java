@@ -1,7 +1,7 @@
 package com.google.code.beanmatchers;
 
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
-import com.google.code.beanmatchers.data.TestBeanWithPropertyThatDoesNotInfluenceHashCode;
+import com.google.code.beanmatchers.data.TestBeanWithPropertyThatDoesNotInfluenceEquals;
 import org.hamcrest.Description;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
@@ -16,9 +16,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class HasValidBeanHashCodeExcludingMatcherTest {
+public class HasValidBeanEqualsExcludingMatcherTest {
 
-    private HasValidBeanHashCodeExcludingMatcher unitUnderTest;
+    private HasValidBeanEqualsExcludingMatcher unitUnderTest;
 
     @Mock
     private TypeBasedValueGenerator valueGeneratorMock;
@@ -41,10 +41,10 @@ public class HasValidBeanHashCodeExcludingMatcherTest {
     }
 
     @Test
-    public void beanWithValidHashCodeShouldMatch() {
+    public void beanWithValidEqualsShouldMatch() {
         // given
         Class beanType = TestBeanWithOneProperty.class;
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
 
         // when
         boolean match = unitUnderTest.matches(beanType);
@@ -54,10 +54,10 @@ public class HasValidBeanHashCodeExcludingMatcherTest {
     }
 
     @Test
-    public void beanWithPropertyNotInfluencingHashCodeShouldNotMatch() {
+    public void beanWithPropertyNotInfluencingEqualsShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock);
-        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
         boolean match = unitUnderTest.matches(beanType);
@@ -69,24 +69,25 @@ public class HasValidBeanHashCodeExcludingMatcherTest {
     @Test
     public void beanWithPropertyNotInfluencingHashCodeShouldBeDiagnosed() {
         // given
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock);
-        Class bean = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class bean = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
         unitUnderTest.matchesSafely(bean, descriptionMock);
 
         // then
         verify(descriptionMock).appendText("bean of type ");
-        verify(descriptionMock).appendValue(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class.getName());
-        verify(descriptionMock).appendText(" had a hashCode not influenced by the property ");
+        verify(descriptionMock).appendValue(TestBeanWithPropertyThatDoesNotInfluenceEquals.class.getName());
+        verify(descriptionMock).appendText(" had property ");
         verify(descriptionMock).appendValue("property");
+        verify(descriptionMock).appendText(" not compared during equals operation");
     }
 
     @Test
-    public void beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsExcluded() {
+    public void beanWithPropertyNotInfluencingEqualsShouldMatchIfBadPropertyIsExcluded() {
         // given
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock, "property");
-        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "property");
+        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
         boolean match = unitUnderTest.matches(beanType);
@@ -98,19 +99,19 @@ public class HasValidBeanHashCodeExcludingMatcherTest {
     @Test
     public void shouldDescribeExpectation() {
         // given
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
 
         // when
         unitUnderTest.describeTo(descriptionMock);
 
         // then
-        verify(descriptionMock).appendText("bean with all properties influencing hashCode");
+        verify(descriptionMock).appendText("bean with all properties compared in equals");
     }
 
     @Test
     public void shouldDescribeExpectationForExcludedProperties() {
         // given
-        unitUnderTest = new HasValidBeanHashCodeExcludingMatcher(valueGeneratorMock, "excludedProperty");
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "excludedProperty");
 
         // when
         unitUnderTest.describeTo(descriptionMock);
@@ -118,6 +119,6 @@ public class HasValidBeanHashCodeExcludingMatcherTest {
         // then
         verify(descriptionMock).appendText("bean with all properties excluding ");
         verify(descriptionMock).appendValue(singletonList("excludedProperty"));
-        verify(descriptionMock).appendText(" influencing hashCode");
+        verify(descriptionMock).appendText(" compared in equals");
     }
 }

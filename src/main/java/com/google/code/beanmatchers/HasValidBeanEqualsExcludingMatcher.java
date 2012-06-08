@@ -9,11 +9,11 @@ import static com.google.code.beanmatchers.BeanOperations.properties;
 import static com.google.code.beanmatchers.ValueGenerators.generateTwoDistinctValues;
 import static java.util.Arrays.asList;
 
-public class HasValidBeanHashCodeExcludingMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
+public class HasValidBeanEqualsExcludingMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
     private final List<String> excludedProperties;
     private final TypeBasedValueGenerator valueGenerator;
 
-    HasValidBeanHashCodeExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+    HasValidBeanEqualsExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
         this.excludedProperties = asList(excludedProperties);
         this.valueGenerator = valueGenerator;
     }
@@ -21,41 +21,41 @@ public class HasValidBeanHashCodeExcludingMatcher<T> extends TypeSafeDiagnosingM
     @Override
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
         for (String property : properties(beanType)) {
-            JavaBean bean = new JavaBean(beanType);
-            if (shouldValidateHashCodeForProperty(property)
-                    && hashCodeNotInfluencedByProperty(bean, property)) {
+            if (shouldValidateEqualsForProperty(property)
+                    && propertyNotComparedDuringEquals(beanType, property)) {
                 mismatchDescription
                         .appendText("bean of type ")
                         .appendValue(beanType.getName())
-                        .appendText(" had a hashCode not influenced by the property ")
-                        .appendValue(property);
+                        .appendText(" had property ")
+                        .appendValue(property)
+                        .appendText(" not compared during equals operation");
                 return false;
             }
         }
         return true;
     }
 
-    private boolean shouldValidateHashCodeForProperty(String property) {
+    private boolean shouldValidateEqualsForProperty(String property) {
         return !excludedProperties.contains(property);
     }
 
-    private boolean hashCodeNotInfluencedByProperty(JavaBean bean, String property) {
-        Class<?> propertyType = bean.propertyType(property);
+    private boolean propertyNotComparedDuringEquals(Class<T> beanType, String property) {
+        JavaBean beanOne = new JavaBean(beanType);
+        Class<?> propertyType = beanOne.propertyType(property);
         DistinctValues values = generateTwoDistinctValues(valueGenerator, propertyType);
-        bean.setProperty(property, values.getValueOne());
-        int initialHashCode = bean.hashCode();
-        bean.setProperty(property, values.getValueTwo());
-        int influencedHashCode = bean.hashCode();
-        return initialHashCode == influencedHashCode;
+        beanOne.setProperty(property, values.getValueOne());
+        JavaBean beanTwo = new JavaBean(beanType);
+        beanTwo.setProperty(property, values.getValueTwo());
+        return beanOne.equals(beanTwo);
     }
 
     public void describeTo(Description description) {
         if (excludedProperties.isEmpty()) {
-            description.appendText("bean with all properties influencing hashCode");
+            description.appendText("bean with all properties compared in equals");
         } else {
             description.appendText("bean with all properties excluding ");
             description.appendValue(excludedProperties);
-            description.appendText(" influencing hashCode");
+            description.appendText(" compared in equals");
         }
     }
 }
