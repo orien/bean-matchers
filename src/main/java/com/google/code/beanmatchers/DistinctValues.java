@@ -1,6 +1,6 @@
 package com.google.code.beanmatchers;
 
-public class DistinctValues<T> {
+class DistinctValues<T> {
     private final T valueOne;
     private final T valueTwo;
 

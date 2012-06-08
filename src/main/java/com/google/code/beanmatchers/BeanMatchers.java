@@ -29,18 +29,33 @@ public final class BeanMatchers {
     private BeanMatchers() {}
 
     @Factory
-    public static <T> Matcher<T> hasValidGettersAndSettersFor(String... fields) {
+    public static Matcher<Class> hasValidGettersAndSettersFor(String... fields) {
+        return new InstantiatingMatcherDecorator(isBeanWithValidGettersAndSettersFor(fields));
+    }
+
+    @Factory
+    public static <T> Matcher<T> isBeanWithValidGettersAndSettersFor(String... fields) {
         return new HasValidGettersAndSettersMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     @Factory
-    public static <T> Matcher<T> hasValidGettersAndSettersExcluding(String... fields) {
+    public static Matcher<Class> hasValidGettersAndSettersExcluding(String... fields) {
+        return new InstantiatingMatcherDecorator(isBeanWithValidGettersAndSettersExcluding(fields));
+    }
+
+    @Factory
+    public static <T> Matcher<T> isBeanWithValidGettersAndSettersExcluding(String... fields) {
         return new HasValidGettersAndSettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     @Factory
-    public static <T> Matcher<T> hasValidGettersAndSetters() {
+    public static Matcher<Class> hasValidGettersAndSetters() {
         return hasValidGettersAndSettersExcluding();
+    }
+
+    @Factory
+    public static <T> Matcher<T> isBeanWithValidGettersAndSetters() {
+        return isBeanWithValidGettersAndSettersExcluding();
     }
 
     @Factory

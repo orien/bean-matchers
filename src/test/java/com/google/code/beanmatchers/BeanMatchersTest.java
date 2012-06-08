@@ -14,18 +14,33 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testBeanHasValidGettersAndSettersFor() {
+        assertThat(new TestBeanWithOneProperty(), isBeanWithValidGettersAndSettersFor("field1"));
+    }
+
+    @Test
     public void testHasValidGettersAndSettersFor() {
-        assertThat(new TestBeanWithOneProperty(), hasValidGettersAndSettersFor("field1"));
+        assertThat(TestBeanWithOneProperty.class, hasValidGettersAndSettersFor("field1"));
+    }
+
+    @Test
+    public void testBeanHasValidGettersAndSettersExcluding() {
+        assertThat(new TestBeanWithBadSetter(), isBeanWithValidGettersAndSettersExcluding("badField"));
     }
 
     @Test
     public void testHasValidGettersAndSettersExcluding() {
-        assertThat(new TestBeanWithBadSetter(), hasValidGettersAndSettersExcluding("badField"));
+        assertThat(TestBeanWithBadSetter.class, hasValidGettersAndSettersExcluding("badField"));
+    }
+
+    @Test
+    public void testBeanHasValidGettersAndSetters() {
+        assertThat(new TestBeanWithManyProperties(), isBeanWithValidGettersAndSetters());
     }
 
     @Test
     public void testHasValidGettersAndSetters() {
-        assertThat(new TestBeanWithManyProperties(), hasValidGettersAndSetters());
+        assertThat(TestBeanWithManyProperties.class, hasValidGettersAndSetters());
     }
 
     @Test
@@ -45,12 +60,12 @@ public class BeanMatchersTest {
 
     @Test(expectedExceptions = BeanMatchersException.class)
     public void shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() {
-        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), hasValidGettersAndSetters());
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isBeanWithValidGettersAndSetters());
     }
 
     @Test(dependsOnMethods = "shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator")
     public void canRegisterCustomValueGenerator() {
         BeanMatchers.registerValueGenerator(new CustomValueGenerator(), ObjectNeedingCustomValueGenerator.class);
-        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), hasValidGettersAndSetters());
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isBeanWithValidGettersAndSetters());
     }
 }
