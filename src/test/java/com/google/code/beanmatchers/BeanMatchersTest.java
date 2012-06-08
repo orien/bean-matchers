@@ -49,13 +49,28 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanHashCodeExcluding() {
+        assertThat(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class, hasValidBeanHashCodeExcluding("property"));
+    }
+
+    @Test
     public void testHasValidBeanEquals() {
         assertThat(TestBeanWithManyProperties.class, hasValidBeanEquals());
     }
 
     @Test
-    public void testHasValidToString() {
-        assertThat(TestBeanWithManyProperties.class, hasValidToString());
+    public void testHasValidBeanEqualsExcluding() {
+        assertThat(TestBeanWithPropertyThatDoesNotInfluenceEquals.class, hasValidBeanEqualsExcluding("propertyNotComparedInEquals"));
+    }
+
+    @Test
+    public void testHasValidBeanToString() {
+        assertThat(TestBeanWithManyProperties.class, hasValidBeanToString());
+    }
+
+    @Test
+    public void testHasValidBeanToStringExcluding() {
+        assertThat(TestBeanWithToStringMissingPropertyValue.class, hasValidBeanToStringExcluding("propertyValueMissingInToString"));
     }
 
     @Test(expectedExceptions = BeanMatchersException.class)

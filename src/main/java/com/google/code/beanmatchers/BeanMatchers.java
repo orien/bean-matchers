@@ -69,13 +69,28 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static Matcher<Class> hasValidBeanHashCodeExcluding(String... fields) {
+        return new HasValidBeanHashCodeExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidBeanEquals() {
         return new HasValidBeanEqualsExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
     }
 
     @Factory
-    public static Matcher<Class> hasValidToString() {
+    public static Matcher<Class> hasValidBeanEqualsExcluding(String... fields) {
+        return new HasValidBeanEqualsExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidBeanToString() {
         return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidBeanToStringExcluding(String... fields) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {

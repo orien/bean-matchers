@@ -2,16 +2,16 @@ package com.google.code.beanmatchers.data;
 
 public class TestBeanWithPropertyThatDoesNotInfluenceEquals {
 
-    private Object property;
+    private Object propertyNotComparedInEquals;
 
     private Object propertyComparedInEquals;
 
-    public Object getProperty() {
-        return property;
+    public Object getPropertyNotComparedInEquals() {
+        return propertyNotComparedInEquals;
     }
 
-    public void setProperty(Object property) {
-        this.property = property;
+    public void setPropertyNotComparedInEquals(Object propertyNotComparedInEquals) {
+        this.propertyNotComparedInEquals = propertyNotComparedInEquals;
     }
 
     public Object getPropertyComparedInEquals() {

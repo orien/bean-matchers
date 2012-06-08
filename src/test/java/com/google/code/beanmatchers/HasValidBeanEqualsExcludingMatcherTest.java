@@ -35,7 +35,7 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     @BeforeMethod
     public void setUp() {
         initMocks(this);
-        when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo);
+        when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo, valueOne, valueTwo);
         when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
         when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
     }
@@ -79,14 +79,14 @@ public class HasValidBeanEqualsExcludingMatcherTest {
         verify(descriptionMock).appendText("bean of type ");
         verify(descriptionMock).appendValue(TestBeanWithPropertyThatDoesNotInfluenceEquals.class.getName());
         verify(descriptionMock).appendText(" had property ");
-        verify(descriptionMock).appendValue("property");
+        verify(descriptionMock).appendValue("propertyNotComparedInEquals");
         verify(descriptionMock).appendText(" not compared during equals operation");
     }
 
     @Test
     public void beanWithPropertyNotInfluencingEqualsShouldMatchIfBadPropertyIsExcluded() {
         // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "property");
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "propertyNotComparedInEquals");
         Class beanType = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
