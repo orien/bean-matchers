@@ -16,6 +16,7 @@ final class BeanOperations {
     public static <T> T instantiateBean(Class<T> beanClass) {
         try {
             Constructor<T> constructor = noArgsConstructor(beanClass);
+            constructor.setAccessible(true);
             return constructor.newInstance();
         } catch (InstantiationException e) {
             throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);

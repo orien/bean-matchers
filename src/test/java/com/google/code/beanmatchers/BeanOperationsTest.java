@@ -3,6 +3,7 @@ package com.google.code.beanmatchers;
 import com.google.code.beanmatchers.data.TestBeanWithMissingGetter;
 import com.google.code.beanmatchers.data.TestBeanWithMissingSetter;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
+import com.google.code.beanmatchers.data.TestBeanWithPrivateConstructor;
 import org.testng.annotations.Test;
 
 import java.beans.PropertyDescriptor;
@@ -17,6 +18,15 @@ public class BeanOperationsTest {
     public void canInstantiateClassUsingNoArgsConstructor() {
         // when
         TestBeanWithOneProperty bean = BeanOperations.instantiateBean(TestBeanWithOneProperty.class);
+
+        // then
+        assertThat(bean, is(notNullValue()));
+    }
+
+    @Test
+    public void canInstantiateClassUsingPrivateNoArgsConstructor() {
+        // when
+        TestBeanWithPrivateConstructor bean = BeanOperations.instantiateBean(TestBeanWithPrivateConstructor.class);
 
         // then
         assertThat(bean, is(notNullValue()));
