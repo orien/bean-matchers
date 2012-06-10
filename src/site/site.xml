@@ -7,7 +7,7 @@
     <body>
         <menu ref="reports"/>
     </body>
-    <poweredBy/>
+    <googleAnalyticsAccountId>UA-32537030-1</googleAnalyticsAccountId>
     <custom>
         <fluidoSkin>
             <googleSearch>
