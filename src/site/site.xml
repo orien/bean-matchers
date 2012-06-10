@@ -1,0 +1,25 @@
+<project name="Bean Matchers">
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.2.1</version>
+    </skin>
+    <body>
+        <menu ref="reports"/>
+    </body>
+    <poweredBy/>
+    <custom>
+        <fluidoSkin>
+            <googleSearch>
+                <sitesearch>http://docs.bean-matchers.googlecode.com/git/</sitesearch>
+            </googleSearch>
+            <googlePlusOne/>
+            <facebookLike/>
+            <gitHub>
+                <projectId>orien/bean-matchers</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>gray</ribbonColor>
+            </gitHub>
+        </fluidoSkin>
+    </custom>
+</project>
