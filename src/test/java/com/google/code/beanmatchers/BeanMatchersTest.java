@@ -15,7 +15,7 @@ public class BeanMatchersTest {
 
     @Test
     public void testBeanHasValidGettersAndSettersFor() {
-        assertThat(new TestBeanWithOneProperty(), isBeanWithValidGettersAndSettersFor("field1"));
+        assertThat(new TestBeanWithOneProperty(), isABeanWithValidGettersAndSettersFor("field1"));
     }
 
     @Test
@@ -25,7 +25,7 @@ public class BeanMatchersTest {
 
     @Test
     public void testBeanHasValidGettersAndSettersExcluding() {
-        assertThat(new TestBeanWithBadSetter(), isBeanWithValidGettersAndSettersExcluding("badField"));
+        assertThat(new TestBeanWithBadSetter(), isABeanWithValidGettersAndSettersExcluding("badField"));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class BeanMatchersTest {
 
     @Test
     public void testBeanHasValidGettersAndSetters() {
-        assertThat(new TestBeanWithManyProperties(), isBeanWithValidGettersAndSetters());
+        assertThat(new TestBeanWithManyProperties(), isABeanWithValidGettersAndSetters());
     }
 
     @Test
@@ -75,12 +75,12 @@ public class BeanMatchersTest {
 
     @Test(expectedExceptions = BeanMatchersException.class)
     public void shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() {
-        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isBeanWithValidGettersAndSetters());
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isABeanWithValidGettersAndSetters());
     }
 
     @Test(dependsOnMethods = "shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator")
     public void canRegisterCustomValueGenerator() {
         BeanMatchers.registerValueGenerator(new CustomValueGenerator(), ObjectNeedingCustomValueGenerator.class);
-        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isBeanWithValidGettersAndSetters());
+        assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isABeanWithValidGettersAndSetters());
     }
 }

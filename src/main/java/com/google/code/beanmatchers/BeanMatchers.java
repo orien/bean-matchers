@@ -30,21 +30,21 @@ public final class BeanMatchers {
 
     @Factory
     public static Matcher<Class> hasValidGettersAndSettersFor(String... fields) {
-        return new InstantiatingMatcherDecorator(isBeanWithValidGettersAndSettersFor(fields));
+        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersFor(fields));
     }
 
     @Factory
-    public static <T> Matcher<T> isBeanWithValidGettersAndSettersFor(String... fields) {
+    public static <T> Matcher<T> isABeanWithValidGettersAndSettersFor(String... fields) {
         return new HasValidGettersAndSettersMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
     @Factory
     public static Matcher<Class> hasValidGettersAndSettersExcluding(String... fields) {
-        return new InstantiatingMatcherDecorator(isBeanWithValidGettersAndSettersExcluding(fields));
+        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersExcluding(fields));
     }
 
     @Factory
-    public static <T> Matcher<T> isBeanWithValidGettersAndSettersExcluding(String... fields) {
+    public static <T> Matcher<T> isABeanWithValidGettersAndSettersExcluding(String... fields) {
         return new HasValidGettersAndSettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
     }
 
@@ -54,8 +54,8 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static <T> Matcher<T> isBeanWithValidGettersAndSetters() {
-        return isBeanWithValidGettersAndSettersExcluding();
+    public static <T> Matcher<T> isABeanWithValidGettersAndSetters() {
+        return isABeanWithValidGettersAndSettersExcluding();
     }
 
     @Factory
