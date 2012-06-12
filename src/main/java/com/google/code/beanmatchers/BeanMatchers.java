@@ -79,6 +79,11 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static Matcher<Class> hasValidBeanEqualsFor(String... fields) {
+        return new HasValidBeanEqualsForMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidBeanEqualsExcluding(String... fields) {
         return new HasValidBeanEqualsExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
     }

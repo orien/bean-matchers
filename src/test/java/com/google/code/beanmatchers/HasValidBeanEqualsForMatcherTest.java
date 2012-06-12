@@ -16,9 +16,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class HasValidBeanEqualsExcludingMatcherTest {
+public class HasValidBeanEqualsForMatcherTest {
 
-    private HasValidBeanEqualsExcludingMatcher unitUnderTest;
+    private HasValidBeanEqualsForMatcher unitUnderTest;
 
     @Mock
     private TypeBasedValueGenerator valueGeneratorMock;
@@ -44,7 +44,7 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     public void beanWithValidEqualsShouldMatch() {
         // given
         Class beanType = TestBeanWithOneProperty.class;
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "field1");
 
         // when
         boolean match = unitUnderTest.matches(beanType);
@@ -56,7 +56,7 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     @Test
     public void beanWithPropertyNotInfluencingEqualsShouldNotMatch() {
         // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "propertyNotComparedInEquals");
         Class beanType = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
@@ -69,7 +69,7 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     @Test
     public void beanWithPropertyNotInfluencingEqualsShouldBeDiagnosed() {
         // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "propertyNotComparedInEquals");
         Class bean = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
@@ -84,9 +84,9 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     }
 
     @Test
-    public void beanWithPropertyNotInfluencingEqualsShouldMatchIfBadPropertyIsExcluded() {
+    public void beanWithPropertyNotInfluencingEqualsShouldMatchIfBadPropertyIsNotIncluded() {
         // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "propertyNotComparedInEquals");
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "propertyComparedInEquals");
         Class beanType = TestBeanWithPropertyThatDoesNotInfluenceEquals.class;
 
         // when
@@ -97,28 +97,16 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     }
 
     @Test
-    public void shouldDescribeExpectation() {
-        // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
-
-        // when
-        unitUnderTest.describeTo(descriptionMock);
-
-        // then
-        verify(descriptionMock).appendText("bean with all properties compared in equals");
-    }
-
-    @Test
     public void shouldDescribeExpectationForExcludedProperties() {
         // given
-        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock, "excludedProperty");
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "property");
 
         // when
         unitUnderTest.describeTo(descriptionMock);
 
         // then
-        verify(descriptionMock).appendText("bean with all properties excluding ");
-        verify(descriptionMock).appendValue(singletonList("excludedProperty"));
+        verify(descriptionMock).appendText("bean with the properties ");
+        verify(descriptionMock).appendValue(singletonList("property"));
         verify(descriptionMock).appendText(" compared in equals");
     }
 }

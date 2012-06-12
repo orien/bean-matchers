@@ -64,6 +64,11 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanEqualsFor() {
+        assertThat(TestBeanWithPropertyThatDoesNotInfluenceEquals.class, hasValidBeanEqualsFor("propertyComparedInEquals"));
+    }
+
+    @Test
     public void testHasValidBeanToString() {
         assertThat(TestBeanWithManyProperties.class, hasValidBeanToString());
     }
