@@ -1,52 +1,25 @@
 package com.google.code.beanmatchers;
 
 import org.hamcrest.Description;
-import org.hamcrest.TypeSafeDiagnosingMatcher;
 
 import java.util.List;
 
-import static com.google.code.beanmatchers.BeanOperations.properties;
-import static com.google.code.beanmatchers.ValueGenerators.generateTwoDistinctValues;
 import static java.util.Arrays.asList;
 
-public class HasValidBeanHashCodeExcludingMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
+public class HasValidBeanHashCodeExcludingMatcher<T> extends AbstractBeanHashCodeMatcher<T> {
     private final List<String> excludedProperties;
-    private final TypeBasedValueGenerator valueGenerator;
 
     HasValidBeanHashCodeExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+        super(valueGenerator);
         this.excludedProperties = asList(excludedProperties);
-        this.valueGenerator = valueGenerator;
     }
 
     @Override
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
-        for (String property : properties(beanType)) {
-            JavaBean bean = new JavaBean(beanType);
-            if (shouldValidateHashCodeForProperty(property)
-                    && hashCodeNotInfluencedByProperty(bean, property)) {
-                mismatchDescription
-                        .appendText("bean of type ")
-                        .appendValue(beanType.getName())
-                        .appendText(" had a hashCode not influenced by the property ")
-                        .appendValue(property);
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private boolean shouldValidateHashCodeForProperty(String property) {
-        return !excludedProperties.contains(property);
-    }
-
-    private boolean hashCodeNotInfluencedByProperty(JavaBean bean, String property) {
-        Class<?> propertyType = bean.propertyType(property);
-        DistinctValues values = generateTwoDistinctValues(valueGenerator, propertyType);
-        bean.setProperty(property, values.getValueOne());
-        int initialHashCode = bean.hashCode();
-        bean.setProperty(property, values.getValueTwo());
-        int influencedHashCode = bean.hashCode();
-        return initialHashCode == influencedHashCode;
+        JavaBean bean = new JavaBean(beanType);
+        List<String> properties = bean.properties();
+        properties.removeAll(excludedProperties);
+        return hashCodeIsInfluencedByProperties(bean, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

@@ -14,6 +14,19 @@ public class JavaBeanTest {
     private JavaBean unitUnderTest;
 
     @Test
+    public void canObtainBeanType() {
+        // given
+        TestBeanWithIntegerProperty bean = new TestBeanWithIntegerProperty();
+        unitUnderTest = new JavaBean(bean);
+
+        // when
+        Class type = unitUnderTest.beanType();
+
+        // then
+        assertThat(type, is(equalTo(TestBeanWithIntegerProperty.class)));
+    }
+
+    @Test
     public void canObtainPropertyType() {
         // given
         TestBeanWithIntegerProperty bean = new TestBeanWithIntegerProperty();

@@ -17,22 +17,9 @@ public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAc
     @Override
     protected boolean matches(Object item, Description mismatchDescription) {
         JavaBean bean = new JavaBean(item);
-        for (String property : bean.properties()) {
-            if (shouldValidateGetterAndSetterForProperty(property)
-                    && !beanHasValidGetterAndSetterForProperty(bean, property)) {
-                mismatchDescription
-                        .appendText("bean of type ")
-                        .appendValue(item.getClass().getName())
-                        .appendText(" had an invalid getter/setter for the property ")
-                        .appendValue(property);
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private boolean shouldValidateGetterAndSetterForProperty(String property) {
-        return !excludedProperties.contains(property);
+        List<String> properties = bean.properties();
+        properties.removeAll(excludedProperties);
+        return super.beanHasValidGetterAndSetterForProperties(bean, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

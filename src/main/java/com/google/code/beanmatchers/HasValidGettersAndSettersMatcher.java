@@ -2,28 +2,21 @@ package com.google.code.beanmatchers;
 
 import org.hamcrest.Description;
 
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class HasValidGettersAndSettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
-    private String[] properties;
+    private final List<String> properties;
 
     HasValidGettersAndSettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
         super(valueGenerator);
-        this.properties = properties;
+        this.properties = asList(properties);
     }
 
     @Override
     protected boolean matches(Object item, Description mismatchDescription) {
-        JavaBean bean = new JavaBean(item);
-        for (String property : properties) {
-            if (!beanHasValidGetterAndSetterForProperty(bean, property)) {
-                mismatchDescription
-                        .appendText("bean of type ")
-                        .appendValue(item.getClass().getName())
-                        .appendText(" had an invalid getter/setter for the property ")
-                        .appendValue(property);
-                return false;
-            }
-        }
-        return true;
+        return beanHasValidGetterAndSetterForProperties(new JavaBean(item), properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

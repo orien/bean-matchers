@@ -19,6 +19,10 @@ class JavaBean {
         this(instantiateBean(targetBeanType));
     }
 
+    public Class beanType() {
+        return targetBean.getClass();
+    }
+
     public Class<?> propertyType(String propertyName) {
         return descriptorForName(propertyName).getPropertyType();
     }
