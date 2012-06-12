@@ -1,0 +1,16 @@
+Bean Matchers
+
+  Hamcrest matchers for testing Java beans
+
++---
+import static com.google.code.beanmatchers.BeanMatchers.*;
+...
+assertThat(BeanToTest.class, allOf(
+        hasValidBeanConstructor(),
+        hasValidGettersAndSetters(),
+        hasValidBeanHashCode(),
+        hasValidBeanEquals(),
+        hasValidBeanToString()
+));
++---
+

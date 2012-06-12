@@ -96,7 +96,6 @@
                                 <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                             </configuration>
                             <reports>
-                                <report>index</report>
                                 <report>scm</report>
                                 <report>issue-tracking</report>
                                 <report>license</report>
@@ -138,6 +137,13 @@
                         </plugin>
                     </reportPlugins>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.kohsuke</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

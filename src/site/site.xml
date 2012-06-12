@@ -5,6 +5,12 @@
         <version>1.2.1</version>
     </skin>
     <body>
+        <menu name="Overview">
+            <item name="Introduction" href="index.html"/>
+        </menu>
+        <menu name="Examples">
+            <item name="Testing Getters and Setters" href="testingGettersAndSetters.html"/>
+        </menu>
         <menu ref="reports"/>
     </body>
     <googleAnalyticsAccountId>UA-32537030-1</googleAnalyticsAccountId>

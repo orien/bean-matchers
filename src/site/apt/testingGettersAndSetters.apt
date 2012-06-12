@@ -1,0 +1,24 @@
+Testing All Properties on a Bean have Working Getters and Setters
+
+  Matchers for ensuring what is stored using a setter is what is obtained using the related getter.
+
++---
+import static com.google.code.beanmatchers.BeanMatchers.*;
+...
+assertThat(BeanToTest.class, hasValidGettersAndSetters());
+
+assertThat(BeanToTest.class, hasValidGettersAndSettersFor("testOnlyThisProperty"));
+
+assertThat(BeanToTest.class, hasValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
++---
+
+  These matchers test a bean instance.
+
++---
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSetters());
+
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSettersFor("testOnlyThisProperty"));
+
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
++---
+
