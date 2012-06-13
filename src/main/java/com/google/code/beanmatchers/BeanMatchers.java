@@ -29,23 +29,23 @@ public final class BeanMatchers {
     private BeanMatchers() {}
 
     @Factory
-    public static Matcher<Class> hasValidGettersAndSettersFor(String... fields) {
-        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersFor(fields));
+    public static Matcher<Class> hasValidGettersAndSettersFor(String... properties) {
+        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersFor(properties));
     }
 
     @Factory
-    public static <T> Matcher<T> isABeanWithValidGettersAndSettersFor(String... fields) {
-        return new HasValidGettersAndSettersMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static <T> Matcher<T> isABeanWithValidGettersAndSettersFor(String... properties) {
+        return new HasValidGettersAndSettersMatcher<T>(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
-    public static Matcher<Class> hasValidGettersAndSettersExcluding(String... fields) {
-        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersExcluding(fields));
+    public static Matcher<Class> hasValidGettersAndSettersExcluding(String... properties) {
+        return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersExcluding(properties));
     }
 
     @Factory
-    public static <T> Matcher<T> isABeanWithValidGettersAndSettersExcluding(String... fields) {
-        return new HasValidGettersAndSettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static <T> Matcher<T> isABeanWithValidGettersAndSettersExcluding(String... properties) {
+        return new HasValidGettersAndSettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
@@ -69,13 +69,13 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanHashCodeFor(String... fields) {
-        return new HasValidBeanHashCodeForMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static Matcher<Class> hasValidBeanHashCodeFor(String... properties) {
+        return new HasValidBeanHashCodeForMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanHashCodeExcluding(String... fields) {
-        return new HasValidBeanHashCodeExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static Matcher<Class> hasValidBeanHashCodeExcluding(String... properties) {
+        return new HasValidBeanHashCodeExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
@@ -84,13 +84,13 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanEqualsFor(String... fields) {
-        return new HasValidBeanEqualsForMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static Matcher<Class> hasValidBeanEqualsFor(String... properties) {
+        return new HasValidBeanEqualsForMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanEqualsExcluding(String... fields) {
-        return new HasValidBeanEqualsExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static Matcher<Class> hasValidBeanEqualsExcluding(String... properties) {
+        return new HasValidBeanEqualsExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     @Factory
@@ -99,8 +99,8 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanToStringExcluding(String... fields) {
-        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, fields);
+    public static Matcher<Class> hasValidBeanToStringExcluding(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 
     public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {
