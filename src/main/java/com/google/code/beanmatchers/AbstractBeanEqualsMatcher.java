@@ -17,16 +17,24 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     protected boolean propertiesComparedDuringEquals(Class<T> beanType, List<String> properties, Description mismatchDescription) {
         for (String property : properties) {
             if (propertyNotComparedDuringEquals(beanType, property)) {
-                mismatchDescription
-                        .appendText("bean of type ")
-                        .appendValue(beanType.getName())
-                        .appendText(" had property ")
-                        .appendValue(property)
-                        .appendText(" not compared during equals operation");
+                describePropertyMismatch(beanType, property, mismatchDescription, " not compared during equals operation");
+                return false;
+            }
+            if (nullPropertyNotHandled(beanType, property)) {
+                describePropertyMismatch(beanType, property, mismatchDescription, " not handling null during equals operation");
                 return false;
             }
         }
         return true;
+    }
+
+    private void describePropertyMismatch(Class<T> beanType, String property, Description description, String reason) {
+        description
+                .appendText("bean of type ")
+                .appendValue(beanType.getName())
+                .appendText(" had property ")
+                .appendValue(property)
+                .appendText(reason);
     }
 
     private boolean propertyNotComparedDuringEquals(Class<T> beanType, String property) {
@@ -37,5 +45,22 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
         JavaBean beanTwo = new JavaBean(beanType);
         beanTwo.setProperty(property, values.getValueTwo());
         return beanOne.equals(beanTwo);
+    }
+
+    private boolean nullPropertyNotHandled(Class<T> beanType, String property) {
+        JavaBean beanOne = new JavaBean(beanType);
+        Class<?> propertyType = beanOne.propertyType(property);
+        if (propertyType.isPrimitive()) {
+            return false;
+        }
+        Object value = valueGenerator.generate(propertyType);
+        beanOne.setProperty(property, value);
+        JavaBean beanTwo = new JavaBean(beanType);
+        beanTwo.setProperty(property, null);
+        try {
+            return beanOne.equals(beanTwo) || beanTwo.equals(beanOne);
+        } catch (RuntimeException e) {
+            return true;
+        }
     }
 }

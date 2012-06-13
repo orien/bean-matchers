@@ -1,5 +1,7 @@
 package com.google.code.beanmatchers;
 
+import com.google.code.beanmatchers.data.TestBeanWithEqualsThatDoesNotHandleThatNullProperty;
+import com.google.code.beanmatchers.data.TestBeanWithEqualsThatDoesNotHandleThisNullProperty;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import com.google.code.beanmatchers.data.TestBeanWithPropertyThatDoesNotInfluenceEquals;
 import org.hamcrest.Description;
@@ -35,7 +37,7 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     @BeforeMethod
     public void setUp() {
         initMocks(this);
-        when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo, valueOne, valueTwo);
+        when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo, valueOne, valueTwo, valueOne, valueTwo);
         when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
         when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
     }
@@ -95,6 +97,50 @@ public class HasValidBeanEqualsExcludingMatcherTest {
         // then
         assertThat(match, is(true));
     }
+
+    @Test
+    public void beanWithEqualsNotHandlingThisNullPropertyShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleThisNullProperty.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingThatNullPropertyShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleThatNullProperty.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingNullPropertyShouldBeDiagnosed() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleThisNullProperty.class;
+
+        // when
+        unitUnderTest.matchesSafely(beanType, descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean of type ");
+        verify(descriptionMock).appendValue(TestBeanWithEqualsThatDoesNotHandleThisNullProperty.class.getName());
+        verify(descriptionMock).appendText(" had property ");
+        verify(descriptionMock).appendValue("property");
+        verify(descriptionMock).appendText(" not handling null during equals operation");
+    }
+
 
     @Test
     public void shouldDescribeExpectation() {
