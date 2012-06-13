@@ -1,6 +1,6 @@
 package com.google.code.beanmatchers;
 
-public final class ValueGenerators {
+final class ValueGenerators {
     private ValueGenerators() {
     }
 
