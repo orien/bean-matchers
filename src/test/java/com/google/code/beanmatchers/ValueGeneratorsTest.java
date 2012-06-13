@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import static com.google.code.beanmatchers.ValueGenerators.generateTwoDistinctValues;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
@@ -46,5 +48,19 @@ public class ValueGeneratorsTest {
         assertThat(result, is(notNullValue()));
         assertThat(result.getValueOne(), is(equalTo(1)));
         assertThat(result.getValueTwo(), is(equalTo(2)));
+    }
+
+    @Test(expectedExceptions = BeanMatchersException.class)
+    public void shouldThrowExceptionGivenCannotGenerateTwoDistinctValuesAfterTenAttempts() {
+        // given
+        when(valueGeneratorMock.generate(Integer.class)).thenReturn(1);
+
+        // when
+        try {
+            generateTwoDistinctValues(valueGeneratorMock, Integer.class);
+        } catch (RuntimeException e) {
+            verify(valueGeneratorMock, times(10 + 1)).generate(Integer.class);
+            throw e;
+        }
     }
 }
