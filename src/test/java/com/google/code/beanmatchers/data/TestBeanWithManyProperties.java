@@ -27,6 +27,8 @@ public class TestBeanWithManyProperties {
     private float floatPrimitive;
     private Byte byteObject;
     private byte bytePrimitive;
+    private Character charObject;
+    private char charPrimitive;
 
     public Object getObject() {
         return object;
@@ -178,6 +180,22 @@ public class TestBeanWithManyProperties {
 
     public void setBytePrimitive(byte bytePrimitive) {
         this.bytePrimitive = bytePrimitive;
+    }
+
+    public Character getCharObject() {
+        return charObject;
+    }
+
+    public void setCharObject(Character charObject) {
+        this.charObject = charObject;
+    }
+
+    public char getCharPrimitive() {
+        return charPrimitive;
+    }
+
+    public void setCharPrimitive(char charPrimitive) {
+        this.charPrimitive = charPrimitive;
     }
 
     @Override
