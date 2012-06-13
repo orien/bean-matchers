@@ -21,6 +21,7 @@ public final class BeanMatchers {
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new FloatGenerator(random), Float.class, Float.TYPE);
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new ByteGenerator(random), Byte.class, Byte.TYPE);
         VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new CharacterGenerator(random), Character.class, Character.TYPE);
+        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new ShortGenerator(random), Short.class, Short.TYPE);
         ArrayTypeBasedValueGenerator arrayValueGenerator = new ArrayTypeBasedValueGenerator();
         TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(VALUE_GENERATOR_REPOSTITORY,
                 new MockingTypeBasedValueGenerator(), new EnumBasedValueGenerator(random), arrayValueGenerator);
