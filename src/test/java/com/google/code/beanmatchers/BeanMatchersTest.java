@@ -49,6 +49,11 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanHashCodeFor() {
+        assertThat(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class, hasValidBeanHashCodeFor());
+    }
+
+    @Test
     public void testHasValidBeanHashCodeExcluding() {
         assertThat(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class, hasValidBeanHashCodeExcluding("property"));
     }
