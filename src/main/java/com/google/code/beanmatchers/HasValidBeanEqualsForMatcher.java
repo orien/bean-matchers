@@ -16,7 +16,7 @@ public class HasValidBeanEqualsForMatcher<T> extends AbstractBeanEqualsMatcher<T
 
     @Override
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
-        return propertiesComparedDuringEquals(beanType, properties, mismatchDescription);
+        return isValidBeanEquals(beanType, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

@@ -14,7 +14,11 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
         this.valueGenerator = valueGenerator;
     }
 
-    protected boolean propertiesComparedDuringEquals(Class<T> beanType, List<String> properties, Description mismatchDescription) {
+    protected boolean isValidBeanEquals(Class<T> beanType, List<String> properties, Description mismatchDescription) {
+        if (equalsDoesNotHandleSameInstance(beanType)) {
+            describeMismatch(beanType, mismatchDescription, " did not correctly identify same instance during equals operation");
+            return false;
+        }
         for (String property : properties) {
             if (propertyNotComparedDuringEquals(beanType, property)) {
                 describePropertyMismatch(beanType, property, mismatchDescription, " not compared during equals operation");
@@ -28,13 +32,21 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
         return true;
     }
 
+    private void describeMismatch(Class<T> beanType, Description description, String reason) {
+        describeBean(beanType, description).appendText(reason);
+    }
+
     private void describePropertyMismatch(Class<T> beanType, String property, Description description, String reason) {
-        description
-                .appendText("bean of type ")
-                .appendValue(beanType.getName())
-                .appendText(" had property ")
-                .appendValue(property)
-                .appendText(reason);
+        describeBean(beanType, description).appendText(" had property ").appendValue(property).appendText(reason);
+    }
+
+    private Description describeBean(Class<T> beanType, Description description) {
+        return description.appendText("bean of type ").appendValue(beanType.getName());
+    }
+
+    private boolean equalsDoesNotHandleSameInstance(Class<T> beanType) {
+        JavaBean beanOne = new JavaBean(beanType);
+        return !beanOne.equals(beanOne);
     }
 
     private boolean propertyNotComparedDuringEquals(Class<T> beanType, String property) {

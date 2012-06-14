@@ -1,9 +1,6 @@
 package com.google.code.beanmatchers;
 
-import com.google.code.beanmatchers.data.TestBeanWithEqualsThatDoesNotHandleThatNullProperty;
-import com.google.code.beanmatchers.data.TestBeanWithEqualsThatDoesNotHandleThisNullProperty;
-import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
-import com.google.code.beanmatchers.data.TestBeanWithPropertyThatDoesNotInfluenceEquals;
+import com.google.code.beanmatchers.data.*;
 import org.hamcrest.Description;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
@@ -139,6 +136,34 @@ public class HasValidBeanEqualsForMatcherTest {
         verify(descriptionMock).appendText(" had property ");
         verify(descriptionMock).appendValue("property");
         verify(descriptionMock).appendText(" not handling null during equals operation");
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingSameInstanceShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleSameInstance.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingSameInstanceShouldBeDiagnosed() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleSameInstance.class;
+
+        // when
+        unitUnderTest.matchesSafely(beanType, descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean of type ");
+        verify(descriptionMock).appendValue(TestBeanWithEqualsThatDoesNotHandleSameInstance.class.getName());
+        verify(descriptionMock).appendText(" did not correctly identify same instance during equals operation");
     }
 
     @Test

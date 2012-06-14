@@ -19,7 +19,7 @@ public class HasValidBeanEqualsExcludingMatcher<T> extends AbstractBeanEqualsMat
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
         List<String> properties = properties(beanType);
         properties.removeAll(excludedProperties);
-        return propertiesComparedDuringEquals(beanType, properties, mismatchDescription);
+        return isValidBeanEquals(beanType, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {
