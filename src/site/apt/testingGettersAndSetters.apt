@@ -1,4 +1,4 @@
-Testing All Properties on a Bean have Working Getters and Setters
+Testing Getters and Setters
 
   Matchers for ensuring what is stored using a setter is what is obtained using the related getter.
 

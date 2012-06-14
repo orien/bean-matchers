@@ -1,0 +1,13 @@
+Testing To String
+
+  Matchers for ensuring properties are included in toString() output.
+
++---
+import static com.google.code.beanmatchers.BeanMatchers.*;
+...
+assertThat(BeanToTest.class, hasValidBeanToString());
+
+assertThat(BeanToTest.class, hasValidBeanToStringExcluding("dontTestPropertyWithThisName"));
++---
+
+

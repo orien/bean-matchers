@@ -1,0 +1,11 @@
+Testing the No-Args Constructor
+
+  Matchers for ensuring a bean has a working no-args constructor.
+
++---
+import static com.google.code.beanmatchers.BeanMatchers.*;
+...
+assertThat(BeanToTest.class, hasValidBeanConstructor());
++---
+
+

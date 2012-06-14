@@ -9,7 +9,11 @@
             <item name="Introduction" href="index.html"/>
         </menu>
         <menu name="Examples">
+            <item name="Testing Bean Constructor" href="testingConstructor.html"/>
             <item name="Testing Getters and Setters" href="testingGettersAndSetters.html"/>
+            <item name="Testing Bean Hash Code" href="testingHashCode.html"/>
+            <item name="Testing Bean Equals" href="testingEquals.html"/>
+            <item name="Testing Bean To String" href="testingToString.html"/>
         </menu>
         <menu ref="reports"/>
     </body>

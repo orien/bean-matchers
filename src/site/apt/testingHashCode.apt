@@ -1,0 +1,15 @@
+Testing Hash Code
+
+  Matchers for ensuring properties influence the generated hash code.
+
++---
+import static com.google.code.beanmatchers.BeanMatchers.*;
+...
+assertThat(BeanToTest.class, hasValidBeanHashCode());
+
+assertThat(BeanToTest.class, hasValidBeanHashCodeFor("testOnlyThisProperty"));
+
+assertThat(BeanToTest.class, hasValidBeanHashCodeExcluding("dontTestPropertyWithThisName"));
++---
+
+
