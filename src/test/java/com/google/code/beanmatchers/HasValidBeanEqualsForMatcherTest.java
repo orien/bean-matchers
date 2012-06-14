@@ -167,6 +167,34 @@ public class HasValidBeanEqualsForMatcherTest {
     }
 
     @Test
+    public void beanWithEqualsNotHandlingNullValueShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleNullValue.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingNullValueShouldBeDiagnosed() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleNullValue.class;
+
+        // when
+        unitUnderTest.matchesSafely(beanType, descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean of type ");
+        verify(descriptionMock).appendValue(TestBeanWithEqualsThatDoesNotHandleNullValue.class.getName());
+        verify(descriptionMock).appendText(" did not correctly identify null value during equals operation");
+    }
+
+    @Test
     public void shouldDescribeExpectationForExcludedProperties() {
         // given
         unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "property");
