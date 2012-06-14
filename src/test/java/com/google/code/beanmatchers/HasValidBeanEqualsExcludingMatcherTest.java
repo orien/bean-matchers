@@ -53,6 +53,19 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     }
 
     @Test
+    public void beanWithEqualsNotHandlingSamePropertyValuesShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleSamePropertyValues.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
     public void beanWithPropertyNotInfluencingEqualsShouldNotMatch() {
         // given
         unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);

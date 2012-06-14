@@ -72,9 +72,11 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
         Class<?> propertyType = beanOne.propertyType(property);
         DistinctValues values = generateTwoDistinctValues(valueGenerator, propertyType);
         beanOne.setProperty(property, values.getValueOne());
-        JavaBean beanTwo = new JavaBean(beanType);
-        beanTwo.setProperty(property, values.getValueTwo());
-        return beanOne.equals(beanTwo);
+        JavaBean beanWithDifferingPropertyValue = new JavaBean(beanType);
+        beanWithDifferingPropertyValue.setProperty(property, values.getValueTwo());
+        JavaBean beanWithSamePropertyValue = new JavaBean(beanType);
+        beanWithSamePropertyValue.setProperty(property, values.getValueOne());
+        return beanOne.equals(beanWithDifferingPropertyValue) || !beanOne.equals(beanWithSamePropertyValue);
     }
 
     private boolean nullPropertyNotHandled(Class<T> beanType, String property) {
