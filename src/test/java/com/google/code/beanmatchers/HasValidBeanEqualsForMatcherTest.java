@@ -195,6 +195,34 @@ public class HasValidBeanEqualsForMatcherTest {
     }
 
     @Test
+    public void beanWithEqualsNotHandlingDifferingTypeShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleDifferingType.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
+    public void beanWithEqualsNotHandlingDifferingTypeShouldBeDiagnosed() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotHandleDifferingType.class;
+
+        // when
+        unitUnderTest.matchesSafely(beanType, descriptionMock);
+
+        // then
+        verify(descriptionMock).appendText("bean of type ");
+        verify(descriptionMock).appendValue(TestBeanWithEqualsThatDoesNotHandleDifferingType.class.getName());
+        verify(descriptionMock).appendText(" did not correctly identify differing type during equals operation");
+    }
+
+    @Test
     public void shouldDescribeExpectationForExcludedProperties() {
         // given
         unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "property");
