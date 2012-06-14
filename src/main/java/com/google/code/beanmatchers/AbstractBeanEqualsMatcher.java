@@ -59,7 +59,11 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
 
     private boolean equalsDoesNotHandleNullValue(Class<T> beanType) {
         JavaBean beanOne = new JavaBean(beanType);
-        return beanOne.equals(null);
+        try {
+            return beanOne.equals(null);
+        } catch (Exception e) {
+            return true;
+        }
     }
 
     private boolean equalsDoesNotHandleDifferingType(Class<T> beanType) {

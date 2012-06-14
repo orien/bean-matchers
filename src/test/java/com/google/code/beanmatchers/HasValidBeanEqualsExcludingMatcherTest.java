@@ -193,6 +193,19 @@ public class HasValidBeanEqualsExcludingMatcherTest {
     }
 
     @Test
+    public void beanWithEqualsNotAccountingNullValueShouldNotMatch() {
+        // given
+        unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
+        Class beanType = TestBeanWithEqualsThatDoesNotAccountForNullValue.class;
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
+    }
+
+    @Test
     public void beanWithEqualsNotHandlingNullValueShouldBeDiagnosed() {
         // given
         unitUnderTest = new HasValidBeanEqualsExcludingMatcher(valueGeneratorMock);
