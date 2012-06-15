@@ -17,26 +17,28 @@ public class JavaBeanTest {
     public void canObtainBeanType() {
         // given
         TestBeanWithIntegerProperty bean = new TestBeanWithIntegerProperty();
+        Class expectedType = TestBeanWithIntegerProperty.class;
         unitUnderTest = new JavaBean(bean);
 
         // when
         Class type = unitUnderTest.beanType();
 
         // then
-        assertThat(type, is(equalTo(TestBeanWithIntegerProperty.class)));
+        assertThat(type, is(equalTo(expectedType)));
     }
 
     @Test
     public void canObtainPropertyType() {
         // given
         TestBeanWithIntegerProperty bean = new TestBeanWithIntegerProperty();
+        Class expectedType = Integer.class;
         unitUnderTest = new JavaBean(bean);
 
         // when
         Class type = unitUnderTest.propertyType("integerProperty");
 
         // then
-        assertThat(type, is(equalTo(Integer.class)));
+        assertThat(type, is(equalTo(expectedType)));
     }
 
     @Test(expectedExceptions = BeanMatchersException.class)
