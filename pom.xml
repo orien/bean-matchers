@@ -39,6 +39,8 @@
         <developer>
             <id>orien.madgwick</id>
             <name>Orien Madgwick</name>
+            <email>orien.madgwick@gmail.com</email>
+            <timezone>+10</timezone>
         </developer>
     </developers>
     <dependencies>
