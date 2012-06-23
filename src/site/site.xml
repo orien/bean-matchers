@@ -24,7 +24,6 @@
                 <sitesearch>http://docs.bean-matchers.googlecode.com/git/</sitesearch>
             </googleSearch>
             <googlePlusOne/>
-            <facebookLike/>
             <gitHub>
                 <projectId>orien/bean-matchers</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
