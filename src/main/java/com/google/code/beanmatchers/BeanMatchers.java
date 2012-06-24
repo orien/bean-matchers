@@ -101,6 +101,11 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static Matcher<Class> hasValidBeanToStringFor(String... properties) {
+        return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidBeanToStringExcluding(String... properties) {
         return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }

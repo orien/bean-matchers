@@ -7,6 +7,8 @@ import static com.google.code.beanmatchers.BeanMatchers.*;
 ...
 assertThat(BeanToTest.class, hasValidBeanToString());
 
+assertThat(BeanToTest.class, hasValidBeanToStringFor("testOnlyThisProperty"));
+
 assertThat(BeanToTest.class, hasValidBeanToStringExcluding("dontTestPropertyWithThisName"));
 +---
 
