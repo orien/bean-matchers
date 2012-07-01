@@ -1,4 +1,4 @@
-Testing To String
+Testing the toString Method
 
   Matchers for ensuring properties are included in toString() output.
 

@@ -7,22 +7,20 @@
     <body>
         <menu name="Overview">
             <item name="Introduction" href="index.html"/>
+            <item name="Quick Start" href="quickStart.html"/>
         </menu>
         <menu name="Examples">
             <item name="Testing Bean Constructor" href="testingConstructor.html"/>
             <item name="Testing Getters and Setters" href="testingGettersAndSetters.html"/>
-            <item name="Testing Bean Hash Code" href="testingHashCode.html"/>
-            <item name="Testing Bean Equals" href="testingEquals.html"/>
-            <item name="Testing Bean To String" href="testingToString.html"/>
+            <item name="Testing Bean hashCode" href="testingHashCode.html"/>
+            <item name="Testing Bean equals" href="testingEquals.html"/>
+            <item name="Testing Bean toString" href="testingToString.html"/>
         </menu>
         <menu ref="reports"/>
     </body>
     <googleAnalyticsAccountId>UA-32537030-1</googleAnalyticsAccountId>
     <custom>
         <fluidoSkin>
-            <googleSearch>
-                <sitesearch>http://docs.bean-matchers.googlecode.com/git/</sitesearch>
-            </googleSearch>
             <googlePlusOne/>
             <gitHub>
                 <projectId>orien/bean-matchers</projectId>

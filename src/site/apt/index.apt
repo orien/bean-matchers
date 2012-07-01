@@ -1,16 +1,12 @@
 Bean Matchers
 
-  Hamcrest matchers for testing Java beans
+  Beans are prevalent in our Java world, however these simple structures are commonly untested.
+  Over the course of a project they can be inflicted with copy and paste errors, <<<hashCode>>>,
+  <<<equals>>> and <<<toString>>> methods fall out of sync as new properties are added.
 
-+---
-import static com.google.code.beanmatchers.BeanMatchers.*;
-...
-assertThat(BeanToTest.class, allOf(
-        hasValidBeanConstructor(),
-        hasValidGettersAndSetters(),
-        hasValidBeanHashCode(),
-        hasValidBeanEquals(),
-        hasValidBeanToString()
-));
-+---
-
+  Enter Bean Matchers. The Bean Matchers project provides a series of Hamcrest matchers for
+  testing Java beans. This provides an easy way to gain confidence that your beans are correct
+  without needing to consume time writing explicit tests for each property. Ensure a no-args
+  constructor exist. Getters and setters are correctly defined for each property. Properties are
+  compared in <<<equals>>>, influence the generated hash code, and are present in the output of
+  the <<<toString>>> method.

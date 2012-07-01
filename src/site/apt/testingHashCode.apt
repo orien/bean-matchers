@@ -1,4 +1,4 @@
-Testing Hash Code
+Testing the hashCode Method
 
   Matchers for ensuring properties influence the generated hash code.
 
