@@ -1,15 +1,29 @@
 Testing the hashCode Method
 
   Matchers for ensuring properties influence the generated hash code.
+  This is tested by setting the property with one value and comparing the
+  generated hash code with that produced when the property is set with a
+  different value. If the values differ we infer the hash code is
+  correctly influenced by the property.
+
+  Ensure that all properties on the bean influence the produced hash code.
 
 +---
-import static com.google.code.beanmatchers.BeanMatchers.*;
-...
 assertThat(BeanToTest.class, hasValidBeanHashCode());
++---
 
-assertThat(BeanToTest.class, hasValidBeanHashCodeFor("testOnlyThisProperty"));
+  Ensure that the property named <<<propertyInfluencingHashCode>>> influences
+  the produced hash code.
 
-assertThat(BeanToTest.class, hasValidBeanHashCodeExcluding("dontTestPropertyWithThisName"));
++---
+assertThat(BeanToTest.class, hasValidBeanHashCodeFor("propertyInfluencingHashCode"));
++---
+
+  Ensure that all properties on the bean except the property named
+  <<<propertyNotInfluencingHashCode>>> influences the produced hash code.
+
++---
+assertThat(BeanToTest.class, hasValidBeanHashCodeExcluding("propertyNotInfluencingHashCode"));
 +---
 
 

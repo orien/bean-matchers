@@ -1,15 +1,25 @@
 Testing the toString Method
 
-  Matchers for ensuring properties are included in toString() output.
+  Matchers for ensuring the bean class name and properties are included in <<<toString>>> output.
+
+  Ensure all properties on the bean are included in the string value.
 
 +---
-import static com.google.code.beanmatchers.BeanMatchers.*;
-...
 assertThat(BeanToTest.class, hasValidBeanToString());
++---
 
-assertThat(BeanToTest.class, hasValidBeanToStringFor("testOnlyThisProperty"));
+  Ensure the string value includes includes the property named <<<propertyInToString>>>.
+  Any other properties on the bean are not tested.
 
-assertThat(BeanToTest.class, hasValidBeanToStringExcluding("dontTestPropertyWithThisName"));
++---
+assertThat(BeanToTest.class, hasValidBeanToStringFor("propertyInToString"));
++---
+
+  Ensure the string value includes all properties on the bean except the property
+  named <<<propertyNotInToString>>>.
+
++---
+assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToString"));
 +---
 
 

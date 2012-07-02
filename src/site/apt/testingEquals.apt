@@ -3,12 +3,14 @@ Testing the equals Method
   Matchers for ensuring properties are compared during the equals operation.
 
 +---
-import static com.google.code.beanmatchers.BeanMatchers.*;
-...
 assertThat(BeanToTest.class, hasValidBeanEquals());
++---
 
++---
 assertThat(BeanToTest.class, hasValidBeanEqualsFor("testOnlyThisProperty"));
++---
 
++---
 assertThat(BeanToTest.class, hasValidBeanEqualsExcluding("dontTestPropertyWithThisName"));
 +---
 

@@ -4,10 +4,10 @@ Quick Start
 
 +---
 <dependency>
-  <groupId>com.google.code.bean-matchers</groupId>
-  <artifactId>bean-matchers</artifactId>
-  <version>${currentVersion}</version>
-  <scope>test</scope>
+    <groupId>com.google.code.bean-matchers</groupId>
+    <artifactId>bean-matchers</artifactId>
+    <version>${currentVersion}</version>
+    <scope>test</scope>
 </dependency>
 +---
 

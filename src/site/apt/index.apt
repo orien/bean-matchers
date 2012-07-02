@@ -8,5 +8,5 @@ Bean Matchers
   testing Java beans. This provides an easy way to gain confidence that your beans are correct
   without needing to consume time writing explicit tests for each property. Ensure a no-args
   constructor exist. Getters and setters are correctly defined for each property. Properties are
-  compared in <<<equals>>>, influence the generated hash code, and are present in the output of
+  compared in <<<equals>>>, influence the generated <<<hashCode>>>, and are present in the output of
   the <<<toString>>> method.

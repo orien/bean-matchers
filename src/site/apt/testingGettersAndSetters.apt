@@ -3,12 +3,14 @@ Testing Getters and Setters
   Matchers for ensuring what is stored using a setter is what is obtained using the related getter.
 
 +---
-import static com.google.code.beanmatchers.BeanMatchers.*;
-...
 assertThat(BeanToTest.class, hasValidGettersAndSetters());
++---
 
++---
 assertThat(BeanToTest.class, hasValidGettersAndSettersFor("testOnlyThisProperty"));
++---
 
++---
 assertThat(BeanToTest.class, hasValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
 +---
 
