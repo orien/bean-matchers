@@ -15,6 +15,7 @@
             <item name="Testing Bean hashCode" href="testingHashCode.html"/>
             <item name="Testing Bean equals" href="testingEquals.html"/>
             <item name="Testing Bean toString" href="testingToString.html"/>
+            <item name="Generating Property Values" href="generatingPropertyValues.html"/>
         </menu>
         <menu ref="reports"/>
     </body>

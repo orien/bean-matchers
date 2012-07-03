@@ -1,0 +1,18 @@
+Generating Property Values
+
+  The Bean Matchers library generates values to populate beans while performing various tests.
+  Out of the box Bean Matchers will generate random values for properties of primitive, array
+  and enum type. It will delegate to {{{http://mockito.org}Mockito}} to create a mock for
+  non-final types. For final types, one can implement and register a
+  {{{./apidocs/com/google/code/beanmatchers/ValueGenerator.html} ValueGenerator}} to generate
+  random values.
+
+  To register a <<<ValueGenerator>>> for the <<<MyCustomFinalType>>> type:
+
++---
+BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomFinalType>() {
+        public MyCustomFinalType generate() {
+            return null;  // Change to generate a random MyCustomFinalType instance
+        }
+    }, MyCustomFinalType.class);
++---
