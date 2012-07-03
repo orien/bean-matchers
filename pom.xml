@@ -32,6 +32,10 @@
         <developerConnection>scm:git:https://code.google.com/p/bean-matchers/</developerConnection>
         <url>http://code.google.com/p/bean-matchers/source/browse/</url>
     </scm>
+    <ciManagement>
+        <system>Travis</system>
+        <url>http://travis-ci.org/#!/orien/bean-matchers</url>
+    </ciManagement>
     <issueManagement>
         <system>Google Code</system>
         <url>http://code.google.com/p/bean-matchers/issues/list</url>
@@ -113,6 +117,7 @@
                             </configuration>
                             <reports>
                                 <report>scm</report>
+                                <report>cim</report>
                                 <report>issue-tracking</report>
                                 <report>license</report>
                                 <report>dependencies</report>
