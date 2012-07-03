@@ -7,7 +7,7 @@
     </parent>
     <groupId>com.google.code.bean-matchers</groupId>
     <artifactId>bean-matchers</artifactId>
-    <version>0.8</version>
+    <version>0.9-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Bean Matchers</name>
     <description>Hamcrest matchers for testing Java beans.</description>
