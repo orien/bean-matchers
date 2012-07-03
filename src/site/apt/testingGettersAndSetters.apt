@@ -2,13 +2,20 @@ Testing Getters and Setters
 
   Matchers for ensuring what is stored using a setter is what is obtained using the related getter.
 
+  Ensure all properties on the bean have working getters and setters.
+
 +---
 assertThat(BeanToTest.class, hasValidGettersAndSetters());
 +---
 
+  Ensure that the property named <<<testOnlyThisProperty>>> has a working getter and setter.
+
 +---
 assertThat(BeanToTest.class, hasValidGettersAndSettersFor("testOnlyThisProperty"));
 +---
+
+  Ensure that all properties on the bean except the property named <<<dontTestPropertyWithThisName>>>
+  has working getters and setters.
 
 +---
 assertThat(BeanToTest.class, hasValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));

@@ -1,14 +1,24 @@
 Testing the equals Method
 
   Matchers for ensuring properties are compared during the equals operation.
+  Ensure the method accounts for the same instance, a null instance,
+  instance of differing type and null properties.
+
+  Ensure all properties on the bean are compared during the equals method.
 
 +---
 assertThat(BeanToTest.class, hasValidBeanEquals());
 +---
 
+  Ensure the property named <<<testOnlyThisProperty>>> on the bean is
+  compared during the equals method.
+
 +---
 assertThat(BeanToTest.class, hasValidBeanEqualsFor("testOnlyThisProperty"));
 +---
+
+  Ensure all the properties on the bean is compared during the equals method
+  except the property named <<<dontTestPropertyWithThisName>>>.
 
 +---
 assertThat(BeanToTest.class, hasValidBeanEqualsExcluding("dontTestPropertyWithThisName"));
