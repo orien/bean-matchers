@@ -7,12 +7,43 @@ Generating Property Values
   {{{./apidocs/com/google/code/beanmatchers/ValueGenerator.html} ValueGenerator}} to generate
   random values.
 
-  To register a <<<ValueGenerator>>> for the <<<MyCustomFinalType>>> type:
+  For example say we have defined a value type:
 
 +---
-BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomFinalType>() {
-        public MyCustomFinalType generate() {
-            return null;  // Change to generate a random MyCustomFinalType instance
+public final class MyCustomValueType {
+    private final String value;
+
+    public MyCustomValueType(String value) {
+        this.value = value;
+    }
+    ...
+}
++---
+
+  We have a bean with a property of our value type:
+
++---
+public class MyBean {
+    private MyCustomValueType property;
+
+    public MyCustomValueType getProperty() {
+        return property;
+    }
+
+    public void setProperty(MyCustomValueType property) {
+        this.property = property;
+    }
+    ...
+}
++---
+
+  To test this bean we need to register a <<<ValueGenerator>>> that can generate
+  random values to populate the bean with:
+
++---
+BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomValueType>() {
+        public MyCustomValueType generate() {
+            return new MyCustomValueType(StringUtils.randomString());
         }
     }, MyCustomFinalType.class);
 +---
