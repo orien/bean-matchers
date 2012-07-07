@@ -45,5 +45,5 @@ BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomValueType>() {
         public MyCustomValueType generate() {
             return new MyCustomValueType(StringUtils.randomString());
         }
-    }, MyCustomFinalType.class);
+    }, MyCustomValueType.class);
 +---
