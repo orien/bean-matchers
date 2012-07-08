@@ -1,7 +1,7 @@
 package com.google.code.beanmatchers;
 
 final class ValueGenerators {
-    private static final int MAX_ATTEMPTS = 10;
+    private static final int MAX_ATTEMPTS = 32;
     private ValueGenerators() {
     }
 
@@ -11,7 +11,7 @@ final class ValueGenerators {
         T valueTwo;
         do {
             if (attempts == MAX_ATTEMPTS) {
-                throw new BeanMatchersException("Could not generate two distinct values after " + MAX_ATTEMPTS + " of type " + valueType.getName());
+                throw new BeanMatchersException("Could not generate two distinct values after " + MAX_ATTEMPTS + " attempts of type " + valueType.getName());
             }
             valueTwo = valueGenerator.generate(valueType);
             attempts++;
