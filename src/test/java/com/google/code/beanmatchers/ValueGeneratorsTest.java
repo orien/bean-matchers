@@ -59,7 +59,7 @@ public class ValueGeneratorsTest {
         try {
             generateTwoDistinctValues(valueGeneratorMock, Integer.class);
         } catch (RuntimeException e) {
-            verify(valueGeneratorMock, times(10 + 1)).generate(Integer.class);
+            verify(valueGeneratorMock, times(32 + 1)).generate(Integer.class);
             throw e;
         }
     }
