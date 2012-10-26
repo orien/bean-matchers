@@ -1,7 +1,7 @@
 package com.google.code.beanmatchers;
 
 final class ValueGenerators {
-    private static final int MAX_ATTEMPTS = 32;
+    private static final int MAX_ATTEMPTS = 128;
     private ValueGenerators() {
     }
 

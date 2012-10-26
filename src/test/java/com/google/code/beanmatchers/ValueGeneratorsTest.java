@@ -51,7 +51,7 @@ public class ValueGeneratorsTest {
     }
 
     @Test(expectedExceptions = BeanMatchersException.class)
-    public void shouldThrowExceptionGivenCannotGenerateTwoDistinctValuesAfterTenAttempts() {
+    public void shouldThrowExceptionGivenCannotGenerateTwoDistinctValuesAfterXAttempts() {
         // given
         when(valueGeneratorMock.generate(Integer.class)).thenReturn(1);
 
@@ -59,7 +59,7 @@ public class ValueGeneratorsTest {
         try {
             generateTwoDistinctValues(valueGeneratorMock, Integer.class);
         } catch (RuntimeException e) {
-            verify(valueGeneratorMock, times(32 + 1)).generate(Integer.class);
+            verify(valueGeneratorMock, times(128 + 1)).generate(Integer.class);
             throw e;
         }
     }
