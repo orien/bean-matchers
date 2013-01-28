@@ -72,12 +72,12 @@ Ensure all properties on the bean have working getters and setters.
 assertThat(BeanToTest.class, hasValidGettersAndSetters());
 ```
 
-Ensure that the property named testOnlyThisProperty has a working getter and setter.
+Ensure that the property named `testOnlyThisProperty` has a working getter and setter.
 ```java
 assertThat(BeanToTest.class, hasValidGettersAndSettersFor("testOnlyThisProperty"));
 ```
 
-Ensure that all properties on the bean except the property named dontTestPropertyWithThisName has working getters and setters.
+Ensure that all properties on the bean except the property named `dontTestPropertyWithThisName` has working getters and setters.
 ```java
 assertThat(BeanToTest.class, hasValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
 ```
@@ -101,12 +101,12 @@ Ensure that all properties on the bean influence the produced hash code.
 assertThat(BeanToTest.class, hasValidBeanHashCode());
 ```
 
-Ensure that the property named propertyInfluencingHashCode influences the produced hash code.
+Ensure that the property named `propertyInfluencingHashCode` influences the produced hash code.
 ```java
 assertThat(BeanToTest.class, hasValidBeanHashCodeFor("propertyInfluencingHashCode"));
 ```
 
-Ensure that all properties on the bean except the property named propertyNotInfluencingHashCode influences the produced hash code.
+Ensure that all properties on the bean except the property named `propertyNotInfluencingHashCode` influences the produced hash code.
 ```java
 assertThat(BeanToTest.class, hasValidBeanHashCodeExcluding("propertyNotInfluencingHashCode"));
 ```
@@ -121,12 +121,12 @@ Ensure all properties on the bean are compared during the equals method.
 assertThat(BeanToTest.class, hasValidBeanEquals());
 ```
 
-Ensure the property named testOnlyThisProperty on the bean is compared during the equals method.
+Ensure the property named `testOnlyThisProperty` on the bean is compared during the equals method.
 ```java
 assertThat(BeanToTest.class, hasValidBeanEqualsFor("testOnlyThisProperty"));
 ```
 
-Ensure all the properties on the bean is compared during the equals method except the property named dontTestPropertyWithThisName.
+Ensure all the properties on the bean is compared during the equals method except the property named `dontTestPropertyWithThisName`.
 ```java
 assertThat(BeanToTest.class, hasValidBeanEqualsExcluding("dontTestPropertyWithThisName"));
 ```
@@ -141,12 +141,12 @@ Ensure all properties on the bean are included in the string value.
 assertThat(BeanToTest.class, hasValidBeanToString());
 ```
 
-Ensure the string value includes includes the property named propertyInToString. Any other properties on the bean are not tested.
+Ensure the string value includes includes the property named `propertyInToString`. Any other properties on the bean are not tested.
 ```java
 assertThat(BeanToTest.class, hasValidBeanToStringFor("propertyInToString"));
 ```
 
-Ensure the string value includes all properties on the bean except the property named propertyNotInToString.
+Ensure the string value includes all properties on the bean except the property named `propertyNotInToString`.
 ```java
 assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToString"));
 ```
@@ -154,7 +154,7 @@ assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToStrin
 Generating Property Values
 --------------------------
 
-The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to Mockito to create a mock for non-final types. For final types, one can implement and register a ValueGenerator to generate random values.
+The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to [Mockito](http://mockito.org) to create a mock for non-final types. For final types, one can implement and register a [ValueGenerator](https://github.com/orien/bean-matchers/blob/master/src/main/java/com/google/code/beanmatchers/ValueGenerator.java) to generate random values.
 
 For example say we have defined a value type:
 ```java
