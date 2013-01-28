@@ -192,3 +192,13 @@ BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomValueType>() {
         }
     }, MyCustomValueType.class);
 ```
+
+Code Status
+-----------
+
+[![Travis-CI](https://api.travis-ci.org/orien/bean-matchers.png)](https://travis-ci.org/orien/bean-matchers)
+
+License
+-------
+
+Bean Matchers is released under the {BSD License}[http://opensource.org/licenses/bsd-license].
