@@ -1,8 +1,8 @@
 Bean Matchers
 =============
 
-[Project documentation](http://docs.bean-matchers.googlecode.com/git/index.html)
-[Google Code project page](http://code.google.com/p/bean-matchers/)
+* [Project documentation](http://docs.bean-matchers.googlecode.com/git/index.html)
+* [Google Code project page](http://code.google.com/p/bean-matchers/)
 
 Beans are prevalent in our Java world, however these simple structures are commonly
 untested. Over the course of a project they can be inflicted with copy and paste errors,
@@ -21,32 +21,33 @@ Quick Start
 1. Add the Bean Matchers dependency to your Maven project (Check
 [MVN Repository](http://mvnrepository.com/artifact/com.google.code.bean-matchers/bean-matchers)
 for the latest version):
-
-    <dependency>
-        <groupId>com.google.code.bean-matchers</groupId>
-        <artifactId>bean-matchers</artifactId>
-        <version>0.8.1</version>
-        <scope>test</scope>
-    </dependency>
+```xml
+<dependency>
+    <groupId>com.google.code.bean-matchers</groupId>
+    <artifactId>bean-matchers</artifactId>
+    <version>0.8.1</version>
+    <scope>test</scope>
+</dependency>
+```
 
 2. Test your bean:
+```java
+import static com.google.code.beanmatchers.BeanMatchers.*;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-    import static com.google.code.beanmatchers.BeanMatchers.*;
-    import static org.hamcrest.CoreMatchers.allOf;
-    import static org.hamcrest.MatcherAssert.assertThat;
-    
-    public class MyBeanTest {
-    
-        @Test
-        public void testBean() {
-            assertThat(MyBean.class, allOf(
-                    hasValidBeanConstructor(),
-                    hasValidGettersAndSetters(),
-                    hasValidBeanHashCode(),
-                    hasValidBeanEquals(),
-                    hasValidBeanToString()
-            ));
-        }
+public class MyBeanTest {
 
+    @Test
+    public void testBean() {
+        assertThat(MyBean.class, allOf(
+                hasValidBeanConstructor(),
+                hasValidGettersAndSetters(),
+                hasValidBeanHashCode(),
+                hasValidBeanEquals(),
+                hasValidBeanToString()
+        ));
     }
 
+}
+```
