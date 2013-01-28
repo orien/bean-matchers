@@ -201,4 +201,4 @@ Code Status
 License
 -------
 
-Bean Matchers is released under the {BSD License}[http://opensource.org/licenses/bsd-license].
+Bean Matchers is released under the [BSD License](http://opensource.org/licenses/bsd-license).
