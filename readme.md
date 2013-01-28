@@ -53,3 +53,142 @@ Quick Start
 
    }
    ```
+
+Testing the No-Args Constructor
+-------------------------------
+
+Ensures a bean has a working no-args constructor.
+```java
+assertThat(BeanToTest.class, hasValidBeanConstructor());
+```
+
+Testing Getters and Setters
+---------------------------
+
+Matchers for ensuring what is stored using a setter is what is obtained using the related getter.
+
+Ensure all properties on the bean have working getters and setters.
+```java
+assertThat(BeanToTest.class, hasValidGettersAndSetters());
+```
+
+Ensure that the property named testOnlyThisProperty has a working getter and setter.
+```java
+assertThat(BeanToTest.class, hasValidGettersAndSettersFor("testOnlyThisProperty"));
+```
+
+Ensure that all properties on the bean except the property named dontTestPropertyWithThisName has working getters and setters.
+```java
+assertThat(BeanToTest.class, hasValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
+```
+
+These matchers test a bean instance.
+```java
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSetters());
+
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSettersFor("testOnlyThisProperty"));
+
+assertThat(new BeanToTest(), isABeanWithValidGettersAndSettersExcluding("dontTestPropertyWithThisName"));
+```
+
+Testing the hashCode Method
+---------------------------
+
+Matchers for ensuring properties influence the generated hash code. This is tested by setting the property with one value and comparing the generated hash code with that produced when the property is set with a different value. If the values differ we infer the hash code is correctly influenced by the property.
+
+Ensure that all properties on the bean influence the produced hash code.
+```java
+assertThat(BeanToTest.class, hasValidBeanHashCode());
+```
+
+Ensure that the property named propertyInfluencingHashCode influences the produced hash code.
+```java
+assertThat(BeanToTest.class, hasValidBeanHashCodeFor("propertyInfluencingHashCode"));
+```
+
+Ensure that all properties on the bean except the property named propertyNotInfluencingHashCode influences the produced hash code.
+```java
+assertThat(BeanToTest.class, hasValidBeanHashCodeExcluding("propertyNotInfluencingHashCode"));
+```
+
+Testing the equals Method
+-------------------------
+
+Matchers for ensuring properties are compared during the equals operation. Ensure the method accounts for the same instance, a null instance, instance of differing type and null properties.
+
+Ensure all properties on the bean are compared during the equals method.
+```java
+assertThat(BeanToTest.class, hasValidBeanEquals());
+```
+
+Ensure the property named testOnlyThisProperty on the bean is compared during the equals method.
+```java
+assertThat(BeanToTest.class, hasValidBeanEqualsFor("testOnlyThisProperty"));
+```
+
+Ensure all the properties on the bean is compared during the equals method except the property named dontTestPropertyWithThisName.
+```java
+assertThat(BeanToTest.class, hasValidBeanEqualsExcluding("dontTestPropertyWithThisName"));
+```
+
+Testing the toString Method
+---------------------------
+
+Matchers for ensuring the bean class name and properties are included in toString output.
+
+Ensure all properties on the bean are included in the string value.
+```java
+assertThat(BeanToTest.class, hasValidBeanToString());
+```
+
+Ensure the string value includes includes the property named propertyInToString. Any other properties on the bean are not tested.
+```java
+assertThat(BeanToTest.class, hasValidBeanToStringFor("propertyInToString"));
+```
+
+Ensure the string value includes all properties on the bean except the property named propertyNotInToString.
+```java
+assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToString"));
+```
+
+Generating Property Values
+--------------------------
+
+The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to Mockito to create a mock for non-final types. For final types, one can implement and register a ValueGenerator to generate random values.
+
+For example say we have defined a value type:
+```java
+public final class MyCustomValueType {
+    private final String value;
+
+    public MyCustomValueType(String value) {
+        this.value = value;
+    }
+    ...
+}
+```
+
+We have a bean with a property of our value type:
+```java
+public class MyBean {
+    private MyCustomValueType property;
+
+    public MyCustomValueType getProperty() {
+        return property;
+    }
+
+    public void setProperty(MyCustomValueType property) {
+        this.property = property;
+    }
+    ...
+}
+```
+
+To test this bean we need to register a ValueGenerator that can generate random values to populate the bean with:
+```java
+BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomValueType>() {
+        public MyCustomValueType generate() {
+            return new MyCustomValueType(StringUtils.randomString());
+        }
+    }, MyCustomValueType.class);
+```
