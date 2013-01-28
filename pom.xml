@@ -12,6 +12,7 @@
     <name>Bean Matchers</name>
     <description>Hamcrest matchers for testing Java beans.</description>
     <url>http://code.google.com/p/bean-matchers/</url>
+    <inceptionYear>2012</inceptionYear>
     <prerequisites>
         <maven>3.0.0</maven>
     </prerequisites>
