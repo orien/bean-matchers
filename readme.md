@@ -46,6 +46,7 @@ Quick Start
 
    public class MyBeanTest {
 
+       // One big test
        @Test
        public void testBean() {
            assertThat(MyBean.class, allOf(
@@ -55,6 +56,33 @@ Quick Start
                    hasValidBeanEquals(),
                    hasValidBeanToString()
            ));
+       }
+
+       // Individual, well named tests
+
+       @Test
+       public void shouldHaveANoArgsConstructor() {
+           assertThat(MyBean.class, hasValidBeanConstructor());
+       }
+
+       @Test
+       public void gettersAndSettersShouldWorkForEachProperty() {
+           assertThat(MyBean.class, hasValidGettersAndSetters());
+       }
+
+       @Test
+       public void allPropertiesShouldInfluenceHashCode() {
+           assertThat(MyBean.class, hasValidBeanHashCode());
+       }
+
+       @Test
+       public void allPropertiesShouldBeComparedDuringEquals() {
+           assertThat(MyBean.class, hasValidBeanEquals());
+       }
+
+       @Test
+       public void allPropertiesShouldBeRepresentedInToStringOutput() {
+           assertThat(MyBean.class, hasValidBeanToString());
        }
 
    }
