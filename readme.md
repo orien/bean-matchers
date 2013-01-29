@@ -1,6 +1,7 @@
 Bean Matchers
 =============
 
+[![Travis-CI](https://api.travis-ci.org/orien/bean-matchers.png)](https://travis-ci.org/orien/bean-matchers)
 * [Project documentation](http://docs.bean-matchers.googlecode.com/git/index.html)
 * [Google Code project page](http://code.google.com/p/bean-matchers/)
 
@@ -14,6 +15,11 @@ correct without needing to consume time writing explicit tests for each property
 a no-args constructor exist. Getters and setters are correctly defined for each property.
 Properties are compared in `equals`, influence the generated `hashCode`, and are present
 in the output of the `toString` method.
+
+Special attention has been given to the readability of these matchers. It is important
+that our tests describe the intent of the code being tested.
+
+Bean Matchers is released under the [BSD License](http://opensource.org/licenses/bsd-license).
 
 Quick Start
 -----------
@@ -193,12 +199,3 @@ BeanMatchers.registerValueGenerator(new ValueGenerator<MyCustomValueType>() {
     }, MyCustomValueType.class);
 ```
 
-Code Status
------------
-
-[![Travis-CI](https://api.travis-ci.org/orien/bean-matchers.png)](https://travis-ci.org/orien/bean-matchers)
-
-License
--------
-
-Bean Matchers is released under the [BSD License](http://opensource.org/licenses/bsd-license).
