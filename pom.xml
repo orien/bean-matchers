@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -14,12 +15,13 @@
     <url>http://code.google.com/p/bean-matchers/</url>
     <inceptionYear>2012</inceptionYear>
     <prerequisites>
-        <maven>3.0.0</maven>
+        <maven>3.0.4</maven>
     </prerequisites>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <currentVersion>${project.version}</currentVersion>
+        <clover.version>3.1.10.1</clover.version>
     </properties>
     <licenses>
         <license>
@@ -93,7 +95,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.0</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
@@ -102,7 +104,7 @@
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-clover2-plugin</artifactId>
-                <version>3.1.4</version>
+                <version>${clover.version}</version>
                 <executions>
                     <execution>
                         <phase>pre-site</phase>
@@ -115,7 +117,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.2</version>
                 <configuration>
                     <reportPlugins>
                         <plugin>
@@ -146,12 +148,12 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-report-plugin</artifactId>
-                            <version>2.12</version>
+                            <version>2.13</version>
                         </plugin>
                         <plugin>
                             <groupId>com.atlassian.maven.plugins</groupId>
                             <artifactId>maven-clover2-plugin</artifactId>
-                            <version>3.1.4</version>
+                            <version>${clover.version}</version>
                         </plugin>
                         <plugin>
                             <groupId>org.codehaus.mojo</groupId>
@@ -171,5 +173,37 @@
                 </configuration>
             </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.13</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
