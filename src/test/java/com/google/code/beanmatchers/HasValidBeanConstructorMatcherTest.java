@@ -1,5 +1,6 @@
 package com.google.code.beanmatchers;
 
+import com.google.code.beanmatchers.data.TestBeanWithArgumentConstructor;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import com.google.code.beanmatchers.data.TestBeanWithoutNoArgsConstructor;
 import org.hamcrest.Description;
@@ -75,5 +76,33 @@ public class HasValidBeanConstructorMatcherTest {
 
         // then
         verify(descriptionMock).appendText("bean class with a valid no-args constructor");
+    }
+
+    @Test
+    public void beanWithArgsConstructorShouldMatch() {
+        // given
+        Class beanType = TestBeanWithArgumentConstructor.class;
+
+        // when
+        Class[] beanTypes = {Object.class};
+        HasValidBeanConstructorMatcher unitUnderTest1 = new HasValidBeanConstructorMatcher(beanTypes);
+        boolean match = unitUnderTest1.matches(beanType);
+
+        // then
+        assertThat(match, is(true));
+    }
+
+    @Test
+    public void beanWithArgsConstructorShouldNotMatch() {
+        // given
+        Class beanType = TestBeanWithArgumentConstructor.class;
+
+        // when
+        Class[] beanTypes = {Double.class};// Incompatible types
+        HasValidBeanConstructorMatcher unitUnderTest1 = new HasValidBeanConstructorMatcher(beanTypes);
+        boolean match = unitUnderTest1.matches(beanType);
+
+        // then
+        assertThat(match, is(false));
     }
 }

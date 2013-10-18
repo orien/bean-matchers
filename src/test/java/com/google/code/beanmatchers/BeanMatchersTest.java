@@ -5,12 +5,25 @@ import org.testng.annotations.Test;
 
 import static com.google.code.beanmatchers.BeanMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.not;
 
 public class BeanMatchersTest {
 
     @Test
     public void testHasValidBeanConstructor() {
         assertThat(TestBeanWithOneProperty.class, hasValidBeanConstructor());
+    }
+
+    @Test
+    public void testHasValidBeanConstructorWithOneProperty() {
+        Class[] types = {Object.class};
+        assertThat(TestBeanWithArgumentConstructor.class, hasValidBeanConstructor(types));
+    }
+
+    @Test
+    public void testHasValidBeanConstructorWithOnePropertyAndError() {
+        Class[] types = {Double.class}; // Incompatible argument types
+        assertThat(TestBeanWithArgumentConstructor.class, not(hasValidBeanConstructor(types)));
     }
 
     @Test
