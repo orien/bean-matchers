@@ -49,7 +49,7 @@
             <name>Orien Madgwick</name>
             <email>_@orien.io</email>
             <url>http://orien.io</url>
-            <timezone>+10</timezone>
+            <timezone>Australia/Melbourne</timezone>
         </developer>
     </developers>
     <contributors>
