@@ -23,7 +23,7 @@ in the output of the `toString` method.
 Special attention has been given to the readability of these matchers. It is important
 that our tests describe the intent of the code being tested.
 
-Bean Matchers is released under the [BSD License](http://opensource.org/licenses/bsd-license).
+Bean Matchers is released under the [New BSD License](http://opensource.org/licenses/BSD-3-Clause).
 
 Quick Start
 -----------
