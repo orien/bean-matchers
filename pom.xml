@@ -132,6 +132,7 @@
                                 <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                             </configuration>
                             <reports>
+                                <report>project-team</report>
                                 <report>scm</report>
                                 <report>cim</report>
                                 <report>issue-tracking</report>
