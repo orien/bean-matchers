@@ -18,6 +18,9 @@ At this point you're waiting on me. I like to at least comment on, if not
 accept, pull requests within three business days (and, typically, one business
 day). I may suggest some changes or improvements or alternatives.
 
+If it's your first time contributing don't forget to add your details to the
+contributors section of our [project file](pom.xml#L55). (Specification [here](http://maven.apache.org/pom.html#Contributors).)
+
 Some things that will increase the chance that your pull request is accepted:
 
 * Follow the ~~Sun~~ Oracle [code conventions](http://www.oracle.com/technetwork/java/codeconv-138413.html)
