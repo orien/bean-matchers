@@ -46,12 +46,14 @@
     </issueManagement>
     <developers>
         <developer>
-            <id>orien.madgwick</id>
             <name>Orien Madgwick</name>
-            <email>orien.madgwick@gmail.com</email>
+            <email>_@orien.io</email>
+            <url>http://orien.io</url>
             <timezone>+10</timezone>
         </developer>
     </developers>
+    <contributors>
+    </contributors>
     <dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
