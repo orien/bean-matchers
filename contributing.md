@@ -20,7 +20,7 @@ day). I may suggest some changes or improvements or alternatives.
 
 Some things that will increase the chance that your pull request is accepted:
 
-* Follow the Sun Oracle [code conventions](http://www.oracle.com/technetwork/java/codeconv-138413.html)
+* Follow the ~~Sun~~ Oracle [code conventions](http://www.oracle.com/technetwork/java/codeconv-138413.html)
 * Include tests that fail without your code, and pass with it
 * Update the documentation, the surrounding one, examples elsewhere, guides,
   whatever is affected by your contribution
