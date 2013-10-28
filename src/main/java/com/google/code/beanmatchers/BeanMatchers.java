@@ -66,8 +66,8 @@ public final class BeanMatchers {
     }
 
     @Factory
-    public static Matcher<Class> hasValidBeanConstructor(Class... argumentTypes) {
-        return new HasValidBeanConstructorMatcher(argumentTypes);
+    public static Matcher<Class> hasAConstructorWithParameterTypes(Class<?>... parameterTypes) {
+        return new HasValidBeanConstructorMatcher(parameterTypes);
     }
 
     @Factory

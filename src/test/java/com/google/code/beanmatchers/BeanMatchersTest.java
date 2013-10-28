@@ -17,13 +17,13 @@ public class BeanMatchersTest {
     @Test
     public void testHasValidBeanConstructorWithOneProperty() {
         Class[] types = {Object.class};
-        assertThat(TestBeanWithArgumentConstructor.class, hasValidBeanConstructor(types));
+        assertThat(TestBeanWithArgumentConstructor.class, hasAConstructorWithParameterTypes(types));
     }
 
     @Test
     public void testHasValidBeanConstructorWithOnePropertyAndError() {
         Class[] types = {Double.class}; // Incompatible argument types
-        assertThat(TestBeanWithArgumentConstructor.class, not(hasValidBeanConstructor(types)));
+        assertThat(TestBeanWithArgumentConstructor.class, not(hasAConstructorWithParameterTypes(types)));
     }
 
     @Test
