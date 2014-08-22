@@ -9,3 +9,6 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+/.classpath
+/.project
+/.settings/
