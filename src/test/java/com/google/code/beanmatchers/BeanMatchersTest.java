@@ -44,6 +44,26 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testBeanHasValidImplGettersAndSettersExcluding() {
+        assertThat(new TestBeanWithBadSetter(), isABeanWithValidImplGettersAndSettersExcluding("badField"));
+    }
+
+    @Test
+    public void testHasValidImplGettersAndSettersExcluding() {
+        assertThat(TestBeanWithBadSetter.class, hasValidImplGettersAndSettersExcluding("badField"));
+    }
+
+    @Test
+    public void testBeanHasValidImplGettersAndSetters() {
+        assertThat(new TestBeanWithManyProperties(), isABeanWithValidImplGettersAndSetters());
+    }
+
+    @Test
+    public void testHasValidImplGettersAndSetters() {
+        assertThat(TestBeanWithManyProperties.class, hasValidImplGettersAndSetters());
+    }
+
+    @Test
     public void testHasValidBeanHashCode() {
         assertThat(TestBeanWithManyProperties.class, hasValidBeanHashCode());
     }
