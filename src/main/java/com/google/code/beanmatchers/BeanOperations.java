@@ -8,6 +8,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hamcrest.Matcher;
+
 import static java.beans.Introspector.getBeanInfo;
 
 final class BeanOperations {
@@ -35,25 +37,25 @@ final class BeanOperations {
         }
     }
 
-    public static List<String> properties(Class<?> beanType) {
-        return properties(propertyDescriptors(beanType));
-    }
-
-    public static List<String> properties(PropertyDescriptor[] descriptors) {
+    public static List<String> properties(PropertyDescriptor[] descriptors, Matcher predicate) {
         List<String> properties = new ArrayList<String>(descriptors.length);
         for (PropertyDescriptor descriptor : descriptors) {
-            properties.add(descriptor.getName());
+            if (predicate.matches(descriptor)) {
+                properties.add(descriptor.getName());
+            }
         }
         properties.remove("class");
         return properties;
     }
 
     public static <T> PropertyDescriptor[] propertyDescriptors(T bean) {
-        return propertyDescriptors(bean.getClass());
-    }
-
-    private static PropertyDescriptor[] propertyDescriptors(Class<?> beanType) {
-        return beanInfo(beanType).getPropertyDescriptors();
+        PropertyDescriptor[] result;
+        if (bean instanceof Class) {
+            result = beanInfo((Class) bean).getPropertyDescriptors();
+        } else {
+            result = beanInfo(bean.getClass()).getPropertyDescriptors();
+        }
+        return result;
     }
 
     private static BeanInfo beanInfo(Class targetClass) {

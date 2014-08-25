@@ -1,11 +1,13 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Description;
+import static com.google.code.beanmatchers.BeanOperations.properties;
+import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
+import static java.util.Arrays.asList;
 
 import java.util.List;
 
-import static com.google.code.beanmatchers.BeanOperations.properties;
-import static java.util.Arrays.asList;
+import org.hamcrest.Description;
+import org.hamcrest.core.IsAnything;
 
 public class HasValidBeanEqualsExcludingMatcher<T> extends AbstractBeanEqualsMatcher<T> {
     private final List<String> excludedProperties;
@@ -17,7 +19,7 @@ public class HasValidBeanEqualsExcludingMatcher<T> extends AbstractBeanEqualsMat
 
     @Override
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
-        List<String> properties = properties(beanType);
+        List<String> properties = properties(propertyDescriptors(beanType), IsAnything.anything());
         properties.removeAll(excludedProperties);
         return isValidBeanEquals(beanType, properties, mismatchDescription);
     }
