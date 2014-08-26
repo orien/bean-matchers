@@ -1,13 +1,10 @@
 package com.google.code.beanmatchers;
 
-import static com.google.code.beanmatchers.BeanOperations.properties;
-import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
 import static java.util.Arrays.asList;
 
 import java.util.List;
 
 import org.hamcrest.Description;
-import org.hamcrest.core.IsAnything;
 
 public class HasToStringDescribingPropertiesExcludingMatcher<T> extends AbstractBeanToStringMatcher<T> {
 
@@ -19,10 +16,11 @@ public class HasToStringDescribingPropertiesExcludingMatcher<T> extends Abstract
     }
 
     @Override
-    protected boolean matchesSafely(Class beanType, Description mismatchDescription) {
-        List<String> properties = properties(propertyDescriptors(beanType), IsAnything.anything());
+    protected boolean matchesSafely(T beanType, Description mismatchDescription) {
+        JavaBean bean = new JavaBean(beanType);
+        List<String> properties = bean.properties();
         properties.removeAll(excludedProperties);
-        return super.toStringDescribesProperties(beanType, properties, mismatchDescription);
+        return super.toStringDescribesProperties(bean, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

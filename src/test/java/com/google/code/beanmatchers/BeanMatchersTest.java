@@ -108,6 +108,21 @@ public class BeanMatchersTest {
         assertThat(TestBeanWithToStringMissingPropertyValue.class, hasValidBeanToStringFor());
     }
 
+    @Test
+    public void testIsValidBeanToString() {
+        assertThat(new TestBeanWithManyProperties(), isWithValidBeanToString());
+    }
+
+    @Test
+    public void testIsValidBeanToStringExcluding() {
+        assertThat(new TestBeanWithToStringMissingPropertyValue(), isWithValidBeanToStringExcluding("propertyValueMissingInToString"));
+    }
+
+    @Test
+    public void testIsValidBeanToStringFor() {
+        assertThat(new TestBeanWithToStringMissingPropertyValue(), isWithValidBeanToStringFor());
+    }
+
     @Test(expectedExceptions = BeanMatchersException.class)
     public void shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() {
         assertThat(new TestBeanWithPropertyNeedingCustomGenerator(), isABeanWithValidGettersAndSetters());

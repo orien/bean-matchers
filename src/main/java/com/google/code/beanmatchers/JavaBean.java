@@ -16,18 +16,18 @@ class JavaBean {
     private final PropertyDescriptor[] descriptors;
 
     public JavaBean(Object targetBean) {
-        this.targetBean = targetBean;
+        if (targetBean instanceof Class) {
+            this.targetBean = instantiateBean((Class<Object>) targetBean);
+        } else {
+            this.targetBean = targetBean;
+        }
         descriptors = propertyDescriptors(targetBean);
-    }
-
-    public JavaBean(Class targetBeanType) {
-        this(instantiateBean(targetBeanType));
     }
 
     public Class beanType() {
         return targetBean.getClass();
     }
-
+    
     public Class<?> propertyType(String propertyName) {
         return descriptorForName(propertyName).getPropertyType();
     }
@@ -70,4 +70,18 @@ class JavaBean {
             return targetBean.equals(object);
         }
     }
+
+    @Override
+    protected JavaBean clone() {
+        JavaBean result = null;
+
+        try {
+            result = (JavaBean) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // FIXME hsyn: won't work for beans without no-args constructor
+            result = new JavaBean(this.beanType());
+        }
+        
+        return result;
+    }    
 }
