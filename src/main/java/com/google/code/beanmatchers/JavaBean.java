@@ -17,7 +17,7 @@ class JavaBean {
 
     public JavaBean(Object targetBean) {
         if (targetBean instanceof Class) {
-            this.targetBean = instantiateBean((Class<Object>) targetBean);
+            this.targetBean = instantiateBean((Class<?>) targetBean);
         } else {
             this.targetBean = targetBean;
         }

@@ -15,7 +15,6 @@ abstract class AbstractBeanToStringMatcher<T> extends TypeSafeDiagnosingMatcher<
     
     protected boolean toStringDescribesProperties(JavaBean bean, List<String> properties, Description mismatchDescription) {
         String toStringResult = bean.toString();
-        String sn = bean.beanType().getSimpleName();
         if (!toStringResult.contains(bean.beanType().getSimpleName())) {
             describeToStringMismatch(bean.beanType(), mismatchDescription)
                     .appendText("It did not produce the bean class name: ")
