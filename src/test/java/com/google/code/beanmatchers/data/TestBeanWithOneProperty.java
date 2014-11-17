@@ -19,7 +19,8 @@ public class TestBeanWithOneProperty {
 
         TestBeanWithOneProperty that = (TestBeanWithOneProperty) o;
 
-        if (field1 != null ? !field1.equals(that.field1) : that.field1 != null) return false;
+        if (field1 == null || that.field1 == null) return false;
+        if (!field1.equals(that.field1)) return false;
 
         return true;
     }
