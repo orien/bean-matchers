@@ -28,8 +28,10 @@ public class TestBeanWithTwoProperties {
 
         TestBeanWithTwoProperties that = (TestBeanWithTwoProperties) o;
 
-        if (field1 == null || that.field2 == null || !field1.equals(that.field1)) return false;
-        if (field2 == null || that.field2 == null || !field2.equals(that.field2)) return false;
+        if (field1 == null || that.field2 == null) return false;
+        if (!field1.equals(that.field1)) return false;
+        if (field2 == null || that.field2 == null) return false;
+        if (!field2.equals(that.field2)) return false;
 
         return true;
     }
