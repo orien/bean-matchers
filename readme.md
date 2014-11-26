@@ -36,7 +36,7 @@ Quick Start
    <dependency>
       <groupId>com.google.code.bean-matchers</groupId>
       <artifactId>bean-matchers</artifactId>
-      <version>0.8.1</version>
+      <version>0.9.0</version>
       <scope>test</scope>
    </dependency>
    ```
