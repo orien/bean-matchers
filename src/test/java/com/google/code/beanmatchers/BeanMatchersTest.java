@@ -64,6 +64,11 @@ public class BeanMatchersTest {
     }
 
     @Test
+    public void testHasValidBeanEqualsOnNonReflectedEquals() {
+      assertThat(TestBeanWithTwoPropertiesAndNonReflectedEquals.class, hasValidBeanEqualsFor("field1", "field2"));
+    }
+
+    @Test
     public void testHasValidBeanEqualsExcluding() {
         assertThat(TestBeanWithPropertyThatDoesNotInfluenceEquals.class, hasValidBeanEqualsExcluding("propertyNotComparedInEquals"));
     }
