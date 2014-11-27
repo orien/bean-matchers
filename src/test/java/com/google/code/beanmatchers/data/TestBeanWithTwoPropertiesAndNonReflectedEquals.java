@@ -3,8 +3,8 @@ package com.google.code.beanmatchers.data;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public class TestBeanWithTwoPropertiesAndNonReflectedEquals {
-  private long field1;
-  private long field2;
+  private Long field1;
+  private Long field2;
 
   @Override
   public boolean equals(Object obj) {
@@ -24,19 +24,19 @@ public class TestBeanWithTwoPropertiesAndNonReflectedEquals {
       .isEquals();
   }
 
-  public long getField1() {
+  public Long getField1() {
     return field1;
   }
 
-  public void setField1(long field1) {
+  public void setField1(Long field1) {
     this.field1 = field1;
   }
 
-  public long getField2() {
+  public Long getField2() {
     return field2;
   }
 
-  public void setField2(long field2) {
+  public void setField2(Long field2) {
     this.field2 = field2;
   }
 
