@@ -31,6 +31,26 @@ public final class BeanMatchers {
     private BeanMatchers() {}
 
     @Factory
+    public static Matcher<Class> hasValidImplGettersAndSettersExcluding(String... properties) {
+        return new InstantiatingMatcherDecorator(isABeanWithValidImplGettersAndSettersExcluding(properties));
+    }
+
+    @Factory
+    public static <T> Matcher<T> isABeanWithValidImplGettersAndSettersExcluding(String... properties) {
+        return new HasValidImplGettersAndSettersExcludingMatcher<T>(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidImplGettersAndSetters() {
+        return hasValidImplGettersAndSettersExcluding();
+    }
+
+    @Factory
+    public static <T> Matcher<T> isABeanWithValidImplGettersAndSetters() {
+        return isABeanWithValidImplGettersAndSettersExcluding();
+    }
+
+    @Factory
     public static Matcher<Class> hasValidGettersAndSettersFor(String... properties) {
         return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersFor(properties));
     }
@@ -99,6 +119,11 @@ public final class BeanMatchers {
     public static Matcher<Class> hasValidBeanToString() {
         return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
     }
+    
+    @Factory
+    public static <T> Matcher<T> isABeanWithValidBeanToString(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
 
     @Factory
     public static Matcher<Class> hasValidBeanToStringFor(String... properties) {
@@ -106,7 +131,47 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static <T> Matcher<T> isABeanWithValidBeanToStringFor(String... properties) {
+        return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidBeanToStringExcluding(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static <T> Matcher<T> isABeanWithValidBeanToStringExcluding(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidToString() {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
+    }
+    
+    @Factory
+    public static <T> Matcher<T> isWithValidBeanToString(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidToStringFor(String... properties) {
+        return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static <T> Matcher<T> isWithValidBeanToStringFor(String... properties) {
+        return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static Matcher<Class> hasValidToStringExcluding(String... properties) {
+        return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    }
+
+    @Factory
+    public static <T> Matcher<T> isWithValidBeanToStringExcluding(String... properties) {
         return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
     }
 

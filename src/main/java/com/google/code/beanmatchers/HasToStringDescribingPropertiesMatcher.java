@@ -17,8 +17,9 @@ public class HasToStringDescribingPropertiesMatcher<T> extends AbstractBeanToStr
     }
 
     @Override
-    protected boolean matchesSafely(Class beanType, Description mismatchDescription) {
-        return super.toStringDescribesProperties(beanType, excludedProperties, mismatchDescription);
+    protected boolean matchesSafely(T beanType, Description mismatchDescription) {
+        JavaBean bean = new JavaBean(beanType);
+        return super.toStringDescribesProperties(bean, excludedProperties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

@@ -14,84 +14,81 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
         this.valueGenerator = valueGenerator;
     }
 
-    protected boolean isValidBeanEquals(Class<T> beanType, List<String> properties, Description mismatchDescription) {
-        if (equalsDoesNotHandleSameInstance(beanType)) {
-            describeMismatch(beanType, mismatchDescription, " did not correctly identify same instance during equals operation");
+    protected boolean isValidBeanEquals(JavaBean bean, List<String> properties, Description mismatchDescription) {
+        if (equalsDoesNotHandleSameInstance(bean)) {
+            describeMismatch(bean, mismatchDescription, " did not correctly identify same instance during equals operation");
             return false;
         }
-        if (equalsDoesNotHandleNullValue(beanType)) {
-            describeMismatch(beanType, mismatchDescription, " did not correctly identify null value during equals operation");
+        if (equalsDoesNotHandleNullValue(bean)) {
+            describeMismatch(bean, mismatchDescription, " did not correctly identify null value during equals operation");
             return false;
         }
-        if (equalsDoesNotHandleDifferingType(beanType)) {
-            describeMismatch(beanType, mismatchDescription, " did not correctly identify differing type during equals operation");
+        if (equalsDoesNotHandleDifferingType(bean)) {
+            describeMismatch(bean, mismatchDescription, " did not correctly identify differing type during equals operation");
             return false;
         }
         for (String property : properties) {
-            if (propertyNotComparedDuringEquals(beanType, property)) {
-                describePropertyMismatch(beanType, property, mismatchDescription, " not compared during equals operation");
+            if (propertyNotComparedDuringEquals(bean, property)) {
+                describePropertyMismatch(bean, property, mismatchDescription, " not compared during equals operation");
                 return false;
             }
-            if (nullPropertyNotHandled(beanType, property)) {
-                describePropertyMismatch(beanType, property, mismatchDescription, " not handling null during equals operation");
+            if (nullPropertyNotHandled(bean, property)) {
+                describePropertyMismatch(bean, property, mismatchDescription, " not handling null during equals operation");
                 return false;
             }
         }
         return true;
     }
 
-    private void describeMismatch(Class<T> beanType, Description description, String reason) {
-        describeBean(beanType, description).appendText(reason);
+    private void describeMismatch(JavaBean bean, Description description, String reason) {
+        describeBean(bean, description).appendText(reason);
     }
 
-    private void describePropertyMismatch(Class<T> beanType, String property, Description description, String reason) {
+    private void describePropertyMismatch(JavaBean beanType, String property, Description description, String reason) {
         describeBean(beanType, description).appendText(" had property ").appendValue(property).appendText(reason);
     }
 
-    private Description describeBean(Class<T> beanType, Description description) {
-        return description.appendText("bean of type ").appendValue(beanType.getName());
+    private Description describeBean(JavaBean bean, Description description) {
+        return description.appendText("bean of type ").appendValue(bean.beanType().getName());
     }
 
-    private boolean equalsDoesNotHandleSameInstance(Class<T> beanType) {
-        JavaBean beanOne = new JavaBean(beanType);
-        return !beanOne.equals(beanOne);
+    private boolean equalsDoesNotHandleSameInstance(JavaBean bean) {
+        return !bean.equals(bean);
     }
 
-    private boolean equalsDoesNotHandleNullValue(Class<T> beanType) {
-        JavaBean beanOne = new JavaBean(beanType);
+    private boolean equalsDoesNotHandleNullValue(JavaBean bean) {
         try {
-            return beanOne.equals(null);
+            return bean.equals(null);
         } catch (Exception e) {
             return true;
         }
     }
 
-    private boolean equalsDoesNotHandleDifferingType(Class<T> beanType) {
-        JavaBean beanOne = new JavaBean(beanType);
-        return beanOne.equals(new TestType());
+    private boolean equalsDoesNotHandleDifferingType(JavaBean bean) {
+        return bean.equals(new TestType());
     }
 
-    private boolean propertyNotComparedDuringEquals(Class<T> beanType, String property) {
-        JavaBean beanOne = new JavaBean(beanType);
+    private boolean propertyNotComparedDuringEquals(JavaBean bean, String property) {
+        JavaBean beanOne = bean.clone();        
         Class<?> propertyType = beanOne.propertyType(property);
         DistinctValues values = generateTwoDistinctValues(valueGenerator, propertyType);
         beanOne.setProperty(property, values.getValueOne());
-        JavaBean beanWithDifferingPropertyValue = new JavaBean(beanType);
+        JavaBean beanWithDifferingPropertyValue = beanOne.clone();
         beanWithDifferingPropertyValue.setProperty(property, values.getValueTwo());
-        JavaBean beanWithSamePropertyValue = new JavaBean(beanType);
+        JavaBean beanWithSamePropertyValue = beanOne.clone();
         beanWithSamePropertyValue.setProperty(property, values.getValueOne());
         return beanOne.equals(beanWithDifferingPropertyValue) || !beanOne.equals(beanWithSamePropertyValue);
     }
 
-    private boolean nullPropertyNotHandled(Class<T> beanType, String property) {
-        JavaBean beanOne = new JavaBean(beanType);
+    private boolean nullPropertyNotHandled(JavaBean bean, String property) {
+        JavaBean beanOne = bean.clone();
         Class<?> propertyType = beanOne.propertyType(property);
         if (propertyType.isPrimitive()) {
             return false;
         }
         Object value = valueGenerator.generate(propertyType);
         beanOne.setProperty(property, value);
-        JavaBean beanTwo = new JavaBean(beanType);
+        JavaBean beanTwo = beanOne.clone();
         beanTwo.setProperty(property, null);
         try {
             return beanOne.equals(beanTwo) || beanTwo.equals(beanOne);

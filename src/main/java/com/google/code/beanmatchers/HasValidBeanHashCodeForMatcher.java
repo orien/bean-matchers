@@ -16,7 +16,8 @@ public class HasValidBeanHashCodeForMatcher<T> extends AbstractBeanHashCodeMatch
 
     @Override
     protected boolean matchesSafely(Class<T> beanType, Description mismatchDescription) {
-        return super.hashCodeIsInfluencedByProperties(new JavaBean(beanType), properties, mismatchDescription);
+        JavaBean bean = new JavaBean(beanType);
+        return super.hashCodeIsInfluencedByProperties(bean, properties, mismatchDescription);
     }
 
     public void describeTo(Description description) {

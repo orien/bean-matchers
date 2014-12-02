@@ -1,9 +1,14 @@
 package com.google.code.beanmatchers;
 
+import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
+import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
+import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
+import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
+
 import java.beans.PropertyDescriptor;
 import java.util.List;
 
-import static com.google.code.beanmatchers.BeanOperations.*;
+import org.hamcrest.core.IsAnything;
 
 class JavaBean {
 
@@ -11,18 +16,18 @@ class JavaBean {
     private final PropertyDescriptor[] descriptors;
 
     public JavaBean(Object targetBean) {
-        this.targetBean = targetBean;
+        if (targetBean instanceof Class) {
+            this.targetBean = instantiateBean((Class<?>) targetBean);
+        } else {
+            this.targetBean = targetBean;
+        }
         descriptors = propertyDescriptors(targetBean);
-    }
-
-    public JavaBean(Class targetBeanType) {
-        this(instantiateBean(targetBeanType));
     }
 
     public Class beanType() {
         return targetBean.getClass();
     }
-
+    
     public Class<?> propertyType(String propertyName) {
         return descriptorForName(propertyName).getPropertyType();
     }
@@ -45,7 +50,7 @@ class JavaBean {
     }
 
     public List<String> properties() {
-        return BeanOperations.properties(descriptors);
+        return BeanOperations.properties(descriptors, IsAnything.anything());
     }
 
     public String toString() {
@@ -65,4 +70,18 @@ class JavaBean {
             return targetBean.equals(object);
         }
     }
+
+    @Override
+    protected JavaBean clone() {
+        JavaBean result = null;
+
+        try {
+            result = (JavaBean) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // FIXME hsyn: won't work for beans without no-args constructor
+            result = new JavaBean(this.beanType());
+        }
+        
+        return result;
+    }    
 }
