@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <name>Bean Matchers</name>
     <description>Hamcrest matchers for testing Java beans.</description>
-    <url>http://code.google.com/p/bean-matchers/</url>
+    <url>https://github.com/orien/bean-matchers</url>
     <inceptionYear>2012</inceptionYear>
     <prerequisites>
         <maven>3.0.4</maven>
@@ -31,9 +31,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://code.google.com/p/bean-matchers/</connection>
-        <developerConnection>scm:git:https://code.google.com/p/bean-matchers/</developerConnection>
-        <url>http://code.google.com/p/bean-matchers/source/browse/</url>
+        <connection>scm:git:https://github.com/orien/bean-matchers.git</connection>
+        <developerConnection>scm:git:ssh://github.com/orien/bean-matchers.git</developerConnection>
+        <url>https://github.com/orien/bean-matchers/tree/master/</url>
       <tag>HEAD</tag>
   </scm>
     <ciManagement>
@@ -41,8 +41,8 @@
         <url>http://travis-ci.org/#!/orien/bean-matchers</url>
     </ciManagement>
     <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/bean-matchers/issues/list</url>
+        <system>GitHub</system>
+        <url>https://github.com/orien/bean-matchers/issues</url>
     </issueManagement>
     <developers>
         <developer>
