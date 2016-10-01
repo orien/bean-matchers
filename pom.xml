@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.bean-matchers</groupId>
     <artifactId>bean-matchers</artifactId>
-    <version>0.10-SNAPSHOT</version>
+    <version>0.10</version>
     <packaging>jar</packaging>
     <name>Bean Matchers</name>
     <description>Hamcrest matchers for testing Java beans.</description>
@@ -28,7 +28,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/orien/bean-matchers.git</connection>
         <url>https://github.com/orien/bean-matchers/tree/master/</url>
-        <tag>HEAD</tag>
+        <tag>0.10</tag>
     </scm>
     <ciManagement>
         <system>Travis CI</system>
