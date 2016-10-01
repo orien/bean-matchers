@@ -2,6 +2,7 @@ Bean Matchers
 =============
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg?maxAge=2592000)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.code.bean-matchers%22%20AND%20a%3A%22bean-matchers%22)
+[![License](https://img.shields.io/github/license/orien/bean-matchers.svg?maxAge=2592000)](https://github.com/orien/bean-matchers/blob/master/license.txt)
 [![Build Status](https://travis-ci.org/orien/bean-matchers.svg?branch=master)](https://travis-ci.org/orien/bean-matchers)
 
 * [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
