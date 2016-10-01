@@ -6,8 +6,8 @@ Bean Matchers
 * [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
 * [JavaBeans Tutorial](http://docs.oracle.com/javase/tutorial/javabeans/)
 * [JavaBeans Wikipedia Entry](http://en.wikipedia.org/wiki/JavaBeans)
-* [Project Documentation](http://docs.bean-matchers.googlecode.com/git/index.html)
-* [Google Code project page](http://code.google.com/p/bean-matchers/)
+* [Project Documentation](http://orien.io/bean-matchers/)
+* [Google Code project page (archived)](https://code.google.com/archive/p/bean-matchers/)
 
 Beans are prevalent in our Java world, however these simple structures are commonly
 untested. Over the course of a project they can be inflicted with copy and paste errors,
