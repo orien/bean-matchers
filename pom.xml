@@ -149,7 +149,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
-                    <releaseProfiles>release</releaseProfiles>
+                    <releaseProfiles>sign</releaseProfiles>
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
