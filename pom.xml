@@ -26,8 +26,7 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:https://github.com/orien/bean-matchers.git</connection>
-        <developerConnection>scm:git:ssh://github.com/orien/bean-matchers.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/orien/bean-matchers.git</connection>
         <url>https://github.com/orien/bean-matchers/tree/master/</url>
         <tag>HEAD</tag>
     </scm>
