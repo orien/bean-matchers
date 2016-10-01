@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>HasValidBeanConstructorMatcher xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../apidocs/com/google/code/beanmatchers/HasValidBeanConstructorMatcher.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> com.google.code.beanmatchers;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> org.hamcrest.Description;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> org.hamcrest.TypeSafeDiagnosingMatcher;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.google.code.beanmatchers.BeanOperations.noArgsConstructor;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../com/google/code/beanmatchers/HasValidBeanConstructorMatcher.html">HasValidBeanConstructorMatcher</a> <strong class="jxr_keyword">extends</strong> TypeSafeDiagnosingMatcher&lt;Class&gt; {
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>      @Override
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">boolean</strong> matchesSafely(Class item, Description mismatchDescription) {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>          <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>              noArgsConstructor(item);
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>          } <strong class="jxr_keyword">catch</strong> (BeanMatchersException e) {
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>              mismatchDescription
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>                      .appendText(<span class="jxr_string">"bean of type "</span>)
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>                      .appendValue(item.getName())
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>                      .appendText(<span class="jxr_string">" does not have a no-args constructor"</span>);
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>              <strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          }
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>      }
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> describeTo(Description description) {
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>          description.appendText(<span class="jxr_string">"bean class with a valid no-args constructor"</span>);
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      }
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2012&#x2013;2016. All rights reserved.</div>
+</body>
+</html>
