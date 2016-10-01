@@ -151,6 +151,7 @@
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>sign</releaseProfiles>
                     <goals>deploy</goals>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
             <plugin>
