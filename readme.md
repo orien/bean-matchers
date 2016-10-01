@@ -1,7 +1,7 @@
 Bean Matchers
 =============
 
-[![Travis-CI](https://api.travis-ci.org/orien/bean-matchers.png)](https://travis-ci.org/orien/bean-matchers)
+[![Build Status](https://travis-ci.org/orien/bean-matchers.svg?branch=master)](https://travis-ci.org/orien/bean-matchers)
 
 * [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
 * [JavaBeans Tutorial](http://docs.oracle.com/javase/tutorial/javabeans/)
