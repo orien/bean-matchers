@@ -7,23 +7,23 @@ import java.util.Random;
 
 public final class BeanMatchers {
 
-    private static final ValueGeneratorRepository VALUE_GENERATOR_REPOSTITORY;
+    private static final ValueGeneratorRepository VALUE_GENERATOR_REPOSITORY;
     private static final TypeBasedValueGenerator TYPE_BASED_VALUE_GENERATOR;
 
     static {
         Random random = new Random();
-        VALUE_GENERATOR_REPOSTITORY = new InMemoryValueGeneratorRepository();
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new StringGenerator(), String.class);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new IntegerGenerator(random), Integer.class, Integer.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new DoubleGenerator(random), Double.class, Double.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new BooleanGenerator(random), Boolean.class, Boolean.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new LongGenerator(random), Long.class, Long.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new FloatGenerator(random), Float.class, Float.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new ByteGenerator(random), Byte.class, Byte.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new CharacterGenerator(random), Character.class, Character.TYPE);
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(new ShortGenerator(random), Short.class, Short.TYPE);
+        VALUE_GENERATOR_REPOSITORY = new InMemoryValueGeneratorRepository();
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new StringGenerator(), String.class);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new IntegerGenerator(random), Integer.class, Integer.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new DoubleGenerator(random), Double.class, Double.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new BooleanGenerator(random), Boolean.class, Boolean.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new LongGenerator(random), Long.class, Long.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new FloatGenerator(random), Float.class, Float.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new ByteGenerator(random), Byte.class, Byte.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new CharacterGenerator(random), Character.class, Character.TYPE);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new ShortGenerator(random), Short.class, Short.TYPE);
         ArrayTypeBasedValueGenerator arrayValueGenerator = new ArrayTypeBasedValueGenerator();
-        TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(VALUE_GENERATOR_REPOSTITORY,
+        TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(VALUE_GENERATOR_REPOSITORY,
                 new MockingTypeBasedValueGenerator(), new EnumBasedValueGenerator(random), arrayValueGenerator);
         arrayValueGenerator.setTypeBaseValueGenerator(TYPE_BASED_VALUE_GENERATOR);
     }
@@ -111,6 +111,6 @@ public final class BeanMatchers {
     }
 
     public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {
-        VALUE_GENERATOR_REPOSTITORY.registerValueGenerator(generator, type);
+        VALUE_GENERATOR_REPOSITORY.registerValueGenerator(generator, type);
     }
 }
