@@ -66,6 +66,11 @@ public final class BeanMatchers {
     }
 
     @Factory
+    public static Matcher<Class> hasAConstructorWithParameterTypes(Class<?>... parameterTypes) {
+        return new HasValidBeanConstructorMatcher(parameterTypes);
+    }
+
+    @Factory
     public static Matcher<Class> hasValidBeanHashCode() {
         return new HasValidBeanHashCodeExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
     }

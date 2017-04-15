@@ -35,6 +35,14 @@ final class BeanOperations {
         }
     }
 
+    public static <Y> Constructor<Y> argConstructor(Class<Y> beanClass, Class<?>... args) {
+        try {
+            return beanClass.getConstructor(args);
+        } catch (NoSuchMethodException e) {
+            throw new BeanMatchersException("Bean does not have a matching constructor", e);
+        }
+    }
+
     public static List<String> properties(Class<?> beanType) {
         return properties(propertyDescriptors(beanType));
     }
