@@ -51,6 +51,19 @@ public class HasValidBeanEqualsForMatcherTest {
         // then
         assertThat(match, is(true));
     }
+    
+    @Test
+    public void beanWithTwoPropertiesAndValidEqualsShouldMatch() {
+        // given
+        Class beanType = TestBeanWithTwoProperties.class;
+        unitUnderTest = new HasValidBeanEqualsForMatcher(valueGeneratorMock, "field1", "field2");
+
+        // when
+        boolean match = unitUnderTest.matches(beanType);
+
+        // then
+        assertThat(match, is(true));
+    }
 
     @Test
     public void beanWithEqualsNotHandlingSamePropertyValuesShouldNotMatch() {
