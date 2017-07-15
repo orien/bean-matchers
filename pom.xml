@@ -8,9 +8,6 @@
     <description>Hamcrest matchers for testing Java beans.</description>
     <url>https://github.com/orien/bean-matchers</url>
     <inceptionYear>2012</inceptionYear>
-    <prerequisites>
-        <maven>3.0.5</maven>
-    </prerequisites>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -152,6 +149,26 @@
                     <goals>deploy</goals>
                     <tagNameFormat>@{project.version}</tagNameFormat>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                        <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                        <rules>
+                            <requireMavenVersion>
+                            <version>3.0.5</version>
+                            </requireMavenVersion>
+                        </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
