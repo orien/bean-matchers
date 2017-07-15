@@ -32,7 +32,7 @@ abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
             Object testValue = valueGenerator.generate(propertyType);
             bean.setProperty(property, testValue);
             Object result = bean.getProperty(property);
-            return (!testValue.equals(result));
+            return !testValue.equals(result);
         } catch (AccessorMissingException e) {
             return true;
         }

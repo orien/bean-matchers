@@ -3,7 +3,10 @@ package com.google.code.beanmatchers;
 import java.beans.PropertyDescriptor;
 import java.util.List;
 
-import static com.google.code.beanmatchers.BeanOperations.*;
+import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
+import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
+import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
+import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
 
 class JavaBean {
 
