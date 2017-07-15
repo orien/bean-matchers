@@ -22,7 +22,6 @@
     <googleAnalyticsAccountId>UA-32537030-1</googleAnalyticsAccountId>
     <custom>
         <fluidoSkin>
-            <googlePlusOne/>
             <gitHub>
                 <projectId>orien/bean-matchers</projectId>
                 <ribbonOrientation>right</ribbonOrientation>
