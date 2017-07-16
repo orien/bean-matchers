@@ -23,7 +23,7 @@ contributors section of our [project file](pom.xml#L55). (Specification [here](h
 
 Some things that will increase the chance that your pull request is accepted:
 
-* Follow the ~~Sun~~ Oracle [code conventions](http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html)
+* Follow the Google [code conventions](https://google.github.io/styleguide/javaguide.html)
 * Include tests that fail without your code, and pass with it
 * Update the documentation, the surrounding one, examples elsewhere, guides,
   whatever is affected by your contribution
