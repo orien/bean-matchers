@@ -33,12 +33,12 @@ class DefaultTypeBasedValueGenerator implements TypeBasedValueGenerator {
     if (type.isArray()) {
       return arrayValueGenerator.generate(type);
     }
-    throw new BeanMatchersException("Could not create a test value of type " + type.getName() +
-        ".\nPlease register a ValueGenerator to create the value:\n" +
-        "    BeanMatchers.registerValueGenerator(new ValueGenerator<" + type.getSimpleName() + ">() {\n" +
-        "        public " + type.getSimpleName() + " generate() {\n" +
-        "            return null;  // Change to generate random instance\n" +
-        "        }\n" +
-        "    }, " + type.getSimpleName() + ".class);");
+    throw new BeanMatchersException("Could not create a test value of type " + type.getName()
+        + ".\nPlease register a ValueGenerator to create the value:\n"
+        + "    BeanMatchers.registerValueGenerator(new ValueGenerator<" + type.getSimpleName() + ">() {\n"
+        + "        public " + type.getSimpleName() + " generate() {\n"
+        + "            return null;  // Change to generate random instance\n"
+        + "        }\n"
+        + "    }, " + type.getSimpleName() + ".class);");
   }
 }
