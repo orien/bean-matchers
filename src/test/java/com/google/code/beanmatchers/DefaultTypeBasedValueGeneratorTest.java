@@ -1,16 +1,15 @@
 package com.google.code.beanmatchers;
 
-import com.google.code.beanmatchers.data.EnumWithOneValue;
-import org.mockito.Mock;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import java.io.File;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import com.google.code.beanmatchers.data.EnumWithOneValue;
+import java.io.File;
+import org.mockito.Mock;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class DefaultTypeBasedValueGeneratorTest {
 

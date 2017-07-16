@@ -1,10 +1,10 @@
 package com.google.code.beanmatchers.data;
 
-import java.util.Date;
-
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+
+import java.util.Date;
 
 public class TestBeanWithManyProperties {
 

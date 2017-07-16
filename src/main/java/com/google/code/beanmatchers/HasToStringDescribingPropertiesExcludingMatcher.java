@@ -1,11 +1,10 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Description;
-
-import java.util.List;
-
 import static com.google.code.beanmatchers.BeanOperations.properties;
 import static java.util.Arrays.asList;
+
+import java.util.List;
+import org.hamcrest.Description;
 
 public class HasToStringDescribingPropertiesExcludingMatcher<T> extends AbstractBeanToStringMatcher<T> {
 

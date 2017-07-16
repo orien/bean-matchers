@@ -1,11 +1,10 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Description;
-import org.hamcrest.TypeSafeDiagnosingMatcher;
+import static com.google.code.beanmatchers.ValueGenerators.generateTwoDistinctValues;
 
 import java.util.List;
-
-import static com.google.code.beanmatchers.ValueGenerators.generateTwoDistinctValues;
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeDiagnosingMatcher;
 
 abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
   final TypeBasedValueGenerator valueGenerator;

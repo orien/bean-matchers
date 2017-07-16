@@ -1,13 +1,15 @@
 package com.google.code.beanmatchers;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
+
 import com.google.code.beanmatchers.data.TestBeanWithIntegerProperty;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
-import org.testng.annotations.Test;
-
 import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import org.testng.annotations.Test;
 
 public class JavaBeanTest {
 

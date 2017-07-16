@@ -1,9 +1,9 @@
 package com.google.code.beanmatchers;
 
-import org.testng.annotations.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
+import org.testng.annotations.Test;
 
 public class BeanMatchersExceptionTest {
 

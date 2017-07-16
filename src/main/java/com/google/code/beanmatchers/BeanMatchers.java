@@ -1,9 +1,8 @@
 package com.google.code.beanmatchers;
 
+import java.util.Random;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
-
-import java.util.Random;
 
 public final class BeanMatchers {
 

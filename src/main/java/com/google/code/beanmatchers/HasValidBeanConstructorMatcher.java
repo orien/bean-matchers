@@ -1,9 +1,9 @@
 package com.google.code.beanmatchers;
 
+import static com.google.code.beanmatchers.BeanOperations.noArgsConstructor;
+
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
-
-import static com.google.code.beanmatchers.BeanOperations.noArgsConstructor;
 
 public class HasValidBeanConstructorMatcher extends TypeSafeDiagnosingMatcher<Class> {
 

@@ -1,13 +1,13 @@
 package com.google.code.beanmatchers;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
+import static org.mockito.MockitoAnnotations.initMocks;
+
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.MockitoAnnotations.initMocks;
 
 public class InMemoryValueGeneratorRepositoryTest {
 

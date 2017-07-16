@@ -1,10 +1,25 @@
 package com.google.code.beanmatchers;
 
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanConstructor;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanEquals;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanEqualsExcluding;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanEqualsFor;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanHashCode;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanHashCodeExcluding;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanHashCodeFor;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanToString;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanToStringExcluding;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidBeanToStringFor;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidGettersAndSetters;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidGettersAndSettersExcluding;
+import static com.google.code.beanmatchers.BeanMatchers.hasValidGettersAndSettersFor;
+import static com.google.code.beanmatchers.BeanMatchers.isABeanWithValidGettersAndSetters;
+import static com.google.code.beanmatchers.BeanMatchers.isABeanWithValidGettersAndSettersExcluding;
+import static com.google.code.beanmatchers.BeanMatchers.isABeanWithValidGettersAndSettersFor;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import com.google.code.beanmatchers.data.*;
 import org.testng.annotations.Test;
-
-import static com.google.code.beanmatchers.BeanMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BeanMatchersTest {
 

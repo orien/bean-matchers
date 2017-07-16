@@ -1,11 +1,5 @@
 package com.google.code.beanmatchers;
 
-import com.google.code.beanmatchers.data.*;
-import org.hamcrest.Description;
-import org.mockito.Mock;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import static java.util.Collections.singletonList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -14,6 +8,12 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
+
+import com.google.code.beanmatchers.data.*;
+import org.hamcrest.Description;
+import org.mockito.Mock;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class HasToStringDescribingPropertiesMatcherTest {
 

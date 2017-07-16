@@ -1,9 +1,8 @@
 package com.google.code.beanmatchers;
 
+import java.util.List;
 import org.hamcrest.Description;
 import org.hamcrest.DiagnosingMatcher;
-
-import java.util.List;
 
 abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
   final TypeBasedValueGenerator valueGenerator;

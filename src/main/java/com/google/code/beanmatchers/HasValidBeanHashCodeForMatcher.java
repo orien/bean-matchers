@@ -1,10 +1,9 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Description;
+import static java.util.Arrays.asList;
 
 import java.util.List;
-
-import static java.util.Arrays.asList;
+import org.hamcrest.Description;
 
 public class HasValidBeanHashCodeForMatcher<T> extends AbstractBeanHashCodeMatcher<T> {
   private final List<String> properties;

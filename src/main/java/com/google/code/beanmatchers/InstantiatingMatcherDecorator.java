@@ -1,10 +1,10 @@
 package com.google.code.beanmatchers;
 
+import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-
-import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
 
 public class InstantiatingMatcherDecorator<T> extends TypeSafeMatcher<Class<T>> {
 

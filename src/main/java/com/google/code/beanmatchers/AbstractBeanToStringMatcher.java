@@ -1,10 +1,9 @@
 package com.google.code.beanmatchers;
 
-import org.hamcrest.Description;
-import org.hamcrest.TypeSafeDiagnosingMatcher;
-
 import java.lang.reflect.Array;
 import java.util.List;
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeDiagnosingMatcher;
 
 abstract class AbstractBeanToStringMatcher<T> extends TypeSafeDiagnosingMatcher<Class<T>> {
   final TypeBasedValueGenerator valueGenerator;
