@@ -8,7 +8,8 @@ import org.hamcrest.Description;
 public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAccessorMatcher<T> {
   private List<String> excludedProperties;
 
-  HasValidGettersAndSettersExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+  HasValidGettersAndSettersExcludingMatcher(
+      TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
     super(valueGenerator);
     this.excludedProperties = asList(excludedProperties);
   }
@@ -25,7 +26,8 @@ public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAc
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with valid setter and getter methods for all properties");
     } else {
-      description.appendText("bean with valid setter and getter methods for all properties excluding ");
+      description.appendText(
+          "bean with valid setter and getter methods for all properties excluding ");
       description.appendValue(excludedProperties);
     }
   }

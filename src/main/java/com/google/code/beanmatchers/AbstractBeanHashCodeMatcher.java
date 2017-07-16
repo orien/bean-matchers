@@ -13,7 +13,8 @@ abstract class AbstractBeanHashCodeMatcher<T> extends TypeSafeDiagnosingMatcher<
     this.valueGenerator = valueGenerator;
   }
 
-  protected boolean hashCodeIsInfluencedByProperties(JavaBean bean, List<String> properties, Description mismatchDescription) {
+  protected boolean hashCodeIsInfluencedByProperties(
+      JavaBean bean, List<String> properties, Description mismatchDescription) {
     for (String property : properties) {
       if (hashCodeNotInfluencedByProperty(bean, property)) {
         mismatchDescription

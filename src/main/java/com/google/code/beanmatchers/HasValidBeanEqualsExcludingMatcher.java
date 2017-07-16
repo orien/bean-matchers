@@ -9,7 +9,8 @@ import org.hamcrest.Description;
 public class HasValidBeanEqualsExcludingMatcher<T> extends AbstractBeanEqualsMatcher<T> {
   private final List<String> excludedProperties;
 
-  HasValidBeanEqualsExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+  HasValidBeanEqualsExcludingMatcher(
+      TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
     super(valueGenerator);
     this.excludedProperties = asList(excludedProperties);
   }

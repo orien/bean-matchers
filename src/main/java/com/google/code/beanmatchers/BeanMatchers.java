@@ -42,7 +42,8 @@ public final class BeanMatchers {
 
   @Factory
   public static Matcher<Class> hasValidGettersAndSettersExcluding(String... properties) {
-    return new InstantiatingMatcherDecorator(isABeanWithValidGettersAndSettersExcluding(properties));
+    return new InstantiatingMatcherDecorator(
+        isABeanWithValidGettersAndSettersExcluding(properties));
   }
 
   @Factory
@@ -107,7 +108,8 @@ public final class BeanMatchers {
 
   @Factory
   public static Matcher<Class> hasValidBeanToStringExcluding(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
+    return new HasToStringDescribingPropertiesExcludingMatcher(
+        TYPE_BASED_VALUE_GENERATOR, properties);
   }
 
   public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {

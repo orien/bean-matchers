@@ -13,26 +13,32 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     this.valueGenerator = valueGenerator;
   }
 
-  protected boolean isValidBeanEquals(Class<T> beanType, List<String> properties, Description mismatchDescription) {
+  protected boolean isValidBeanEquals(
+      Class<T> beanType, List<String> properties, Description mismatchDescription) {
     if (equalsDoesNotHandleSameInstance(beanType)) {
-      describeMismatch(beanType, mismatchDescription, " did not correctly identify same instance during equals operation");
+      describeMismatch(beanType,mismatchDescription,
+          " did not correctly identify same instance during equals operation");
       return false;
     }
     if (equalsDoesNotHandleNullValue(beanType)) {
-      describeMismatch(beanType, mismatchDescription, " did not correctly identify null value during equals operation");
+      describeMismatch(beanType, mismatchDescription,
+          " did not correctly identify null value during equals operation");
       return false;
     }
     if (equalsDoesNotHandleDifferingType(beanType)) {
-      describeMismatch(beanType, mismatchDescription, " did not correctly identify differing type during equals operation");
+      describeMismatch(beanType, mismatchDescription,
+          " did not correctly identify differing type during equals operation");
       return false;
     }
     for (String property : properties) {
       if (propertyNotComparedDuringEquals(beanType, property)) {
-        describePropertyMismatch(beanType, property, mismatchDescription, " not compared during equals operation");
+        describePropertyMismatch(beanType, property, mismatchDescription,
+            " not compared during equals operation");
         return false;
       }
       if (nullPropertyNotHandled(beanType, property)) {
-        describePropertyMismatch(beanType, property, mismatchDescription, " not handling null during equals operation");
+        describePropertyMismatch(beanType, property, mismatchDescription,
+            " not handling null during equals operation");
         return false;
       }
     }
@@ -43,8 +49,12 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     describeBean(beanType, description).appendText(reason);
   }
 
-  private void describePropertyMismatch(Class<T> beanType, String property, Description description, String reason) {
-    describeBean(beanType, description).appendText(" had property ").appendValue(property).appendText(reason);
+  private void describePropertyMismatch(
+      Class<T> beanType, String property, Description description, String reason) {
+    describeBean(beanType, description)
+        .appendText(" had property ")
+        .appendValue(property)
+        .appendText(reason);
   }
 
   private Description describeBean(Class<T> beanType, Description description) {
@@ -79,7 +89,8 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     beanWithDifferingPropertyValue.setProperty(property, values.getValueTwo());
     JavaBean beanWithSamePropertyValue = new JavaBean(beanType);
     beanWithSamePropertyValue.setProperty(property, values.getValueOne());
-    return beanOne.equals(beanWithDifferingPropertyValue) || !beanOne.equals(beanWithSamePropertyValue);
+    return beanOne.equals(beanWithDifferingPropertyValue)
+        || !beanOne.equals(beanWithSamePropertyValue);
   }
 
   private boolean nullPropertyNotHandled(Class<T> beanType, String property) {

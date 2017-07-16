@@ -11,7 +11,8 @@ abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
     this.valueGenerator = valueGenerator;
   }
 
-  protected boolean beanHasValidGetterAndSetterForProperties(JavaBean bean, List<String> properties, Description mismatchDescription) {
+  protected boolean beanHasValidGetterAndSetterForProperties(
+      JavaBean bean, List<String> properties, Description mismatchDescription) {
     for (String property : properties) {
       if (beanDoesNotHaveValidGetterAndSetterForProperty(bean, property)) {
         mismatchDescription

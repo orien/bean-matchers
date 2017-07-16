@@ -20,11 +20,14 @@ final class BeanOperations {
       constructor.setAccessible(true);
       return constructor.newInstance();
     } catch (InstantiationException exception) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
+      throw new BeanMatchersException(
+          "Could not instantiate bean with no-args constructor", exception);
     } catch (IllegalAccessException exception) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
+      throw new BeanMatchersException(
+          "Could not instantiate bean with no-args constructor", exception);
     } catch (InvocationTargetException exception) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
+      throw new BeanMatchersException(
+          "Could not instantiate bean with no-args constructor", exception);
     }
   }
 

@@ -15,7 +15,8 @@ public class HasValidGettersAndSettersMatcher<T> extends AbstractBeanAccessorMat
 
   @Override
   protected boolean matches(Object item, Description mismatchDescription) {
-    return beanHasValidGetterAndSetterForProperties(new JavaBean(item), properties, mismatchDescription);
+    return beanHasValidGetterAndSetterForProperties(
+        new JavaBean(item), properties, mismatchDescription);
   }
 
   public void describeTo(Description description) {

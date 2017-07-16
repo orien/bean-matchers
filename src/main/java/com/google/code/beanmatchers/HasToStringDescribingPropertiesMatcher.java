@@ -10,7 +10,8 @@ public class HasToStringDescribingPropertiesMatcher<T> extends AbstractBeanToStr
 
   private final List<String> properties;
 
-  public HasToStringDescribingPropertiesMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
+  public HasToStringDescribingPropertiesMatcher(
+      TypeBasedValueGenerator valueGenerator, String... properties) {
     super(valueGenerator);
     this.properties = asList(properties);
   }

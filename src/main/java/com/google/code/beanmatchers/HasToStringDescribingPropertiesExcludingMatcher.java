@@ -6,11 +6,13 @@ import static java.util.Arrays.asList;
 import java.util.List;
 import org.hamcrest.Description;
 
-public class HasToStringDescribingPropertiesExcludingMatcher<T> extends AbstractBeanToStringMatcher<T> {
+public class HasToStringDescribingPropertiesExcludingMatcher<T>
+    extends AbstractBeanToStringMatcher<T> {
 
   private final List<String> excludedProperties;
 
-  public HasToStringDescribingPropertiesExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+  public HasToStringDescribingPropertiesExcludingMatcher(
+      TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
     super(valueGenerator);
     this.excludedProperties = asList(excludedProperties);
   }
@@ -26,7 +28,8 @@ public class HasToStringDescribingPropertiesExcludingMatcher<T> extends Abstract
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with toString() describing class name and all properties");
     } else {
-      description.appendText("bean with toString() describing class name and all properties excluding ");
+      description.appendText(
+          "bean with toString() describing class name and all properties excluding ");
       description.appendValue(excludedProperties);
     }
   }

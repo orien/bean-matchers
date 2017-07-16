@@ -8,7 +8,8 @@ import org.hamcrest.Description;
 public class HasValidBeanHashCodeExcludingMatcher<T> extends AbstractBeanHashCodeMatcher<T> {
   private final List<String> excludedProperties;
 
-  HasValidBeanHashCodeExcludingMatcher(TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
+  HasValidBeanHashCodeExcludingMatcher(
+      TypeBasedValueGenerator valueGenerator, String... excludedProperties) {
     super(valueGenerator);
     this.excludedProperties = asList(excludedProperties);
   }

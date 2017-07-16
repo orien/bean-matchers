@@ -44,7 +44,8 @@ class JavaBean {
         return propertyDescriptor;
       }
     }
-    throw new BeanMatchersException("No property named '" + propertyName + "' on bean " + targetBean);
+    throw new BeanMatchersException(
+        "No property named '" + propertyName + "' on bean " + targetBean);
   }
 
   public List<String> properties() {
