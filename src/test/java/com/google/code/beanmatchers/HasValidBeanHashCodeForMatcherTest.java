@@ -18,94 +18,94 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class HasValidBeanHashCodeForMatcherTest {
 
-    private HasValidBeanHashCodeForMatcher unitUnderTest;
+  private HasValidBeanHashCodeForMatcher unitUnderTest;
 
-    @Mock
-    private TypeBasedValueGenerator valueGeneratorMock;
+  @Mock
+  private TypeBasedValueGenerator valueGeneratorMock;
 
-    @Mock
-    private Object valueOne;
+  @Mock
+  private Object valueOne;
 
-    @Mock
-    private Object valueTwo;
+  @Mock
+  private Object valueTwo;
 
-    @Mock
-    private Description descriptionMock;
+  @Mock
+  private Description descriptionMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-        when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo, valueOne, valueTwo);
-        when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
-        when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+    when(valueGeneratorMock.generate(Object.class)).thenReturn(valueOne, valueTwo, valueOne, valueTwo);
+    when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
+    when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
+  }
 
-    @Test
-    public void beanWithValidHashCodeShouldMatch() {
-        // given
-        Class beanType = TestBeanWithOneProperty.class;
-        unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "field1");
+  @Test
+  public void beanWithValidHashCodeShouldMatch() {
+    // given
+    Class beanType = TestBeanWithOneProperty.class;
+    unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "field1");
 
-        // when
-        boolean match = unitUnderTest.matches(beanType);
+    // when
+    boolean match = unitUnderTest.matches(beanType);
 
-        // then
-        assertThat(match, is(true));
-    }
+    // then
+    assertThat(match, is(true));
+  }
 
-    @Test
-    public void beanWithPropertyNotInfluencingHashCodeShouldNotMatch() {
-        // given
-        unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
-        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+  @Test
+  public void beanWithPropertyNotInfluencingHashCodeShouldNotMatch() {
+    // given
+    unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
+    Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
 
-        // when
-        boolean match = unitUnderTest.matches(beanType);
+    // when
+    boolean match = unitUnderTest.matches(beanType);
 
-        // then
-        assertThat(match, is(false));
-    }
+    // then
+    assertThat(match, is(false));
+  }
 
-    @Test
-    public void beanWithPropertyNotInfluencingHashCodeShouldBeDiagnosed() {
-        // given
-        unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
-        Class bean = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+  @Test
+  public void beanWithPropertyNotInfluencingHashCodeShouldBeDiagnosed() {
+    // given
+    unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
+    Class bean = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
 
-        // when
-        unitUnderTest.matchesSafely(bean, descriptionMock);
+    // when
+    unitUnderTest.matchesSafely(bean, descriptionMock);
 
-        // then
-        verify(descriptionMock).appendText("bean of type ");
-        verify(descriptionMock).appendValue(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class.getName());
-        verify(descriptionMock).appendText(" had a hashCode not influenced by the property ");
-        verify(descriptionMock).appendValue("property");
-    }
+    // then
+    verify(descriptionMock).appendText("bean of type ");
+    verify(descriptionMock).appendValue(TestBeanWithPropertyThatDoesNotInfluenceHashCode.class.getName());
+    verify(descriptionMock).appendText(" had a hashCode not influenced by the property ");
+    verify(descriptionMock).appendValue("property");
+  }
 
-    @Test
-    public void beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsNotIncluded() {
-        // given
-        unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock);
-        Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
+  @Test
+  public void beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsNotIncluded() {
+    // given
+    unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock);
+    Class beanType = TestBeanWithPropertyThatDoesNotInfluenceHashCode.class;
 
-        // when
-        boolean match = unitUnderTest.matches(beanType);
+    // when
+    boolean match = unitUnderTest.matches(beanType);
 
-        // then
-        assertThat(match, is(true));
-    }
+    // then
+    assertThat(match, is(true));
+  }
 
-    @Test
-    public void shouldDescribeExpectationForExcludedProperties() {
-        // given
-        unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
+  @Test
+  public void shouldDescribeExpectationForExcludedProperties() {
+    // given
+    unitUnderTest = new HasValidBeanHashCodeForMatcher(valueGeneratorMock, "property");
 
-        // when
-        unitUnderTest.describeTo(descriptionMock);
+    // when
+    unitUnderTest.describeTo(descriptionMock);
 
-        // then
-        verify(descriptionMock).appendText("bean with the properties ");
-        verify(descriptionMock).appendValue(singletonList("property"));
-        verify(descriptionMock).appendText(" influencing hashCode");
-    }
+    // then
+    verify(descriptionMock).appendText("bean with the properties ");
+    verify(descriptionMock).appendValue(singletonList("property"));
+    verify(descriptionMock).appendText(" influencing hashCode");
+  }
 }

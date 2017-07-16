@@ -13,27 +13,27 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class DoubleGeneratorTest {
 
-    private DoubleGenerator unitUnderTest;
+  private DoubleGenerator unitUnderTest;
 
-    @Mock
-    private Random randomMock;
+  @Mock
+  private Random randomMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-        unitUnderTest = new DoubleGenerator(randomMock);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+    unitUnderTest = new DoubleGenerator(randomMock);
+  }
 
-    @Test
-    public void shouldGenerateRandomValue() {
-        // given
-        Double expectedDouble = 743.232;
-        when(randomMock.nextDouble()).thenReturn(expectedDouble);
+  @Test
+  public void shouldGenerateRandomValue() {
+    // given
+    Double expectedDouble = 743.232;
+    when(randomMock.nextDouble()).thenReturn(expectedDouble);
 
-        // when
-        Double result = unitUnderTest.generate();
+    // when
+    Double result = unitUnderTest.generate();
 
-        // then
-        assertThat(result, is(expectedDouble));
-    }
+    // then
+    assertThat(result, is(expectedDouble));
+  }
 }

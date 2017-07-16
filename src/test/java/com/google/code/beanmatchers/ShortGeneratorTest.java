@@ -10,29 +10,29 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ShortGeneratorTest {
 
-    private ShortGenerator unitUnderTest;
+  private ShortGenerator unitUnderTest;
 
-    @BeforeMethod
-    public void setUp() {
-        unitUnderTest = new ShortGenerator(new Random());
-    }
+  @BeforeMethod
+  public void setUp() {
+    unitUnderTest = new ShortGenerator(new Random());
+  }
 
-    @Test
-    public void shouldProvideValue() {
-        // when
-        Short result = unitUnderTest.generate();
+  @Test
+  public void shouldProvideValue() {
+    // when
+    Short result = unitUnderTest.generate();
 
-        // then
-        assertThat(result, is(notNullValue()));
-    }
+    // then
+    assertThat(result, is(notNullValue()));
+  }
 
-    @Test
-    public void shouldProvideDifferingValueOnSubsequentCall() {
-        // when
-        Short result1 = unitUnderTest.generate();
-        Short result2 = unitUnderTest.generate();
+  @Test
+  public void shouldProvideDifferingValueOnSubsequentCall() {
+    // when
+    Short result1 = unitUnderTest.generate();
+    Short result2 = unitUnderTest.generate();
 
-        // then
-        assertThat(result1, is(not(equalTo(result2))));
-    }
+    // then
+    assertThat(result1, is(not(equalTo(result2))));
+  }
 }

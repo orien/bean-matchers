@@ -13,27 +13,27 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class IntegerGeneratorTest {
 
-    private IntegerGenerator unitUnderTest;
+  private IntegerGenerator unitUnderTest;
 
-    @Mock
-    private Random randomMock;
+  @Mock
+  private Random randomMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-        unitUnderTest = new IntegerGenerator(randomMock);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+    unitUnderTest = new IntegerGenerator(randomMock);
+  }
 
-    @Test
-    public void shouldGenerateRandomInteger() {
-        // given
-        Integer expectedInteger = 743;
-        when(randomMock.nextInt()).thenReturn(expectedInteger);
+  @Test
+  public void shouldGenerateRandomInteger() {
+    // given
+    Integer expectedInteger = 743;
+    when(randomMock.nextInt()).thenReturn(expectedInteger);
 
-        // when
-        Integer result = unitUnderTest.generate();
+    // when
+    Integer result = unitUnderTest.generate();
 
-        // then
-        assertThat(result, is(expectedInteger));
-    }
+    // then
+    assertThat(result, is(expectedInteger));
+  }
 }

@@ -15,36 +15,36 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class EnumBasedValueGeneratorTest {
 
-    private EnumBasedValueGenerator unitUnderTest;
+  private EnumBasedValueGenerator unitUnderTest;
 
-    @Mock
-    private Random randomMock;
+  @Mock
+  private Random randomMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-        unitUnderTest = new EnumBasedValueGenerator(randomMock);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+    unitUnderTest = new EnumBasedValueGenerator(randomMock);
+  }
 
-    @Test
-    public void shouldObtainEnumValue() {
+  @Test
+  public void shouldObtainEnumValue() {
 
-        // when
-        EnumWithOneValue value = unitUnderTest.generate(EnumWithOneValue.class);
+    // when
+    EnumWithOneValue value = unitUnderTest.generate(EnumWithOneValue.class);
 
-        // then
-        assertThat(value, is(EnumWithOneValue.ONE_VALUE));
-    }
+    // then
+    assertThat(value, is(EnumWithOneValue.ONE_VALUE));
+  }
 
-    @Test
-    public void shouldObtainRandomEnumValue() {
-        // given
-        when(randomMock.nextInt(3)).thenReturn(2);
+  @Test
+  public void shouldObtainRandomEnumValue() {
+    // given
+    when(randomMock.nextInt(3)).thenReturn(2);
 
-        // when
-        EnumWithThreeValues value = unitUnderTest.generate(EnumWithThreeValues.class);
+    // when
+    EnumWithThreeValues value = unitUnderTest.generate(EnumWithThreeValues.class);
 
-        // then
-        assertThat(value, is(EnumWithThreeValues.VALUE_THREE));
-    }
+    // then
+    assertThat(value, is(EnumWithThreeValues.VALUE_THREE));
+  }
 }

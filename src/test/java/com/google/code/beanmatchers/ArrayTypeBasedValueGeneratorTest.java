@@ -12,40 +12,40 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class ArrayTypeBasedValueGeneratorTest {
 
-    @InjectMocks
-    private TypeBasedValueGenerator unitUnderTest;
+  @InjectMocks
+  private TypeBasedValueGenerator unitUnderTest;
 
-    @Mock
-    private TypeBasedValueGenerator valueGeneratorMock;
+  @Mock
+  private TypeBasedValueGenerator valueGeneratorMock;
 
-    @BeforeMethod
-    public void setUp() {
-        unitUnderTest = new ArrayTypeBasedValueGenerator();
-        initMocks(this);
-    }
+  @BeforeMethod
+  public void setUp() {
+    unitUnderTest = new ArrayTypeBasedValueGenerator();
+    initMocks(this);
+  }
 
-    @Test
-    public void canCreateArray() {
-        // given
-        when(valueGeneratorMock.generate(Integer.TYPE)).thenReturn(4);
+  @Test
+  public void canCreateArray() {
+    // given
+    when(valueGeneratorMock.generate(Integer.TYPE)).thenReturn(4);
 
-        // when
-        int[] value = unitUnderTest.generate(int[].class);
+    // when
+    int[] value = unitUnderTest.generate(int[].class);
 
-        // then
-        assertThat(value, is(notNullValue()));
-    }
+    // then
+    assertThat(value, is(notNullValue()));
+  }
 
-    @Test
-    public void arrayShouldHaveAtLeastOneElement() {
-        // given
-        when(valueGeneratorMock.generate(String.class)).thenReturn("test");
+  @Test
+  public void arrayShouldHaveAtLeastOneElement() {
+    // given
+    when(valueGeneratorMock.generate(String.class)).thenReturn("test");
 
-        // when
-        String[] value = unitUnderTest.generate(String[].class);
+    // when
+    String[] value = unitUnderTest.generate(String[].class);
 
-        // then
-        assertThat(value, is(not(emptyArray())));
-        assertThat(value[0], is("test"));
-    }
+    // then
+    assertThat(value, is(not(emptyArray())));
+    assertThat(value[0], is("test"));
+  }
 }

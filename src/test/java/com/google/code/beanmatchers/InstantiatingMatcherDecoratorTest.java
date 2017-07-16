@@ -18,66 +18,66 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class InstantiatingMatcherDecoratorTest {
 
-    private InstantiatingMatcherDecorator unitUnderTest;
+  private InstantiatingMatcherDecorator unitUnderTest;
 
-    @Mock
-    private Matcher matcherMock;
+  @Mock
+  private Matcher matcherMock;
 
-    @Mock
-    private Description descriptionMock;
+  @Mock
+  private Description descriptionMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+  }
 
-    @Test
-    public void shouldInstantiateBeanAndDelegate() {
-        // given
-        Class beanType = TestBeanWithOneProperty.class;
+  @Test
+  public void shouldInstantiateBeanAndDelegate() {
+    // given
+    Class beanType = TestBeanWithOneProperty.class;
 
-        // when
-        unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
-        unitUnderTest.matches(beanType);
+    // when
+    unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
+    unitUnderTest.matches(beanType);
 
-        // then
-        verify(matcherMock).matches(any(TestBeanWithOneProperty.class));
-    }
+    // then
+    verify(matcherMock).matches(any(TestBeanWithOneProperty.class));
+  }
 
-    @Test
-    public void shouldReturnDelegatesResponse() {
-        // given
-        Class beanType = TestBeanWithOneProperty.class;
-        when(matcherMock.matches(anyObject())).thenReturn(true);
+  @Test
+  public void shouldReturnDelegatesResponse() {
+    // given
+    Class beanType = TestBeanWithOneProperty.class;
+    when(matcherMock.matches(anyObject())).thenReturn(true);
 
-        // when
-        unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
-        boolean match = unitUnderTest.matches(beanType);
+    // when
+    unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
+    boolean match = unitUnderTest.matches(beanType);
 
-        // then
-        assertThat(match, is(true));
-    }
+    // then
+    assertThat(match, is(true));
+  }
 
-    @Test
-    public void shouldDelegateDescribingMismatch() {
-        // given
-        Class beanType = TestBeanWithOneProperty.class;
+  @Test
+  public void shouldDelegateDescribingMismatch() {
+    // given
+    Class beanType = TestBeanWithOneProperty.class;
 
-        // when
-        unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
-        unitUnderTest.describeMismatch(beanType, descriptionMock);
+    // when
+    unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
+    unitUnderTest.describeMismatch(beanType, descriptionMock);
 
-        // then
-        verify(matcherMock).describeMismatch(any(TestBeanWithOneProperty.class), eq(descriptionMock));
-    }
+    // then
+    verify(matcherMock).describeMismatch(any(TestBeanWithOneProperty.class), eq(descriptionMock));
+  }
 
-    @Test
-    public void shouldDelegateDescription() {
-        // when
-        unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
-        unitUnderTest.describeTo(descriptionMock);
+  @Test
+  public void shouldDelegateDescription() {
+    // when
+    unitUnderTest = new InstantiatingMatcherDecorator(matcherMock);
+    unitUnderTest.describeTo(descriptionMock);
 
-        // then
-        verify(matcherMock).describeTo(descriptionMock);
-    }
+    // then
+    verify(matcherMock).describeTo(descriptionMock);
+  }
 }

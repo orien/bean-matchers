@@ -7,20 +7,20 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 public class HasValidGettersAndSettersMatcher<T> extends AbstractBeanAccessorMatcher<T> {
-    private final List<String> properties;
+  private final List<String> properties;
 
-    HasValidGettersAndSettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
-        super(valueGenerator);
-        this.properties = asList(properties);
-    }
+  HasValidGettersAndSettersMatcher(TypeBasedValueGenerator valueGenerator, String... properties) {
+    super(valueGenerator);
+    this.properties = asList(properties);
+  }
 
-    @Override
-    protected boolean matches(Object item, Description mismatchDescription) {
-        return beanHasValidGetterAndSetterForProperties(new JavaBean(item), properties, mismatchDescription);
-    }
+  @Override
+  protected boolean matches(Object item, Description mismatchDescription) {
+    return beanHasValidGetterAndSetterForProperties(new JavaBean(item), properties, mismatchDescription);
+  }
 
-    public void describeTo(Description description) {
-        description.appendText("bean with valid setter and getter methods for properties ");
-        description.appendValue(properties);
-    }
+  public void describeTo(Description description) {
+    description.appendText("bean with valid setter and getter methods for properties ");
+    description.appendValue(properties);
+  }
 }

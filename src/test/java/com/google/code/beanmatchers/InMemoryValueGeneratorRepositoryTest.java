@@ -11,43 +11,43 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class InMemoryValueGeneratorRepositoryTest {
 
-    private InMemoryValueGeneratorRepository unitUnderTest;
+  private InMemoryValueGeneratorRepository unitUnderTest;
 
-    @Mock
-    private ValueGenerator<Integer> valueGeneratorMock;
+  @Mock
+  private ValueGenerator<Integer> valueGeneratorMock;
 
-    @BeforeMethod
-    public void setUp() {
-        unitUnderTest = new InMemoryValueGeneratorRepository();
-        initMocks(this);
-    }
+  @BeforeMethod
+  public void setUp() {
+    unitUnderTest = new InMemoryValueGeneratorRepository();
+    initMocks(this);
+  }
 
-    @Test
-    public void canRegisterValueGenerator() {
-        // when
-        unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class);
+  @Test
+  public void canRegisterValueGenerator() {
+    // when
+    unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class);
 
-        // then
-        assertThat(unitUnderTest.retrieveValueGenerator(Integer.class), is(valueGeneratorMock));
-    }
+    // then
+    assertThat(unitUnderTest.retrieveValueGenerator(Integer.class), is(valueGeneratorMock));
+  }
 
-    @Test
-    public void shouldNotRegisterValueGeneratorForDifferingType() {
-        // when
-        unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class);
+  @Test
+  public void shouldNotRegisterValueGeneratorForDifferingType() {
+    // when
+    unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class);
 
-        // then
-        assertThat(unitUnderTest.retrieveValueGenerator(Integer.TYPE), is(not(valueGeneratorMock)));
-    }
+    // then
+    assertThat(unitUnderTest.retrieveValueGenerator(Integer.TYPE), is(not(valueGeneratorMock)));
+  }
 
-    @Test
-    public void canRegisterValueGeneratorForTwoTypes() {
-        // when
-        unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class, Integer.TYPE);
+  @Test
+  public void canRegisterValueGeneratorForTwoTypes() {
+    // when
+    unitUnderTest.registerValueGenerator(valueGeneratorMock, Integer.class, Integer.TYPE);
 
-        // then
-        assertThat(unitUnderTest.retrieveValueGenerator(Integer.class), is(valueGeneratorMock));
-        assertThat(unitUnderTest.retrieveValueGenerator(Integer.TYPE), is(valueGeneratorMock));
-    }
+    // then
+    assertThat(unitUnderTest.retrieveValueGenerator(Integer.class), is(valueGeneratorMock));
+    assertThat(unitUnderTest.retrieveValueGenerator(Integer.TYPE), is(valueGeneratorMock));
+  }
 
 }

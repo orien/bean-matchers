@@ -13,27 +13,27 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class FloatGeneratorTest {
 
-    private FloatGenerator unitUnderTest;
+  private FloatGenerator unitUnderTest;
 
-    @Mock
-    private Random randomMock;
+  @Mock
+  private Random randomMock;
 
-    @BeforeMethod
-    public void setUp() {
-        initMocks(this);
-        unitUnderTest = new FloatGenerator(randomMock);
-    }
+  @BeforeMethod
+  public void setUp() {
+    initMocks(this);
+    unitUnderTest = new FloatGenerator(randomMock);
+  }
 
-    @Test
-    public void shouldGenerateRandomValue() {
-        // given
-        Float expectedValue = 342.32F;
-        when(randomMock.nextFloat()).thenReturn(expectedValue);
+  @Test
+  public void shouldGenerateRandomValue() {
+    // given
+    Float expectedValue = 342.32F;
+    when(randomMock.nextFloat()).thenReturn(expectedValue);
 
-        // when
-        Float result = unitUnderTest.generate();
+    // when
+    Float result = unitUnderTest.generate();
 
-        // then
-        assertThat(result, is(expectedValue));
-    }
+    // then
+    assertThat(result, is(expectedValue));
+  }
 }

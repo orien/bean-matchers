@@ -10,29 +10,29 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CharacterGeneratorTest {
 
-    private CharacterGenerator unitUnderTest;
+  private CharacterGenerator unitUnderTest;
 
-    @BeforeMethod
-    public void setUp() {
-        unitUnderTest = new CharacterGenerator(new Random());
-    }
+  @BeforeMethod
+  public void setUp() {
+    unitUnderTest = new CharacterGenerator(new Random());
+  }
 
-    @Test
-    public void shouldProvideValue() {
-        // when
-        Character result = unitUnderTest.generate();
+  @Test
+  public void shouldProvideValue() {
+    // when
+    Character result = unitUnderTest.generate();
 
-        // then
-        assertThat(result, is(notNullValue()));
-    }
+    // then
+    assertThat(result, is(notNullValue()));
+  }
 
-    @Test
-    public void shouldProvideDifferingValueOnSubsequentCall() {
-        // when
-        Character result1 = unitUnderTest.generate();
-        Character result2 = unitUnderTest.generate();
+  @Test
+  public void shouldProvideDifferingValueOnSubsequentCall() {
+    // when
+    Character result1 = unitUnderTest.generate();
+    Character result2 = unitUnderTest.generate();
 
-        // then
-        assertThat(result1, is(not(equalTo(result2))));
-    }
+    // then
+    assertThat(result1, is(not(equalTo(result2))));
+  }
 }

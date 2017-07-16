@@ -8,15 +8,15 @@ import static org.hamcrest.Matchers.is;
 
 public class MockingTypeBasedValueGeneratorTest {
 
-    @Test
-    public void testGenerate() {
-        // given
-        TypeBasedValueGenerator unitUnderTest = new MockingTypeBasedValueGenerator();
+  @Test
+  public void testGenerate() {
+    // given
+    TypeBasedValueGenerator unitUnderTest = new MockingTypeBasedValueGenerator();
 
-        // when
-        Object value = unitUnderTest.generate(Object.class);
+    // when
+    Object value = unitUnderTest.generate(Object.class);
 
-        // then
-        assertThat(value, is(mock()));
-    }
+    // then
+    assertThat(value, is(mock()));
+  }
 }
