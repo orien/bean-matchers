@@ -28,5 +28,4 @@ Some things that will increase the chance that your pull request is accepted:
 * Update the documentation, the surrounding one, examples elsewhere, guides,
   whatever is affected by your contribution
 
-
 And in case I didn't emphasize it enough: I love tests!
