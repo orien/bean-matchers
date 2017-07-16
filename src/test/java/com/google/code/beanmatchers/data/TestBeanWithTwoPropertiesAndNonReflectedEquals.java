@@ -19,9 +19,9 @@ public class TestBeanWithTwoPropertiesAndNonReflectedEquals {
     }
     TestBeanWithTwoPropertiesAndNonReflectedEquals rhs = (TestBeanWithTwoPropertiesAndNonReflectedEquals) obj;
     return new EqualsBuilder()
-      .append(getField1(), rhs.getField1())
-      .append(getField2(), rhs.getField2())
-      .isEquals();
+        .append(getField1(), rhs.getField1())
+        .append(getField2(), rhs.getField2())
+        .isEquals();
   }
 
   public Long getField1() {
