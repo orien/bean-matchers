@@ -12,7 +12,7 @@ public class HasValidBeanConstructorMatcher extends TypeSafeDiagnosingMatcher<Cl
     try {
       noArgsConstructor(item);
       return true;
-    } catch (BeanMatchersException e) {
+    } catch (BeanMatchersException exception) {
       mismatchDescription
           .appendText("bean of type ")
           .appendValue(item.getName())

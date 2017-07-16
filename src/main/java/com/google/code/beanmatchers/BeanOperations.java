@@ -19,20 +19,20 @@ final class BeanOperations {
       Constructor<T> constructor = noArgsConstructor(beanClass);
       constructor.setAccessible(true);
       return constructor.newInstance();
-    } catch (InstantiationException e) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
-    } catch (IllegalAccessException e) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
-    } catch (InvocationTargetException e) {
-      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", e);
+    } catch (InstantiationException exception) {
+      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
+    } catch (IllegalAccessException exception) {
+      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
+    } catch (InvocationTargetException exception) {
+      throw new BeanMatchersException("Could not instantiate bean with no-args constructor", exception);
     }
   }
 
   public static <T> Constructor<T> noArgsConstructor(Class<T> beanClass) {
     try {
       return beanClass.getDeclaredConstructor();
-    } catch (NoSuchMethodException e) {
-      throw new BeanMatchersException("Bean does not have no-args constructor", e);
+    } catch (NoSuchMethodException exception) {
+      throw new BeanMatchersException("Bean does not have no-args constructor", exception);
     }
   }
 
@@ -60,8 +60,8 @@ final class BeanOperations {
   private static BeanInfo beanInfo(Class targetClass) {
     try {
       return getBeanInfo(targetClass);
-    } catch (Exception e) {
-      throw new BeanMatchersException(e);
+    } catch (Exception exception) {
+      throw new BeanMatchersException(exception);
     }
   }
 
@@ -84,8 +84,8 @@ final class BeanOperations {
   private static Object invokeMethod(Object bean, Method method, Object... args) {
     try {
       return method.invoke(bean, args);
-    } catch (Exception e) {
-      throw new BeanMatchersException(e);
+    } catch (Exception exception) {
+      throw new BeanMatchersException(exception);
     }
   }
 }

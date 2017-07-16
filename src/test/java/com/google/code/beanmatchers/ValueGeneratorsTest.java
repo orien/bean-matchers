@@ -60,9 +60,9 @@ public class ValueGeneratorsTest {
     // when
     try {
       generateTwoDistinctValues(valueGeneratorMock, Integer.class);
-    } catch (RuntimeException e) {
+    } catch (RuntimeException exception) {
       verify(valueGeneratorMock, times(128 + 1)).generate(Integer.class);
-      throw e;
+      throw exception;
     }
   }
 }

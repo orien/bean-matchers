@@ -60,7 +60,7 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     JavaBean beanOne = new JavaBean(beanType);
     try {
       return beanOne.equals(null);
-    } catch (Exception e) {
+    } catch (Exception exception) {
       return true;
     }
   }
@@ -94,7 +94,7 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
     beanTwo.setProperty(property, null);
     try {
       return beanOne.equals(beanTwo) || beanTwo.equals(beanOne);
-    } catch (RuntimeException e) {
+    } catch (RuntimeException exception) {
       return true;
     }
   }
