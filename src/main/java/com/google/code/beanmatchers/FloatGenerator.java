@@ -4,13 +4,13 @@ import java.util.Random;
 
 class FloatGenerator implements ValueGenerator<Float> {
 
-    private final Random random;
+  private final Random random;
 
-    public FloatGenerator(Random random) {
-        this.random = random;
-    }
+  public FloatGenerator(Random random) {
+    this.random = random;
+  }
 
-    public Float generate() {
-        return random.nextFloat();
-    }
+  public Float generate() {
+    return random.nextFloat();
+  }
 }

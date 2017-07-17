@@ -4,13 +4,13 @@ import java.util.Random;
 
 class IntegerGenerator implements ValueGenerator<Integer> {
 
-    private final Random random;
+  private final Random random;
 
-    public IntegerGenerator(Random random) {
-        this.random = random;
-    }
+  public IntegerGenerator(Random random) {
+    this.random = random;
+  }
 
-    public Integer generate() {
-        return random.nextInt();
-    }
+  public Integer generate() {
+    return random.nextInt();
+  }
 }
