@@ -1,233 +1,233 @@
 package com.google.code.beanmatchers.data;
 
-import java.util.Date;
-
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 
+import java.util.Date;
+
 public class TestBeanWithManyProperties {
 
-    private Object object;
-    private String string;
-    private Integer integerObject;
-    private Integer[] integerObjectArray;
-    private int integerPrimitive;
-    private int[] integerPrimitiveArray;
-    private Date date;
-    private Date[] dateArray;
-    private EnumWithThreeValues enumProperty;
-    private Double doubleObject;
-    private double doublePrimitive;
-    private Boolean booleanObject;
-    private boolean booleanPrimitive;
-    private Long longObject;
-    private long longPrimitive;
-    private Float floatObject;
-    private float floatPrimitive;
-    private Byte byteObject;
-    private byte bytePrimitive;
-    private Character charObject;
-    private char charPrimitive;
-    private Short shortObject;
-    private short shortPrimitive;
+  private Object object;
+  private String string;
+  private Integer integerObject;
+  private Integer[] integerObjectArray;
+  private int integerPrimitive;
+  private int[] integerPrimitiveArray;
+  private Date date;
+  private Date[] dateArray;
+  private EnumWithThreeValues enumProperty;
+  private Double doubleObject;
+  private double doublePrimitive;
+  private Boolean booleanObject;
+  private boolean booleanPrimitive;
+  private Long longObject;
+  private long longPrimitive;
+  private Float floatObject;
+  private float floatPrimitive;
+  private Byte byteObject;
+  private byte bytePrimitive;
+  private Character charObject;
+  private char charPrimitive;
+  private Short shortObject;
+  private short shortPrimitive;
 
-    public Object getObject() {
-        return object;
-    }
+  public Object getObject() {
+    return object;
+  }
 
-    public void setObject(Object object) {
-        this.object = object;
-    }
+  public void setObject(Object object) {
+    this.object = object;
+  }
 
-    public String getString() {
-        return string;
-    }
+  public String getString() {
+    return string;
+  }
 
-    public void setString(String string) {
-        this.string = string;
-    }
+  public void setString(String string) {
+    this.string = string;
+  }
 
-    public Integer getIntegerObject() {
-        return integerObject;
-    }
+  public Integer getIntegerObject() {
+    return integerObject;
+  }
 
-    public void setIntegerObject(Integer integerObject) {
-        this.integerObject = integerObject;
-    }
+  public void setIntegerObject(Integer integerObject) {
+    this.integerObject = integerObject;
+  }
 
-    public Integer[] getIntegerObjectArray() {
-        return integerObjectArray;
-    }
+  public Integer[] getIntegerObjectArray() {
+    return integerObjectArray;
+  }
 
-    public void setIntegerObjectArray(Integer[] integerObjectArray) {
-        this.integerObjectArray = integerObjectArray;
-    }
+  public void setIntegerObjectArray(Integer[] integerObjectArray) {
+    this.integerObjectArray = integerObjectArray;
+  }
 
-    public int getIntegerPrimitive() {
-        return integerPrimitive;
-    }
+  public int getIntegerPrimitive() {
+    return integerPrimitive;
+  }
 
-    public void setIntegerPrimitive(int integerPrimitive) {
-        this.integerPrimitive = integerPrimitive;
-    }
+  public void setIntegerPrimitive(int integerPrimitive) {
+    this.integerPrimitive = integerPrimitive;
+  }
 
-    public int[] getIntegerPrimitiveArray() {
-        return integerPrimitiveArray;
-    }
+  public int[] getIntegerPrimitiveArray() {
+    return integerPrimitiveArray;
+  }
 
-    public void setIntegerPrimitiveArray(int[] integerPrimitiveArray) {
-        this.integerPrimitiveArray = integerPrimitiveArray;
-    }
+  public void setIntegerPrimitiveArray(int[] integerPrimitiveArray) {
+    this.integerPrimitiveArray = integerPrimitiveArray;
+  }
 
-    public Date getDate() {
-        return date;
-    }
+  public Date getDate() {
+    return date;
+  }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+  public void setDate(Date date) {
+    this.date = date;
+  }
 
-    public Date[] getDateArray() {
-        return dateArray;
-    }
+  public Date[] getDateArray() {
+    return dateArray;
+  }
 
-    public void setDateArray(Date[] dateArray) {
-        this.dateArray = dateArray;
-    }
+  public void setDateArray(Date[] dateArray) {
+    this.dateArray = dateArray;
+  }
 
-    public EnumWithThreeValues getEnumProperty() {
-        return enumProperty;
-    }
+  public EnumWithThreeValues getEnumProperty() {
+    return enumProperty;
+  }
 
-    public void setEnumProperty(EnumWithThreeValues enumProperty) {
-        this.enumProperty = enumProperty;
-    }
+  public void setEnumProperty(EnumWithThreeValues enumProperty) {
+    this.enumProperty = enumProperty;
+  }
 
-    public Double getDoubleObject() {
-        return doubleObject;
-    }
+  public Double getDoubleObject() {
+    return doubleObject;
+  }
 
-    public void setDoubleObject(Double doubleObject) {
-        this.doubleObject = doubleObject;
-    }
+  public void setDoubleObject(Double doubleObject) {
+    this.doubleObject = doubleObject;
+  }
 
-    public double getDoublePrimitive() {
-        return doublePrimitive;
-    }
+  public double getDoublePrimitive() {
+    return doublePrimitive;
+  }
 
-    public void setDoublePrimitive(double doublePrimitive) {
-        this.doublePrimitive = doublePrimitive;
-    }
+  public void setDoublePrimitive(double doublePrimitive) {
+    this.doublePrimitive = doublePrimitive;
+  }
 
-    public Boolean getBooleanObject() {
-        return booleanObject;
-    }
+  public Boolean getBooleanObject() {
+    return booleanObject;
+  }
 
-    public void setBooleanObject(Boolean booleanObject) {
-        this.booleanObject = booleanObject;
-    }
+  public void setBooleanObject(Boolean booleanObject) {
+    this.booleanObject = booleanObject;
+  }
 
-    public boolean isBooleanPrimitive() {
-        return booleanPrimitive;
-    }
+  public boolean isBooleanPrimitive() {
+    return booleanPrimitive;
+  }
 
-    public void setBooleanPrimitive(boolean booleanPrimitive) {
-        this.booleanPrimitive = booleanPrimitive;
-    }
+  public void setBooleanPrimitive(boolean booleanPrimitive) {
+    this.booleanPrimitive = booleanPrimitive;
+  }
 
-    public Long getLongObject() {
-        return longObject;
-    }
+  public Long getLongObject() {
+    return longObject;
+  }
 
-    public void setLongObject(Long longObject) {
-        this.longObject = longObject;
-    }
+  public void setLongObject(Long longObject) {
+    this.longObject = longObject;
+  }
 
-    public long getLongPrimitive() {
-        return longPrimitive;
-    }
+  public long getLongPrimitive() {
+    return longPrimitive;
+  }
 
-    public void setLongPrimitive(long longPrimitive) {
-        this.longPrimitive = longPrimitive;
-    }
+  public void setLongPrimitive(long longPrimitive) {
+    this.longPrimitive = longPrimitive;
+  }
 
-    public Float getFloatObject() {
-        return floatObject;
-    }
+  public Float getFloatObject() {
+    return floatObject;
+  }
 
-    public void setFloatObject(Float floatObject) {
-        this.floatObject = floatObject;
-    }
+  public void setFloatObject(Float floatObject) {
+    this.floatObject = floatObject;
+  }
 
-    public float getFloatPrimitive() {
-        return floatPrimitive;
-    }
+  public float getFloatPrimitive() {
+    return floatPrimitive;
+  }
 
-    public void setFloatPrimitive(float floatPrimitive) {
-        this.floatPrimitive = floatPrimitive;
-    }
+  public void setFloatPrimitive(float floatPrimitive) {
+    this.floatPrimitive = floatPrimitive;
+  }
 
-    public Byte getByteObject() {
-        return byteObject;
-    }
+  public Byte getByteObject() {
+    return byteObject;
+  }
 
-    public void setByteObject(Byte byteObject) {
-        this.byteObject = byteObject;
-    }
+  public void setByteObject(Byte byteObject) {
+    this.byteObject = byteObject;
+  }
 
-    public byte getBytePrimitive() {
-        return bytePrimitive;
-    }
+  public byte getBytePrimitive() {
+    return bytePrimitive;
+  }
 
-    public void setBytePrimitive(byte bytePrimitive) {
-        this.bytePrimitive = bytePrimitive;
-    }
+  public void setBytePrimitive(byte bytePrimitive) {
+    this.bytePrimitive = bytePrimitive;
+  }
 
-    public Character getCharObject() {
-        return charObject;
-    }
+  public Character getCharObject() {
+    return charObject;
+  }
 
-    public void setCharObject(Character charObject) {
-        this.charObject = charObject;
-    }
+  public void setCharObject(Character charObject) {
+    this.charObject = charObject;
+  }
 
-    public char getCharPrimitive() {
-        return charPrimitive;
-    }
+  public char getCharPrimitive() {
+    return charPrimitive;
+  }
 
-    public void setCharPrimitive(char charPrimitive) {
-        this.charPrimitive = charPrimitive;
-    }
+  public void setCharPrimitive(char charPrimitive) {
+    this.charPrimitive = charPrimitive;
+  }
 
-    public Short getShortObject() {
-        return shortObject;
-    }
+  public Short getShortObject() {
+    return shortObject;
+  }
 
-    public void setShortObject(Short shortObject) {
-        this.shortObject = shortObject;
-    }
+  public void setShortObject(Short shortObject) {
+    this.shortObject = shortObject;
+  }
 
-    public short getShortPrimitive() {
-        return shortPrimitive;
-    }
+  public short getShortPrimitive() {
+    return shortPrimitive;
+  }
 
-    public void setShortPrimitive(short shortPrimitive) {
-        this.shortPrimitive = shortPrimitive;
-    }
+  public void setShortPrimitive(short shortPrimitive) {
+    this.shortPrimitive = shortPrimitive;
+  }
 
-    @Override
-    public int hashCode() {
-        return reflectionHashCode(this);
-    }
+  @Override
+  public int hashCode() {
+    return reflectionHashCode(this);
+  }
 
-    @Override
-    public boolean equals(Object obj) {
-        return reflectionEquals(this, obj);
-    }
+  @Override
+  public boolean equals(Object obj) {
+    return reflectionEquals(this, obj);
+  }
 
-    @Override
-    public String toString() {
-        return reflectionToString(this);
-    }
+  @Override
+  public String toString() {
+    return reflectionToString(this);
+  }
 }

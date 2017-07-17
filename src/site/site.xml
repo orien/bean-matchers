@@ -2,7 +2,7 @@
     <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
     </skin>
     <body>
         <menu name="Overview">
@@ -22,7 +22,6 @@
     <googleAnalyticsAccountId>UA-32537030-1</googleAnalyticsAccountId>
     <custom>
         <fluidoSkin>
-            <googlePlusOne/>
             <gitHub>
                 <projectId>orien/bean-matchers</projectId>
                 <ribbonOrientation>right</ribbonOrientation>

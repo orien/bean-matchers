@@ -4,13 +4,13 @@ import java.util.Random;
 
 class BooleanGenerator implements ValueGenerator<Boolean> {
 
-    private final Random random;
+  private final Random random;
 
-    public BooleanGenerator(Random random) {
-        this.random = random;
-    }
+  public BooleanGenerator(Random random) {
+    this.random = random;
+  }
 
-    public Boolean generate() {
-        return random.nextBoolean();
-    }
+  public Boolean generate() {
+    return random.nextBoolean();
+  }
 }
