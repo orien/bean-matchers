@@ -21,7 +21,7 @@ public class UuidGeneratorTest {
 	}
 
 	@Test
-	public void shouldProvideString() {
+	public void shouldProvideUuid() {
 		// when
 		UUID result = unitUnderTest.generate();
 
@@ -30,7 +30,7 @@ public class UuidGeneratorTest {
 	}
 
 	@Test
-	public void shouldProvideDifferingStringOnSubsequentCall() {
+	public void shouldProvideDifferingUuidOnSubsequentCall() {
 		// when
 		UUID result1 = unitUnderTest.generate();
 		UUID result2 = unitUnderTest.generate();
