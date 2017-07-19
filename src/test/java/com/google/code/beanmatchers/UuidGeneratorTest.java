@@ -13,29 +13,29 @@ import org.testng.annotations.Test;
 
 public class UuidGeneratorTest {
 
-	private UuidGenerator unitUnderTest;
+  private UuidGenerator unitUnderTest;
 
-	@BeforeMethod
-	public void setUp() {
-		unitUnderTest = new UuidGenerator();
-	}
+  @BeforeMethod
+  public void setUp() {
+    unitUnderTest = new UuidGenerator();
+  }
 
-	@Test
-	public void shouldProvideUuid() {
-		// when
-		UUID result = unitUnderTest.generate();
+  @Test
+  public void shouldProvideUuid() {
+    // when
+    UUID result = unitUnderTest.generate();
 
-		// then
-		assertThat(result, is(notNullValue()));
-	}
+    // then
+    assertThat(result, is(notNullValue()));
+  }
 
-	@Test
-	public void shouldProvideDifferingUuidOnSubsequentCall() {
-		// when
-		UUID result1 = unitUnderTest.generate();
-		UUID result2 = unitUnderTest.generate();
+  @Test
+  public void shouldProvideDifferingUuidOnSubsequentCall() {
+    // when
+    UUID result1 = unitUnderTest.generate();
+    UUID result2 = unitUnderTest.generate();
 
-		// then
-		assertThat(result1, is(not(equalTo(result2))));
-	}
+    // then
+    assertThat(result1, is(not(equalTo(result2))));
+  }
 }
