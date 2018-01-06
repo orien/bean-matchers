@@ -39,7 +39,7 @@ Quick Start
    <dependency>
       <groupId>com.google.code.bean-matchers</groupId>
       <artifactId>bean-matchers</artifactId>
-      <version>0.10</version>
+      <version>0.11</version>
       <scope>test</scope>
    </dependency>
    ```
