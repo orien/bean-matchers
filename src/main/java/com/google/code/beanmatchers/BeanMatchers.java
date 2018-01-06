@@ -1,6 +1,8 @@
 package com.google.code.beanmatchers;
 
 import java.util.Random;
+import java.util.UUID;
+
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 
@@ -13,6 +15,7 @@ public final class BeanMatchers {
     Random random = new Random();
     VALUE_GENERATOR_REPOSITORY = new InMemoryValueGeneratorRepository();
     VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new StringGenerator(), String.class);
+    VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new UuidGenerator(), UUID.class);
     VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new IntegerGenerator(random), Integer.class, Integer.TYPE);
     VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new DoubleGenerator(random), Double.class, Double.TYPE);
     VALUE_GENERATOR_REPOSITORY.registerValueGenerator(new BooleanGenerator(random), Boolean.class, Boolean.TYPE);
