@@ -22,6 +22,7 @@ public class HasValidBeanEqualsExcludingMatcher<T> extends AbstractBeanEqualsMat
     return isValidBeanEquals(beanType, properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with all properties compared in equals");

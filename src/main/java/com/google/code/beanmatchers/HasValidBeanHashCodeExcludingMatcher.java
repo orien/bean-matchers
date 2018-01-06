@@ -22,6 +22,7 @@ public class HasValidBeanHashCodeExcludingMatcher<T> extends AbstractBeanHashCod
     return hashCodeIsInfluencedByProperties(bean, properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with all properties influencing hashCode");

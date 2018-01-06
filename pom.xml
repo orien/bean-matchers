@@ -133,7 +133,6 @@
                         <phase>test</phase>
                         <configuration>
                             <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
                         </configuration>
                         <goals>
                             <goal>check</goal>

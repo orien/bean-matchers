@@ -22,6 +22,7 @@ public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAc
     return super.beanHasValidGetterAndSetterForProperties(bean, properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with valid setter and getter methods for all properties");

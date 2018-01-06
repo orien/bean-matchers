@@ -24,6 +24,7 @@ public class HasToStringDescribingPropertiesExcludingMatcher<T>
     return super.toStringDescribesProperties(beanType, properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     if (excludedProperties.isEmpty()) {
       description.appendText("bean with toString() describing class name and all properties");

@@ -19,6 +19,7 @@ public class HasValidBeanHashCodeForMatcher<T> extends AbstractBeanHashCodeMatch
         new JavaBean(beanType), properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     description.appendText("bean with the properties ");
     description.appendValue(properties);

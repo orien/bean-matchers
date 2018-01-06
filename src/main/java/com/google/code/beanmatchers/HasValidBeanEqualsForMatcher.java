@@ -18,6 +18,7 @@ public class HasValidBeanEqualsForMatcher<T> extends AbstractBeanEqualsMatcher<T
     return isValidBeanEquals(beanType, properties, mismatchDescription);
   }
 
+  @Override
   public void describeTo(Description description) {
     description.appendText("bean with the properties ");
     description.appendValue(properties);
