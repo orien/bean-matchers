@@ -11,24 +11,24 @@
 <a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> java.lang.reflect.Array;
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">class</strong> <a href="../../../../com/google/code/beanmatchers/ArrayTypeBasedValueGenerator.html">ArrayTypeBasedValueGenerator</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> {
-<a class="jxr_linenumber" name="L6" href="#L6">6</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> ARRAY_GENERATION_SIZE = 3;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> ARRAY_GENERATION_SIZE = 3;
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   
-<a class="jxr_linenumber" name="L8" href="#L8">8</a>       <strong class="jxr_keyword">private</strong> <a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> typeBaseValueGenerator;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> typeBaseValueGenerator;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>      <strong class="jxr_keyword">public</strong> &lt;T&gt; T generate(Class&lt;T&gt; type) {
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>          T array = (T) Array.newInstance(type.getComponentType(), ARRAY_GENERATION_SIZE);
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>          <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; ARRAY_GENERATION_SIZE; i++) {
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>              Array.set(array, i, typeBaseValueGenerator.generate(type.getComponentType()));
-<a class="jxr_linenumber" name="L14" href="#L14">14</a>          }
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>          <strong class="jxr_keyword">return</strong> array;
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>      }
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>    <strong class="jxr_keyword">public</strong> &lt;T&gt; T generate(Class&lt;T&gt; type) {
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>      T array = (T) Array.newInstance(type.getComponentType(), ARRAY_GENERATION_SIZE);
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; ARRAY_GENERATION_SIZE; i++) {
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>        Array.set(array, i, typeBaseValueGenerator.generate(type.getComponentType()));
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>      }
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>      <strong class="jxr_keyword">return</strong> array;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>    }
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setTypeBaseValueGenerator(<a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> typeBaseValueGenerator) {
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>          <strong class="jxr_keyword">this</strong>.typeBaseValueGenerator = typeBaseValueGenerator;
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>      }
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setTypeBaseValueGenerator(<a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> typeBaseValueGenerator) {
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      <strong class="jxr_keyword">this</strong>.typeBaseValueGenerator = typeBaseValueGenerator;
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>    }
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2016. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
 </body>
 </html>

@@ -9,7 +9,7 @@ var Packages = {
     "text": "com.google.code.beanmatchers",
     "package": "com.google.code.beanmatchers",
     "url": "com/google/code/beanmatchers/pkg-summary.html",
-            "coverage": "99.1%",
+            "coverage": "99.2%",
         "icon": "aui-icon aui-icon-small aui-iconfont-devtools-folder-closed",
             "li_attr": {"data-is-link": "true"},
         "a_attr": {"href": "com/google/code/beanmatchers/pkg-summary.html"},

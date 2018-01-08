@@ -1,10 +1,10 @@
 var clover = new Object();
 
 // JSON: {classes : [{name, id, sl, el,  methods : [{sl, el}, ...]}, ...]}
-clover.pageData = {"classes":[{"el":9,"id":1410,"methods":[{"el":8,"sc":5,"sl":6}],"name":"CustomValueGenerator","sl":5}]}
+clover.pageData = {"classes":[{"el":9,"id":1423,"methods":[{"el":8,"sc":3,"sl":6}],"name":"CustomValueGenerator","sl":5}]}
 
 // JSON: {test_ID : {"methods": [ID1, ID2, ID3...], "name" : "testXXX() void"}, ...};
-clover.testTargets = {"test_77":{"methods":[{"sl":6}],"name":"canRegisterCustomValueGenerator","pass":true,"statements":[{"sl":7}]}}
+clover.testTargets = {"test_145":{"methods":[{"sl":6}],"name":"canRegisterCustomValueGenerator","pass":true,"statements":[{"sl":7}]}}
 
 // JSON: { lines : [{tests : [testid1, testid2, testid3, ...]}, ...]};
-clover.srcFileLines = [[], [], [], [], [], [], [77], [77], [], []]
+clover.srcFileLines = [[], [], [], [], [], [], [145], [145], [], []]

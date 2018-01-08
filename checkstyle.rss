@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>Bean Matchers - Checkstyle report</title>
+    <link>https://github.com/orien/bean-matchers</link>
+    <description>Bean Matchers - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2012 - 2018</copyright>
+    <item>
+      <title>File: 41,
+             Errors: 0,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>https://github.com/orien/bean-matchers/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/orien/bean-matchers/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.AbstractBeanHashCodeMatcher.java">com/google/code/beanmatchers/AbstractBeanHashCodeMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidBeanConstructorMatcher.java">com/google/code/beanmatchers/HasValidBeanConstructorMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.LongGenerator.java">com/google/code/beanmatchers/LongGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.IntegerGenerator.java">com/google/code/beanmatchers/IntegerGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.DistinctValues.java">com/google/code/beanmatchers/DistinctValues.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.EnumBasedValueGenerator.java">com/google/code/beanmatchers/EnumBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.InMemoryValueGeneratorRepository.java">com/google/code/beanmatchers/InMemoryValueGeneratorRepository.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.DefaultTypeBasedValueGenerator.java">com/google/code/beanmatchers/DefaultTypeBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.TypeBasedValueGenerator.java">com/google/code/beanmatchers/TypeBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.MockingTypeBasedValueGenerator.java">com/google/code/beanmatchers/MockingTypeBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.UuidGenerator.java">com/google/code/beanmatchers/UuidGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.AccessorMissingException.java">com/google/code/beanmatchers/AccessorMissingException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.FloatGenerator.java">com/google/code/beanmatchers/FloatGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ValueGenerators.java">com/google/code/beanmatchers/ValueGenerators.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ValueGeneratorRepository.java">com/google/code/beanmatchers/ValueGeneratorRepository.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ShortGenerator.java">com/google/code/beanmatchers/ShortGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.StringGenerator.java">com/google/code/beanmatchers/StringGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasToStringDescribingPropertiesMatcher.java">com/google/code/beanmatchers/HasToStringDescribingPropertiesMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.InstantiatingMatcherDecorator.java">com/google/code/beanmatchers/InstantiatingMatcherDecorator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.BeanOperations.java">com/google/code/beanmatchers/BeanOperations.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidGettersAndSettersMatcher.java">com/google/code/beanmatchers/HasValidGettersAndSettersMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.BeanMatchersException.java">com/google/code/beanmatchers/BeanMatchersException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.AbstractBeanToStringMatcher.java">com/google/code/beanmatchers/AbstractBeanToStringMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#target.surefire-reports.old.Surefire suite.Surefire test.properties">target/surefire-reports/old/Surefire suite/Surefire test.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.BooleanGenerator.java">com/google/code/beanmatchers/BooleanGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidBeanHashCodeForMatcher.java">com/google/code/beanmatchers/HasValidBeanHashCodeForMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidBeanHashCodeExcludingMatcher.java">com/google/code/beanmatchers/HasValidBeanHashCodeExcludingMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasToStringDescribingPropertiesExcludingMatcher.java">com/google/code/beanmatchers/HasToStringDescribingPropertiesExcludingMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.AbstractBeanEqualsMatcher.java">com/google/code/beanmatchers/AbstractBeanEqualsMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.AbstractBeanAccessorMatcher.java">com/google/code/beanmatchers/AbstractBeanAccessorMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ByteGenerator.java">com/google/code/beanmatchers/ByteGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.BeanMatchers.java">com/google/code/beanmatchers/BeanMatchers.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ValueGenerator.java">com/google/code/beanmatchers/ValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.JavaBean.java">com/google/code/beanmatchers/JavaBean.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#target.clover.surefire-reports.old.Surefire suite.Surefire test.properties">target/clover/surefire-reports/old/Surefire suite/Surefire test.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ArrayTypeBasedValueGenerator.java">com/google/code/beanmatchers/ArrayTypeBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidBeanEqualsExcludingMatcher.java">com/google/code/beanmatchers/HasValidBeanEqualsExcludingMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.CharacterGenerator.java">com/google/code/beanmatchers/CharacterGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidGettersAndSettersExcludingMatcher.java">com/google/code/beanmatchers/HasValidGettersAndSettersExcludingMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.DoubleGenerator.java">com/google/code/beanmatchers/DoubleGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.HasValidBeanEqualsForMatcher.java">com/google/code/beanmatchers/HasValidBeanEqualsForMatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
