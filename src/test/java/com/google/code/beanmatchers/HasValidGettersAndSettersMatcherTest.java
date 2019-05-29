@@ -8,7 +8,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-import com.google.code.beanmatchers.data.TestBeanWithArrayProperty;
+import com.google.code.beanmatchers.data.TestBeanWithArrayProperties;
 import com.google.code.beanmatchers.data.TestBeanWithBadGetter;
 import com.google.code.beanmatchers.data.TestBeanWithBadSetter;
 import com.google.code.beanmatchers.data.TestBeanWithListProperty;
@@ -74,8 +74,9 @@ public class HasValidGettersAndSettersMatcherTest {
   @Test
   public void beanWithValidGettersAndSettersForArrayShouldMatch() {
     // given
-    Object bean = new TestBeanWithArrayProperty();
-    unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "field1");
+    Object bean = new TestBeanWithArrayProperties();
+    unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock,
+        "field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8", "field9");
 
     // when
     boolean match = unitUnderTest.matches(bean);
