@@ -8,9 +8,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.code.beanmatchers.data.TestBeanWithArrayProperty;
 import com.google.code.beanmatchers.data.TestBeanWithBadGetter;
 import com.google.code.beanmatchers.data.TestBeanWithBadSetter;
+import com.google.code.beanmatchers.data.TestBeanWithListProperty;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
+import java.util.ArrayList;
+import java.util.List;
 import org.hamcrest.Description;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
@@ -33,6 +37,10 @@ public class HasValidGettersAndSettersMatcherTest {
   public void setUp() {
     initMocks(this);
     when(valueGeneratorMock.generate(Object.class)).thenReturn(value);
+    when(valueGeneratorMock.generate(int[].class)).thenReturn(new int[]{1, 2, 3});
+    List valueList = new ArrayList();
+    valueList.add(value);
+    when(valueGeneratorMock.generate(List.class)).thenReturn(valueList);
     when(descriptionMock.appendText(anyString())).thenReturn(descriptionMock);
     when(descriptionMock.appendValue(any())).thenReturn(descriptionMock);
   }
@@ -41,6 +49,32 @@ public class HasValidGettersAndSettersMatcherTest {
   public void beanWithValidGettersAndSettersShouldMatch() {
     // given
     Object bean = new TestBeanWithOneProperty();
+    unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "field1");
+
+    // when
+    boolean match = unitUnderTest.matches(bean);
+
+    // then
+    assertThat(match, is(true));
+  }
+
+  @Test
+  public void beanWithValidGettersAndSettersForListShouldMatch() {
+    // given
+    Object bean = new TestBeanWithListProperty();
+    unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "field1");
+
+    // when
+    boolean match = unitUnderTest.matches(bean);
+
+    // then
+    assertThat(match, is(true));
+  }
+
+  @Test
+  public void beanWithValidGettersAndSettersForArrayShouldMatch() {
+    // given
+    Object bean = new TestBeanWithArrayProperty();
     unitUnderTest = new HasValidGettersAndSettersMatcher(valueGeneratorMock, "field1");
 
     // when
