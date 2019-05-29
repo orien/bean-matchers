@@ -32,7 +32,7 @@ public class TestBeanWithArrayProperties {
     return field3 == null ? null : field3.clone();
   }
 
-  public void setField3(short[] field1) {
+  public void setField3(short[] field3) {
     this.field3 = field3 == null ? null : field3.clone();
   }
 
@@ -40,7 +40,7 @@ public class TestBeanWithArrayProperties {
     return field4 == null ? null : field4.clone();
   }
 
-  public void setField4(long[] field1) {
+  public void setField4(long[] field4) {
     this.field4 = field4 == null ? null : field4.clone();
   }
 

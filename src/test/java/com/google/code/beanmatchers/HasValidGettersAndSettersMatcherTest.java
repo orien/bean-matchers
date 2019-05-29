@@ -38,6 +38,14 @@ public class HasValidGettersAndSettersMatcherTest {
     initMocks(this);
     when(valueGeneratorMock.generate(Object.class)).thenReturn(value);
     when(valueGeneratorMock.generate(int[].class)).thenReturn(new int[]{1, 2, 3});
+    when(valueGeneratorMock.generate(byte[].class)).thenReturn(new byte[]{1, 2, 3});
+    when(valueGeneratorMock.generate(short[].class)).thenReturn(new short[]{1, 2, 3});
+    when(valueGeneratorMock.generate(long[].class)).thenReturn(new long[]{1, 2, 3});
+    when(valueGeneratorMock.generate(char[].class)).thenReturn(new char[]{1, 2, 3});
+    when(valueGeneratorMock.generate(boolean[].class)).thenReturn(new boolean[]{true, false});
+    when(valueGeneratorMock.generate(float[].class)).thenReturn(new float[]{1, 2, 3});
+    when(valueGeneratorMock.generate(double[].class)).thenReturn(new double[]{1, 2, 3});
+    when(valueGeneratorMock.generate(Object[].class)).thenReturn(new Object[]{1, 2, 3});
     List valueList = new ArrayList();
     valueList.add(value);
     when(valueGeneratorMock.generate(List.class)).thenReturn(valueList);
