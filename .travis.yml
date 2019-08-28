@@ -1,4 +1,6 @@
 language: java
+jdk:
+- oraclejdk9
 sudo: false
 script: "mvn cobertura:cobertura"
 after_success:
