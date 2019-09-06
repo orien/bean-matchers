@@ -29,8 +29,8 @@
         <tag>HEAD</tag>
     </scm>
     <ciManagement>
-        <system>Travis CI</system>
-        <url>https://travis-ci.org/orien/bean-matchers</url>
+        <system>Github</system>
+        <url>https://github.com/orien/bean-matchers/actions</url>
     </ciManagement>
     <issueManagement>
         <system>GitHub</system>
