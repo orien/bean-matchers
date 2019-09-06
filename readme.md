@@ -1,10 +1,10 @@
 Bean Matchers
 =============
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg?style=for-the-badge)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.code.bean-matchers%22%20AND%20a%3A%22bean-matchers%22)
-[![License](https://img.shields.io/github/license/orien/bean-matchers.svg?style=for-the-badge)](https://github.com/orien/bean-matchers/blob/master/LICENSE)
-[![Build Status](https://img.shields.io/travis/orien/bean-matchers/master.svg?style=for-the-badge)](https://travis-ci.org/orien/bean-matchers)
-[![Codecov](https://img.shields.io/codecov/c/github/orien/bean-matchers.svg?style=for-the-badge)](https://codecov.io/gh/orien/bean-matchers)
+[![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.code.bean-matchers%22%20AND%20a%3A%22bean-matchers%22)
+[![License](https://img.shields.io/github/license/orien/bean-matchers.svg)](https://github.com/orien/bean-matchers/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/orien/bean-matchers/master.svg)](https://travis-ci.org/orien/bean-matchers)
+[![Codecov](https://img.shields.io/codecov/c/github/orien/bean-matchers.svg)](https://codecov.io/gh/orien/bean-matchers)
 
 * [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
 * [JavaBeans Tutorial](http://docs.oracle.com/javase/tutorial/javabeans/)
