@@ -21,7 +21,7 @@ var Packages = {
     "text": "data",
     "package": "com.google.code.beanmatchers.data",
     "url": "com/google/code/beanmatchers/data/testsrc-pkg-summary.html",
-            "coverage": "82%",
+            "coverage": "76.4%",
         "icon": "aui-icon aui-icon-small aui-iconfont-devtools-folder-closed",
             "li_attr": {"data-is-link": "true"},
         "a_attr": {"href": "com/google/code/beanmatchers/data/testsrc-pkg-summary.html"},

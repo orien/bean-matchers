@@ -16,7 +16,7 @@
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> HasValidGettersAndSettersMatcher&lt;T&gt; <strong class="jxr_keyword">extends</strong> AbstractBeanAccessorMatcher&lt;T&gt; {
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> List&lt;String&gt; properties;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <a href="../../../../com/google/code/beanmatchers/HasValidGettersAndSettersMatcher.html">HasValidGettersAndSettersMatcher</a>(<a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> valueGenerator, String... properties) {
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <a name="HasValidGettersAndSettersMatcher" href="../../../../com/google/code/beanmatchers/HasValidGettersAndSettersMatcher.html#HasValidGettersAndSettersMatcher">HasValidGettersAndSettersMatcher</a>(<a name="TypeBasedValueGenerator" href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator">TypeBasedValueGenerator</a> valueGenerator, String... properties) {
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">super</strong>(valueGenerator);
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>      <strong class="jxr_keyword">this</strong>.properties = asList(properties);
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>    }
@@ -24,7 +24,7 @@
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>    @Override
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>    <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">boolean</strong> matches(Object item, Description mismatchDescription) {
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">return</strong> beanHasValidGetterAndSetterForProperties(
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>          <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(item), properties, mismatchDescription);
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>          <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(item), properties, mismatchDescription);
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>    }
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> describeTo(Description description) {
@@ -34,6 +34,6 @@
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019. All rights reserved.</div>
 </body>
 </html>

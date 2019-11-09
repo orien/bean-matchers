@@ -16,17 +16,17 @@
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> java.beans.PropertyDescriptor;
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">class</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> {
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">class</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a> {
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Object targetBean;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> PropertyDescriptor[] descriptors;
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>    <strong class="jxr_keyword">public</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(Object targetBean) {
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>    <strong class="jxr_keyword">public</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(Object targetBean) {
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">this</strong>.targetBean = targetBean;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      descriptors = propertyDescriptors(targetBean);
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>    }
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>    <strong class="jxr_keyword">public</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(Class targetBeanType) {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>    <strong class="jxr_keyword">public</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(Class targetBeanType) {
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      <strong class="jxr_keyword">this</strong>(instantiateBean(targetBeanType));
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>    }
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>          <strong class="jxr_keyword">return</strong> propertyDescriptor;
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>        }
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      }
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/BeanMatchersException.html">BeanMatchersException</a>(
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a name="BeanMatchersException" href="../../../../com/google/code/beanmatchers/BeanMatchersException.html#BeanMatchersException">BeanMatchersException</a>(
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>          <span class="jxr_string">"No property named '"</span> + propertyName + <span class="jxr_string">"' on bean "</span> + targetBean);
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>    }
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  
@@ -71,8 +71,8 @@
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>    @Override
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(Object object) {
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>      <strong class="jxr_keyword">if</strong> (object instanceof JavaBean) {
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>        <strong class="jxr_keyword">return</strong> targetBean.equals(((JavaBean) object).targetBean);
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>      <strong class="jxr_keyword">if</strong> (object instanceof <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>) {
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>        <strong class="jxr_keyword">return</strong> targetBean.equals(((<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>) object).targetBean);
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>      } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>        <strong class="jxr_keyword">return</strong> targetBean.equals(object);
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>      }
@@ -80,6 +80,6 @@
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019. All rights reserved.</div>
 </body>
 </html>

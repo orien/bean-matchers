@@ -14,15 +14,15 @@
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.hamcrest.TypeSafeDiagnosingMatcher;
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> AbstractBeanToStringMatcher&lt;T&gt; <strong class="jxr_keyword">extends</strong> TypeSafeDiagnosingMatcher&lt;Class&lt;T&gt;&gt; {
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>     <strong class="jxr_keyword">final</strong> <a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> valueGenerator;
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>     <strong class="jxr_keyword">final</strong> <a name="TypeBasedValueGenerator" href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator">TypeBasedValueGenerator</a> valueGenerator;
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <a href="../../../../com/google/code/beanmatchers/AbstractBeanToStringMatcher.html">AbstractBeanToStringMatcher</a>(<a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> valueGenerator) {
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <a name="AbstractBeanToStringMatcher" href="../../../../com/google/code/beanmatchers/AbstractBeanToStringMatcher.html#AbstractBeanToStringMatcher">AbstractBeanToStringMatcher</a>(<a name="TypeBasedValueGenerator" href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator">TypeBasedValueGenerator</a> valueGenerator) {
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">this</strong>.valueGenerator = valueGenerator;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>    }
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>    <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">boolean</strong> toStringDescribesProperties(
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>        Class beanType, List&lt;String&gt; properties, Description mismatchDescription) {
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>      String toStringResult = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType).toString();
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      String toStringResult = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType).toString();
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">if</strong> (!toStringResult.contains(beanType.getSimpleName())) {
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>        describeToStringMismatch(beanType, mismatchDescription)
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>            .appendText(<span class="jxr_string">"It did not produce the bean class name: "</span>)
@@ -30,7 +30,7 @@
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>        <strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>      }
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">for</strong> (String property : properties) {
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>        <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> bean = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>        <a name="JavaBean" href="../../../../com/google/code/bean<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>/JavaBean.html#JavaBean">JavaBean</a> bean = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>        Object value = valueGenerator.generate(bean.propertyType(property));
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>        bean.setProperty(property, value);
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>        toStringResult = bean.toString();
@@ -76,6 +76,6 @@
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019. All rights reserved.</div>
 </body>
 </html>

@@ -15,9 +15,9 @@
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.hamcrest.TypeSafeDiagnosingMatcher;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> AbstractBeanEqualsMatcher&lt;T&gt; <strong class="jxr_keyword">extends</strong> TypeSafeDiagnosingMatcher&lt;Class&lt;T&gt;&gt; {
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>    <strong class="jxr_keyword">final</strong> <a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> valueGenerator;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>    <strong class="jxr_keyword">final</strong> <a name="TypeBasedValueGenerator" href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator">TypeBasedValueGenerator</a> valueGenerator;
 <a class="jxr_linenumber" name="L11" href="#L11">11</a>  
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>    <a href="../../../../com/google/code/beanmatchers/AbstractBeanEqualsMatcher.html">AbstractBeanEqualsMatcher</a>(<a href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html">TypeBasedValueGenerator</a> valueGenerator) {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>    <a name="AbstractBeanEqualsMatcher" href="../../../../com/google/code/beanmatchers/AbstractBeanEqualsMatcher.html#AbstractBeanEqualsMatcher">AbstractBeanEqualsMatcher</a>(<a name="TypeBasedValueGenerator" href="../../../../com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator">TypeBasedValueGenerator</a> valueGenerator) {
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>      <strong class="jxr_keyword">this</strong>.valueGenerator = valueGenerator;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>    }
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  
@@ -70,12 +70,12 @@
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>    }
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> equalsDoesNotHandleSameInstance(Class&lt;T&gt; beanType) {
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>      <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>      <strong class="jxr_keyword">return</strong> !beanOne.equals(beanOne);
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>    }
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> equalsDoesNotHandleNullValue(Class&lt;T&gt; beanType) {
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>      <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>      <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>        <strong class="jxr_keyword">return</strong> beanOne.equals(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>      } <strong class="jxr_keyword">catch</strong> (Exception exception) {
@@ -84,32 +84,32 @@
 <a class="jxr_linenumber" name="L76" href="#L76">76</a>    }
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> equalsDoesNotHandleDifferingType(Class&lt;T&gt; beanType) {
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">return</strong> beanOne.equals(<strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/AbstractBeanEqualsMatcher.html">TestType</a>());
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>      <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">return</strong> beanOne.equals(<strong class="jxr_keyword">new</strong> TestType());
 <a class="jxr_linenumber" name="L81" href="#L81">81</a>    }
 <a class="jxr_linenumber" name="L82" href="#L82">82</a>  
 <a class="jxr_linenumber" name="L83" href="#L83">83</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> propertyNotComparedDuringEquals(Class&lt;T&gt; beanType, String property) {
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>      <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L85" href="#L85">85</a>      Class&lt;?&gt; propertyType = beanOne.propertyType(property);
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>      <a href="../../../../com/google/code/beanmatchers/DistinctValues.html">DistinctValues</a> values = generateTwoDistinctValues(valueGenerator, propertyType);
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>      <a name="DistinctValues" href="../../../../com/google/code/beanmatchers/DistinctValues.html#DistinctValues">DistinctValues</a> values = generateTwoDistinctValues(valueGenerator, propertyType);
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>      beanOne.setProperty(property, values.getValueOne());
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanWithDifferingPropertyValue = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>      <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#Jav<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>avaBean</a> beanWithDifferingPropertyValue = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>      beanWithDifferingPropertyValue.setProperty(property, values.getValueTwo());
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanWithSamePropertyValue = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>      <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.htm<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>an">JavaBean</a> beanWithSamePropertyValue = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>      beanWithSamePropertyValue.setProperty(property, values.getValueOne());
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>      <strong class="jxr_keyword">return</strong> beanOne.equals(beanWithDifferingPropertyValue)
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>          || !beanOne.equals(beanWithSamePropertyValue);
 <a class="jxr_linenumber" name="L94" href="#L94">94</a>    }
 <a class="jxr_linenumber" name="L95" href="#L95">95</a>  
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>    <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> nullPropertyNotHandled(Class&lt;T&gt; beanType, String property) {
-<a class="jxr_linenumber" name="L97" href="#L97">97</a>      <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>      <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanOne = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>      Class&lt;?&gt; propertyType = beanOne.propertyType(property);
 <a class="jxr_linenumber" name="L99" href="#L99">99</a>      <strong class="jxr_keyword">if</strong> (propertyType.isPrimitive()) {
 <a class="jxr_linenumber" name="L100" href="#L100">100</a>       <strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="L101" href="#L101">101</a>     }
 <a class="jxr_linenumber" name="L102" href="#L102">102</a>     Object value = valueGenerator.generate(propertyType);
 <a class="jxr_linenumber" name="L103" href="#L103">103</a>     beanOne.setProperty(property, value);
-<a class="jxr_linenumber" name="L104" href="#L104">104</a>     <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a> beanTwo = <strong class="jxr_keyword">new</strong> <a href="../../../../com/google/code/beanmatchers/JavaBean.html">JavaBean</a>(beanType);
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>     <a name="JavaBean" href="../../../../com/google/code/beanmat<a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>vaBean.html#JavaBean">JavaBean</a> beanTwo = <strong class="jxr_keyword">new</strong> <a name="JavaBean" href="../../../../com/google/code/beanmatchers/JavaBean.html#JavaBean">JavaBean</a>(beanType);
 <a class="jxr_linenumber" name="L105" href="#L105">105</a>     beanTwo.setProperty(property, <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L106" href="#L106">106</a>     <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>       <strong class="jxr_keyword">return</strong> beanOne.equals(beanTwo) || beanTwo.equals(beanOne);
@@ -118,11 +118,11 @@
 <a class="jxr_linenumber" name="L110" href="#L110">110</a>     }
 <a class="jxr_linenumber" name="L111" href="#L111">111</a>   }
 <a class="jxr_linenumber" name="L112" href="#L112">112</a> 
-<a class="jxr_linenumber" name="L113" href="#L113">113</a>   <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../com/google/code/beanmatchers/AbstractBeanEqualsMatcher.html">TestType</a> {
+<a class="jxr_linenumber" name="L113" href="#L113">113</a>   <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> TestType {
 <a class="jxr_linenumber" name="L114" href="#L114">114</a>   }
 <a class="jxr_linenumber" name="L115" href="#L115">115</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019. All rights reserved.</div>
 </body>
 </html>

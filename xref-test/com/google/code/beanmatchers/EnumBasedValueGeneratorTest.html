@@ -20,7 +20,7 @@
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> org.testng.annotations.BeforeMethod;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> org.testng.annotations.Test;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../com/google/code/beanmatchers/EnumBasedValueGeneratorTest.html">EnumBasedValueGeneratorTest</a> {
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="EnumBasedValueGeneratorTest" href="../../../../com/google/code/beanmatchers/EnumBasedValueGeneratorTest.html#EnumBasedValueGeneratorTest">EnumBasedValueGeneratorTest</a> {
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>    <strong class="jxr_keyword">private</strong> EnumBasedValueGenerator unitUnderTest;
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
@@ -37,7 +37,7 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> shouldObtainEnumValue() {
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>      <em class="jxr_comment">// when</em>
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>      <a href="../../../../com/google/code/beanmatchers/data/EnumWithOneValue.html">EnumWithOneValue</a> value = unitUnderTest.generate(EnumWithOneValue.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      <a name="EnumWithOneValue" href="../../../../com/google/code/beanmatchers/data/EnumWithOneValue.html#EnumWithOneValue">EnumWithOneValue</a> value = unitUnderTest.generate(EnumWithOneValue.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      <em class="jxr_comment">// then</em>
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>      assertThat(value, is(EnumWithOneValue.ONE_VALUE));
@@ -49,7 +49,7 @@
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>      when(randomMock.nextInt(3)).thenReturn(2);
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>      <em class="jxr_comment">// when</em>
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>      <a href="../../../../com/google/code/beanmatchers/data/EnumWithThreeValues.html">EnumWithThreeValues</a> value = unitUnderTest.generate(EnumWithThreeValues.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      <a name="EnumWithThreeValues" href="../../../../com/google/code/beanmatchers/data/EnumWithThreeValues.html#EnumWithThreeValues">EnumWithThreeValues</a> value = unitUnderTest.generate(EnumWithThreeValues.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      <em class="jxr_comment">// then</em>
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>      assertThat(value, is(EnumWithThreeValues.VALUE_THREE));
@@ -57,6 +57,6 @@
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2012&#x2013;2018. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2012&#x2013;2019. All rights reserved.</div>
 </body>
 </html>
