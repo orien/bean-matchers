@@ -2,8 +2,8 @@ Bean Matchers
 =============
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.code.bean-matchers%22%20AND%20a%3A%22bean-matchers%22)
-[![License](https://img.shields.io/github/license/orien/bean-matchers.svg)](https://github.com/orien/bean-matchers/blob/master/LICENSE)
-[![Build Status](https://github.com/orien/bean-matchers/workflows/Build/badge.svg?branch=master)](https://github.com/orien/bean-matchers/actions)
+[![License](https://img.shields.io/github/license/orien/bean-matchers.svg)](https://github.com/orien/bean-matchers/blob/main/LICENSE)
+[![Build Status](https://github.com/orien/bean-matchers/workflows/Build/badge.svg?branch=main)](https://github.com/orien/bean-matchers/actions?query=workflow%3ABuild+branch%3Amain)
 [![Codecov](https://img.shields.io/codecov/c/github/orien/bean-matchers.svg)](https://codecov.io/gh/orien/bean-matchers)
 
 * [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
@@ -195,7 +195,7 @@ assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToStrin
 Generating Property Values
 --------------------------
 
-The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to [Mockito](http://mockito.org) to create a mock for non-final types. For final types, one can implement and register a [ValueGenerator](https://github.com/orien/bean-matchers/blob/master/src/main/java/com/google/code/beanmatchers/ValueGenerator.java) to generate random values.
+The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to [Mockito](http://mockito.org) to create a mock for non-final types. For final types, one can implement and register a [ValueGenerator](https://github.com/orien/bean-matchers/blob/main/src/main/java/com/google/code/beanmatchers/ValueGenerator.java) to generate random values.
 
 For example say we have defined a value type:
 ```java
