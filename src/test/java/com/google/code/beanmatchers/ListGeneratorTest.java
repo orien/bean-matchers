@@ -1,12 +1,11 @@
 package com.google.code.beanmatchers;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.CoreMatchers.sameInstance;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Random;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,25 +15,25 @@ public class ListGeneratorTest {
 
   @BeforeMethod
   public void setUp() {
-    unitUnderTest = new ListGenerator();
+    unitUnderTest = new ListGenerator(new Random());
   }
 
   @Test
-  public void shouldProvideUuid() {
+  public void shouldProvideList() {
     // when
-    Collection result = unitUnderTest.generate();
+    List result = unitUnderTest.generate();
 
     // then
     assertThat(result, is(notNullValue()));
   }
 
   @Test
-  public void shouldProvideDifferingUuidOnSubsequentCall() {
+  public void shouldProvideDifferingValueOnSubsequentCall() {
     // when
-    Collection result1 = unitUnderTest.generate();
-    Collection result2 = unitUnderTest.generate();
+    List result1 = unitUnderTest.generate();
+    List result2 = unitUnderTest.generate();
 
     // then
-    assertThat(result1, is(not(sameInstance(result2))));
+    assertThat(result1, is(not(equalTo(result2))));
   }
 }

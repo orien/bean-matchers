@@ -23,7 +23,7 @@ public final class BeanMatchers {
     repo.registerValueGenerator(new ByteGenerator(random), Byte.class, Byte.TYPE);
     repo.registerValueGenerator(new CharacterGenerator(random), Character.class, Character.TYPE);
     repo.registerValueGenerator(new ShortGenerator(random), Short.class, Short.TYPE);
-    repo.registerValueGenerator(new ListGenerator(), List.class);
+    repo.registerValueGenerator(new ListGenerator(random), List.class);
     VALUE_GENERATOR_REPOSITORY = repo;
     final ArrayTypeBasedValueGenerator arrayValueGenerator = new ArrayTypeBasedValueGenerator();
     TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(
