@@ -1,5 +1,7 @@
 package com.google.code.beanmatchers.data;
 
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
@@ -228,6 +230,15 @@ public class TestBeanWithManyProperties {
 
   @Override
   public String toString() {
-    return reflectionToString(this);
+    return reflectionToString(this, new TestingToStringStyle());
+  }
+
+  private static final class TestingToStringStyle extends ToStringStyle {
+    private static final long serialVersionUID = 1L;
+
+    TestingToStringStyle() {
+      setArrayStart("[");
+      setArrayEnd("]");
+    }
   }
 }
