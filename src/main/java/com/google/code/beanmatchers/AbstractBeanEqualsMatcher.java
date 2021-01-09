@@ -16,7 +16,7 @@ abstract class AbstractBeanEqualsMatcher<T> extends TypeSafeDiagnosingMatcher<Cl
   protected boolean isValidBeanEquals(
       Class<T> beanType, List<String> properties, Description mismatchDescription) {
     if (equalsDoesNotHandleSameInstance(beanType)) {
-      describeMismatch(beanType,mismatchDescription,
+      describeMismatch(beanType, mismatchDescription,
           " did not correctly identify same instance during equals operation");
       return false;
     }

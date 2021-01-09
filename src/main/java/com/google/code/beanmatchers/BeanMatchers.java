@@ -27,10 +27,10 @@ public final class BeanMatchers {
     VALUE_GENERATOR_REPOSITORY = repo;
     final ArrayTypeBasedValueGenerator arrayValueGenerator = new ArrayTypeBasedValueGenerator();
     TYPE_BASED_VALUE_GENERATOR = new DefaultTypeBasedValueGenerator(
-      VALUE_GENERATOR_REPOSITORY,
-      new MockingTypeBasedValueGenerator(),
-      new EnumBasedValueGenerator(random),
-      arrayValueGenerator
+        VALUE_GENERATOR_REPOSITORY,
+        new MockingTypeBasedValueGenerator(),
+        new EnumBasedValueGenerator(random),
+        arrayValueGenerator
     );
     arrayValueGenerator.setTypeBaseValueGenerator(TYPE_BASED_VALUE_GENERATOR);
   }

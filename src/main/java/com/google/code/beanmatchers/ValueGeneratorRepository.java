@@ -8,7 +8,7 @@ interface ValueGeneratorRepository {
 
   /**
    * @return The registered {@code ValueGenerator} or {@code null}
-   * if no generator has been registered for the given type.
+   *     if no generator has been registered for the given type.
    */
   <T> ValueGenerator<T> retrieveValueGenerator(Class<T> type);
 }
