@@ -1,15 +1,15 @@
 Bean Matchers
 =============
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.code.bean-matchers%22%20AND%20a%3A%22bean-matchers%22)
+[![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg)](https://search.maven.org/search?q=g:com.google.code.bean-matchers%20AND%20a:bean-matchers)
 [![License](https://img.shields.io/github/license/orien/bean-matchers.svg)](https://github.com/orien/bean-matchers/blob/main/LICENSE)
 [![Build Status](https://github.com/orien/bean-matchers/workflows/Build/badge.svg?branch=main)](https://github.com/orien/bean-matchers/actions?query=workflow%3ABuild+branch%3Amain)
 [![Codecov](https://img.shields.io/codecov/c/github/orien/bean-matchers.svg)](https://codecov.io/gh/orien/bean-matchers)
 
-* [JavaBeans Spec](http://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html)
-* [JavaBeans Tutorial](http://docs.oracle.com/javase/tutorial/javabeans/)
-* [JavaBeans Wikipedia Entry](http://en.wikipedia.org/wiki/JavaBeans)
-* [Project Documentation](http://orien.io/bean-matchers/)
+* [JavaBeans Spec](https://www.oracle.com/java/technologies/javase/javabeans-spec.html)
+* [JavaBeans Tutorial](https://docs.oracle.com/javase/tutorial/javabeans/)
+* [JavaBeans Wikipedia Entry](https://en.wikipedia.org/wiki/JavaBeans)
+* [Project Documentation](https://orien.io/bean-matchers/)
 * [Google Code project page (archived)](https://code.google.com/archive/p/bean-matchers/)
 
 Beans are prevalent in our Java world, however these simple structures are commonly
@@ -26,13 +26,13 @@ in the output of the `toString` method.
 Special attention has been given to the readability of these matchers. It is important
 that our tests describe the intent of the code being tested.
 
-Bean Matchers is released under the [New BSD License](http://opensource.org/licenses/BSD-3-Clause).
+Bean Matchers is released under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
 
 Quick Start
 -----------
 
 1. Add the Bean Matchers dependency to your Maven project
-   (Check [MVN Repository](http://mvnrepository.com/artifact/com.google.code.bean-matchers/bean-matchers)
+   (Check the [Central Repository](https://search.maven.org/search?q=g:com.google.code.bean-matchers%20AND%20a:bean-matchers)
    for the latest version):
 
    ```xml
@@ -195,7 +195,7 @@ assertThat(BeanToTest.class, hasValidBeanToStringExcluding("propertyNotInToStrin
 Generating Property Values
 --------------------------
 
-The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to [Mockito](http://mockito.org) to create a mock for non-final types. For final types, one can implement and register a [ValueGenerator](https://github.com/orien/bean-matchers/blob/main/src/main/java/com/google/code/beanmatchers/ValueGenerator.java) to generate random values.
+The Bean Matchers library generates values to populate beans while performing various tests. Out of the box Bean Matchers will generate random values for properties of primitive, array and enum type. It will delegate to [Mockito](https://site.mockito.org) to create a mock for non-final types. For final types, one can implement and register a [ValueGenerator](https://github.com/orien/bean-matchers/blob/main/src/main/java/com/google/code/beanmatchers/ValueGenerator.java) to generate random values.
 
 For example say we have defined a value type:
 ```java
