@@ -255,6 +255,9 @@
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
                     <version>4.1.3</version>
+                    <configuration>
+                        <excludeFilterFile>src/test/filters/SpotBugsExcludeFilter.xml</excludeFilterFile>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
