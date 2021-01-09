@@ -6,7 +6,9 @@ import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class TestBeanWithManyProperties {
 
@@ -33,6 +35,9 @@ public class TestBeanWithManyProperties {
   private char charPrimitive;
   private Short shortObject;
   private short shortPrimitive;
+  private List<String> listOfString;
+  private List<Long> listOfLong;
+  private List<Boolean> unmodifiableList;
 
   public Object getObject() {
     return object;
@@ -216,6 +221,30 @@ public class TestBeanWithManyProperties {
 
   public void setShortPrimitive(short shortPrimitive) {
     this.shortPrimitive = shortPrimitive;
+  }
+
+  public List<String> getListOfString() {
+    return listOfString;
+  }
+
+  public void setListOfString(List<String> listOfString) {
+    this.listOfString = listOfString;
+  }
+
+  public List<Long> getListOfLong() {
+    return listOfLong;
+  }
+
+  public void setListOfLong(List<Long> listOfLong) {
+    this.listOfLong = listOfLong;
+  }
+
+  public List<Boolean> getUnmodifiableList() {
+    return unmodifiableList == null ? null : Collections.unmodifiableList(unmodifiableList);
+  }
+
+  public void setUnmodifiableList(List<Boolean> unmodifiableList) {
+    this.unmodifiableList = unmodifiableList == null ? null : Collections.unmodifiableList(unmodifiableList);
   }
 
   @Override
