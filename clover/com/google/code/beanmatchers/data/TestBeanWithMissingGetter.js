@@ -1,10 +1,10 @@
 var clover = new Object();
 
 // JSON: {classes : [{name, id, sl, el,  methods : [{sl, el}, ...]}, ...]}
-clover.pageData = {"classes":[{"el":19,"id":1811,"methods":[{"el":10,"sc":3,"sl":8},{"el":14,"sc":3,"sl":12},{"el":18,"sc":3,"sl":16}],"name":"TestBeanWithMissingGetter","sl":3}]}
+clover.pageData = {"classes":[{"el":19,"id":1832,"methods":[{"el":10,"sc":3,"sl":8},{"el":14,"sc":3,"sl":12},{"el":18,"sc":3,"sl":16}],"name":"TestBeanWithMissingGetter","sl":3}]}
 
 // JSON: {test_ID : {"methods": [ID1, ID2, ID3...], "name" : "testXXX() void"}, ...};
-clover.testTargets = {"test_33":{"methods":[{"sl":16}],"name":"shouldThrowExceptionIfGetterIsMissing","pass":true,"statements":[{"sl":17}]},"test_98":{"methods":[{"sl":16}],"name":"beanWithMissingGetterShouldNotMatch","pass":true,"statements":[{"sl":17}]}}
+clover.testTargets = {"test_66":{"methods":[{"sl":16}],"name":"beanWithMissingGetterShouldNotMatch","pass":true,"statements":[{"sl":17}]},"test_73":{"methods":[{"sl":16}],"name":"shouldThrowExceptionIfGetterIsMissing","pass":true,"statements":[{"sl":17}]}}
 
 // JSON: { lines : [{tests : [testid1, testid2, testid3, ...]}, ...]};
-clover.srcFileLines = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [33, 98], [33, 98], [], []]
+clover.srcFileLines = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [66, 73], [66, 73], [], []]

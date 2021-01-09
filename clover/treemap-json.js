@@ -1,10 +1,10 @@
-var treeMapJson = {"id":"Clover database Sat Nov 9 2019 20:55:48 AEDT0","name":"","data":{
-    "$area":555.0,"$color":98.558556,"title":
-    " 555 Elements, 98.6% Coverage"},"children":[{"id":
+var treeMapJson = {"id":"Clover database Sun Jan 10 2021 08:31:34 AEDT0","name":"","data":{
+    "$area":557.0,"$color":98.563736,"title":
+    " 557 Elements, 98.6% Coverage"},"children":[{"id":
       "com.google.code.beanmatchers0","name":
-      "com.google.code.beanmatchers","data":{"$area":555.0,"$color":
-        98.558556,"title":
-        "com.google.code.beanmatchers 555 Elements, 98.6% Coverage"},
+      "com.google.code.beanmatchers","data":{"$area":557.0,"$color":
+        98.563736,"title":
+        "com.google.code.beanmatchers 557 Elements, 98.6% Coverage"},
       "children":[{"id":"AbstractBeanAccessorMatcher0","name":
           "AbstractBeanAccessorMatcher","data":{"$area":58.0,"$color":
             100.0,"path":
@@ -167,47 +167,47 @@ var treeMapJson = {"id":"Clover database Sat Nov 9 2019 20:55:48 AEDT0","name":"
             "$color":100.0,"path":
             "com/google/code/beanmatchers/JavaBean.html#JavaBean","title":
             "JavaBean 32 Elements, 100% Coverage"},"children":[]},{"id":
-          "ListGenerator521","name":"ListGenerator","data":{"$area":2.0,
+          "ListGenerator521","name":"ListGenerator","data":{"$area":4.0,
             "$color":100.0,"path":
             "com/google/code/beanmatchers/ListGenerator.html#ListGenerator",
-            "title":"ListGenerator 2 Elements, 100% Coverage"},"children":[]},
-        {"id":"LongGenerator523","name":"LongGenerator","data":{"$area":
+            "title":"ListGenerator 4 Elements, 100% Coverage"},"children":[]},
+        {"id":"LongGenerator525","name":"LongGenerator","data":{"$area":
             4.0,"$color":100.0,"path":
             "com/google/code/beanmatchers/LongGenerator.html#LongGenerator",
             "title":"LongGenerator 4 Elements, 100% Coverage"},"children":[]},
-        {"id":"MockingTypeBasedValueGenerator527","name":
+        {"id":"MockingTypeBasedValueGenerator529","name":
           "MockingTypeBasedValueGenerator","data":{"$area":2.0,"$color":
             100.0,"path":
             "com/google/code/beanmatchers/MockingTypeBasedValueGenerator.html#MockingTypeBasedValueGenerator",
             "title":
             "MockingTypeBasedValueGenerator 2 Elements, 100% Coverage"},
-          "children":[]},{"id":"ShortGenerator529","name":"ShortGenerator",
+          "children":[]},{"id":"ShortGenerator531","name":"ShortGenerator",
           "data":{"$area":7.0,"$color":100.0,"path":
             "com/google/code/beanmatchers/ShortGenerator.html#ShortGenerator",
             "title":"ShortGenerator 7 Elements, 100% Coverage"},"children":[]},
-        {"id":"StringGenerator536","name":"StringGenerator","data":{"$area":
+        {"id":"StringGenerator538","name":"StringGenerator","data":{"$area":
             2.0,"$color":100.0,"path":
             "com/google/code/beanmatchers/StringGenerator.html#StringGenerator",
             "title":"StringGenerator 2 Elements, 100% Coverage"},"children":[]},
-        {"id":"TypeBasedValueGenerator538","name":
+        {"id":"TypeBasedValueGenerator540","name":
           "TypeBasedValueGenerator","data":{"$area":0.0,"$color":-100.0,
             "path":
             "com/google/code/beanmatchers/TypeBasedValueGenerator.html#TypeBasedValueGenerator",
             "title":"TypeBasedValueGenerator 0 Elements,  -  Coverage"},
-          "children":[]},{"id":"UuidGenerator538","name":"UuidGenerator",
+          "children":[]},{"id":"UuidGenerator540","name":"UuidGenerator",
           "data":{"$area":2.0,"$color":100.0,"path":
             "com/google/code/beanmatchers/UuidGenerator.html#UuidGenerator",
             "title":"UuidGenerator 2 Elements, 100% Coverage"},"children":[]},
-        {"id":"ValueGenerator540","name":"ValueGenerator","data":{"$area":
+        {"id":"ValueGenerator542","name":"ValueGenerator","data":{"$area":
             0.0,"$color":-100.0,"path":
             "com/google/code/beanmatchers/ValueGenerator.html#ValueGenerator",
             "title":"ValueGenerator 0 Elements,  -  Coverage"},"children":[]},
-        {"id":"ValueGeneratorRepository540","name":
+        {"id":"ValueGeneratorRepository542","name":
           "ValueGeneratorRepository","data":{"$area":0.0,"$color":-100.0,
             "path":
             "com/google/code/beanmatchers/ValueGeneratorRepository.html#ValueGeneratorRepository",
             "title":"ValueGeneratorRepository 0 Elements,  -  Coverage"},
-          "children":[]},{"id":"ValueGenerators540","name":
+          "children":[]},{"id":"ValueGenerators542","name":
           "ValueGenerators","data":{"$area":15.0,"$color":93.333336,"path":
             "com/google/code/beanmatchers/ValueGenerators.html#ValueGenerators",
             "title":"ValueGenerators 15 Elements, 93.3% Coverage"},

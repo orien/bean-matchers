@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1573293374388" clover="4.4.1">
-   <project name="Bean Matchers 0.12" timestamp="1573293352438">
-      <metrics coveredelements="547" complexity="178" loc="1275" methods="129" classes="41" statements="348" packages="1" coveredconditionals="78" coveredmethods="126" elements="555" ncloc="1013" files="40" conditionals="78" coveredstatements="343"/>
+<coverage generated="1610227922690" clover="4.4.1">
+   <project name="Bean Matchers 0.13" timestamp="1610227898378">
+      <metrics coveredelements="549" complexity="179" loc="1283" methods="130" classes="41" statements="349" packages="1" coveredconditionals="78" coveredmethods="127" elements="557" ncloc="1018" files="40" conditionals="78" coveredstatements="344"/>
       <package name="com.google.code.beanmatchers">
-         <metrics coveredelements="547" complexity="178" loc="1275" methods="129" classes="41" statements="348" coveredconditionals="78" coveredmethods="126" elements="555" ncloc="1013" files="40" conditionals="78" coveredstatements="343"/>
+         <metrics coveredelements="549" complexity="179" loc="1283" methods="130" classes="41" statements="349" coveredconditionals="78" coveredmethods="127" elements="557" ncloc="1018" files="40" conditionals="78" coveredstatements="344"/>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/AbstractBeanAccessorMatcher.java" name="AbstractBeanAccessorMatcher.java">
             <metrics coveredelements="58" coveredconditionals="22" complexity="15" loc="70" coveredmethods="3" methods="3" elements="58" classes="1" ncloc="61" statements="33" conditionals="22" coveredstatements="33"/>
             <class name="AbstractBeanAccessorMatcher">
@@ -13,20 +13,20 @@
             <line num="14" count="24" type="stmt"/>
             <line complexity="2" visibility="protected" signature="beanHasValidGetterAndSetterForProperties(JavaBean,List&lt;String&gt;,Description) : boolean" num="17" count="21" type="method"/>
             <line num="19" count="21" type="stmt"/>
-            <line num="20" count="76" type="stmt"/>
-            <line falsecount="67" truecount="8" num="20" type="cond"/>
+            <line num="20" count="82" type="stmt"/>
+            <line falsecount="73" truecount="8" num="20" type="cond"/>
             <line num="21" count="8" type="stmt"/>
             <line num="26" count="8" type="stmt"/>
             <line num="29" count="12" type="stmt"/>
-            <line complexity="12" visibility="protected" signature="beanDoesNotHaveValidGetterAndSetterForProperty(JavaBean,String) : boolean" num="32" count="76" type="method"/>
-            <line num="33" count="76" type="stmt"/>
-            <line num="34" count="76" type="stmt"/>
-            <line num="35" count="76" type="stmt"/>
-            <line num="36" count="75" type="stmt"/>
-            <line num="37" count="74" type="stmt"/>
-            <line num="38" count="73" type="stmt"/>
-            <line num="42" count="73" type="stmt"/>
-            <line falsecount="58" truecount="15" num="42" type="cond"/>
+            <line complexity="12" visibility="protected" signature="beanDoesNotHaveValidGetterAndSetterForProperty(JavaBean,String) : boolean" num="32" count="82" type="method"/>
+            <line num="33" count="82" type="stmt"/>
+            <line num="34" count="82" type="stmt"/>
+            <line num="35" count="82" type="stmt"/>
+            <line num="36" count="81" type="stmt"/>
+            <line num="37" count="80" type="stmt"/>
+            <line num="38" count="79" type="stmt"/>
+            <line num="42" count="79" type="stmt"/>
+            <line falsecount="64" truecount="15" num="42" type="cond"/>
             <line num="43" count="15" type="stmt"/>
             <line falsecount="6" truecount="9" num="43" type="cond"/>
             <line num="44" count="9" type="stmt"/>
@@ -54,7 +54,7 @@
             <line falsecount="1" truecount="1" num="58" type="cond"/>
             <line num="59" count="1" type="stmt"/>
             <line num="61" count="1" type="stmt"/>
-            <line num="65" count="73" type="stmt"/>
+            <line num="65" count="79" type="stmt"/>
             <line num="67" count="2" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/AbstractBeanEqualsMatcher.java" name="AbstractBeanEqualsMatcher.java">
@@ -81,12 +81,12 @@
             <line num="29" count="4" type="stmt"/>
             <line num="31" count="4" type="stmt"/>
             <line num="33" count="20" type="stmt"/>
-            <line num="34" count="45" type="stmt"/>
-            <line falsecount="39" truecount="6" num="34" type="cond"/>
+            <line num="34" count="48" type="stmt"/>
+            <line falsecount="42" truecount="6" num="34" type="cond"/>
             <line num="35" count="6" type="stmt"/>
             <line num="37" count="6" type="stmt"/>
-            <line num="39" count="39" type="stmt"/>
-            <line falsecount="33" truecount="6" num="39" type="cond"/>
+            <line num="39" count="42" type="stmt"/>
+            <line falsecount="36" truecount="6" num="39" type="cond"/>
             <line num="40" count="6" type="stmt"/>
             <line num="42" count="6" type="stmt"/>
             <line num="45" count="8" type="stmt"/>
@@ -107,28 +107,28 @@
             <line complexity="1" visibility="private" signature="equalsDoesNotHandleDifferingType(Class&lt;T&gt;) : boolean" num="78" count="24" type="method"/>
             <line num="79" count="24" type="stmt"/>
             <line num="80" count="24" type="stmt"/>
-            <line complexity="1" visibility="private" signature="propertyNotComparedDuringEquals(Class&lt;T&gt;,String) : boolean" num="83" count="45" type="method"/>
-            <line num="84" count="45" type="stmt"/>
-            <line num="85" count="45" type="stmt"/>
-            <line num="86" count="45" type="stmt"/>
-            <line num="87" count="45" type="stmt"/>
-            <line num="88" count="45" type="stmt"/>
-            <line num="89" count="45" type="stmt"/>
-            <line num="90" count="45" type="stmt"/>
-            <line num="91" count="45" type="stmt"/>
-            <line num="92" count="45" type="stmt"/>
-            <line complexity="3" visibility="private" signature="nullPropertyNotHandled(Class&lt;T&gt;,String) : boolean" num="96" count="39" type="method"/>
-            <line num="97" count="39" type="stmt"/>
-            <line num="98" count="39" type="stmt"/>
-            <line num="99" count="39" type="stmt"/>
-            <line falsecount="31" truecount="8" num="99" type="cond"/>
+            <line complexity="1" visibility="private" signature="propertyNotComparedDuringEquals(Class&lt;T&gt;,String) : boolean" num="83" count="48" type="method"/>
+            <line num="84" count="48" type="stmt"/>
+            <line num="85" count="48" type="stmt"/>
+            <line num="86" count="48" type="stmt"/>
+            <line num="87" count="48" type="stmt"/>
+            <line num="88" count="48" type="stmt"/>
+            <line num="89" count="48" type="stmt"/>
+            <line num="90" count="48" type="stmt"/>
+            <line num="91" count="48" type="stmt"/>
+            <line num="92" count="48" type="stmt"/>
+            <line complexity="3" visibility="private" signature="nullPropertyNotHandled(Class&lt;T&gt;,String) : boolean" num="96" count="42" type="method"/>
+            <line num="97" count="42" type="stmt"/>
+            <line num="98" count="42" type="stmt"/>
+            <line num="99" count="42" type="stmt"/>
+            <line falsecount="34" truecount="8" num="99" type="cond"/>
             <line num="100" count="8" type="stmt"/>
-            <line num="102" count="31" type="stmt"/>
-            <line num="103" count="31" type="stmt"/>
-            <line num="104" count="31" type="stmt"/>
-            <line num="105" count="31" type="stmt"/>
-            <line num="106" count="31" type="stmt"/>
-            <line num="107" count="31" type="stmt"/>
+            <line num="102" count="34" type="stmt"/>
+            <line num="103" count="34" type="stmt"/>
+            <line num="104" count="34" type="stmt"/>
+            <line num="105" count="34" type="stmt"/>
+            <line num="106" count="34" type="stmt"/>
+            <line num="107" count="34" type="stmt"/>
             <line num="109" count="6" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/AbstractBeanHashCodeMatcher.java" name="AbstractBeanHashCodeMatcher.java">
@@ -140,19 +140,19 @@
             <line num="13" count="14" type="stmt"/>
             <line complexity="2" visibility="protected" signature="hashCodeIsInfluencedByProperties(JavaBean,List&lt;String&gt;,Description) : boolean" num="16" count="11" type="method"/>
             <line num="18" count="11" type="stmt"/>
-            <line num="19" count="29" type="stmt"/>
-            <line falsecount="25" truecount="4" num="19" type="cond"/>
+            <line num="19" count="32" type="stmt"/>
+            <line falsecount="28" truecount="4" num="19" type="cond"/>
             <line num="20" count="4" type="stmt"/>
             <line num="25" count="4" type="stmt"/>
             <line num="28" count="7" type="stmt"/>
-            <line complexity="1" visibility="private" signature="hashCodeNotInfluencedByProperty(JavaBean,String) : boolean" num="31" count="29" type="method"/>
-            <line num="32" count="29" type="stmt"/>
-            <line num="33" count="29" type="stmt"/>
-            <line num="34" count="29" type="stmt"/>
-            <line num="35" count="29" type="stmt"/>
-            <line num="36" count="29" type="stmt"/>
-            <line num="37" count="29" type="stmt"/>
-            <line num="38" count="29" type="stmt"/>
+            <line complexity="1" visibility="private" signature="hashCodeNotInfluencedByProperty(JavaBean,String) : boolean" num="31" count="32" type="method"/>
+            <line num="32" count="32" type="stmt"/>
+            <line num="33" count="32" type="stmt"/>
+            <line num="34" count="32" type="stmt"/>
+            <line num="35" count="32" type="stmt"/>
+            <line num="36" count="32" type="stmt"/>
+            <line num="37" count="32" type="stmt"/>
+            <line num="38" count="32" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/AbstractBeanToStringMatcher.java" name="AbstractBeanToStringMatcher.java">
             <metrics coveredelements="40" coveredconditionals="12" complexity="10" loc="68" coveredmethods="4" methods="4" elements="40" classes="1" ncloc="62" statements="24" conditionals="12" coveredstatements="24"/>
@@ -168,29 +168,29 @@
             <line num="19" count="4" type="stmt"/>
             <line num="22" count="4" type="stmt"/>
             <line num="24" count="19" type="stmt"/>
-            <line num="25" count="35" type="stmt"/>
-            <line num="26" count="35" type="stmt"/>
-            <line num="27" count="35" type="stmt"/>
-            <line num="28" count="35" type="stmt"/>
-            <line num="29" count="35" type="stmt"/>
-            <line falsecount="31" truecount="4" num="29" type="cond"/>
+            <line num="25" count="38" type="stmt"/>
+            <line num="26" count="38" type="stmt"/>
+            <line num="27" count="38" type="stmt"/>
+            <line num="28" count="38" type="stmt"/>
+            <line num="29" count="38" type="stmt"/>
+            <line falsecount="34" truecount="4" num="29" type="cond"/>
             <line num="30" count="4" type="stmt"/>
             <line num="35" count="4" type="stmt"/>
-            <line num="37" count="31" type="stmt"/>
-            <line falsecount="25" truecount="6" num="37" type="cond"/>
+            <line num="37" count="34" type="stmt"/>
+            <line falsecount="28" truecount="6" num="37" type="cond"/>
             <line num="38" count="6" type="stmt"/>
             <line num="43" count="6" type="stmt"/>
             <line num="46" count="9" type="stmt"/>
-            <line complexity="4" visibility="private" signature="resultDoesNotContainValue(String,Object) : boolean" num="49" count="42" type="method"/>
-            <line num="50" count="42" type="stmt"/>
-            <line falsecount="37" truecount="5" num="50" type="cond"/>
+            <line complexity="4" visibility="private" signature="resultDoesNotContainValue(String,Object) : boolean" num="49" count="45" type="method"/>
+            <line num="50" count="45" type="stmt"/>
+            <line falsecount="40" truecount="5" num="50" type="cond"/>
             <line num="51" count="5" type="stmt"/>
             <line falsecount="3" truecount="11" num="51" type="cond"/>
             <line num="52" count="11" type="stmt"/>
             <line falsecount="9" truecount="2" num="52" type="cond"/>
             <line num="53" count="2" type="stmt"/>
             <line num="56" count="3" type="stmt"/>
-            <line num="58" count="37" type="stmt"/>
+            <line num="58" count="40" type="stmt"/>
             <line complexity="1" visibility="private" signature="describeToStringMismatch(Class,Description) : Description" num="62" count="14" type="method"/>
             <line num="63" count="14" type="stmt"/>
          </file>
@@ -293,49 +293,49 @@
                <metrics coveredelements="41" coveredconditionals="4" complexity="19" coveredmethods="10" methods="11" elements="47" statements="32" conditionals="4" coveredstatements="27"/>
             </class>
             <line complexity="1" visibility="private" signature="BeanOperations()" num="14" count="0" type="method"/>
-            <line complexity="4" visibility="public" signature="instantiateBean(Class&lt;T&gt;) : T" num="17" count="370" type="method"/>
-            <line num="18" count="370" type="stmt"/>
-            <line num="19" count="370" type="stmt"/>
-            <line num="20" count="370" type="stmt"/>
-            <line num="21" count="370" type="stmt"/>
+            <line complexity="4" visibility="public" signature="instantiateBean(Class&lt;T&gt;) : T" num="17" count="388" type="method"/>
+            <line num="18" count="388" type="stmt"/>
+            <line num="19" count="388" type="stmt"/>
+            <line num="20" count="388" type="stmt"/>
+            <line num="21" count="388" type="stmt"/>
             <line num="23" count="0" type="stmt"/>
             <line num="26" count="0" type="stmt"/>
             <line num="29" count="0" type="stmt"/>
-            <line complexity="2" visibility="public" signature="noArgsConstructor(Class&lt;T&gt;) : Constructor&lt;T&gt;" num="34" count="375" type="method"/>
-            <line num="35" count="375" type="stmt"/>
-            <line num="36" count="375" type="stmt"/>
+            <line complexity="2" visibility="public" signature="noArgsConstructor(Class&lt;T&gt;) : Constructor&lt;T&gt;" num="34" count="393" type="method"/>
+            <line num="35" count="393" type="stmt"/>
+            <line num="36" count="393" type="stmt"/>
             <line num="38" count="2" type="stmt"/>
             <line complexity="1" visibility="public" signature="properties(Class&lt;?&gt;) : List&lt;String&gt;" num="42" count="29" type="method"/>
             <line num="43" count="29" type="stmt"/>
             <line complexity="1" visibility="public" signature="properties(PropertyDescriptor[]) : List&lt;String&gt;" num="46" count="49" type="method"/>
             <line num="47" count="49" type="stmt"/>
             <line num="48" count="49" type="stmt"/>
-            <line num="49" count="214" type="stmt"/>
+            <line num="49" count="229" type="stmt"/>
             <line num="51" count="49" type="stmt"/>
             <line num="52" count="49" type="stmt"/>
-            <line complexity="1" visibility="public" signature="propertyDescriptors(T) : PropertyDescriptor[]" num="55" count="404" type="method"/>
-            <line num="56" count="404" type="stmt"/>
-            <line complexity="1" visibility="private" signature="propertyDescriptors(Class&lt;?&gt;) : PropertyDescriptor[]" num="59" count="433" type="method"/>
-            <line num="60" count="433" type="stmt"/>
-            <line complexity="2" visibility="private" signature="beanInfo(Class) : BeanInfo" num="63" count="433" type="method"/>
-            <line num="64" count="433" type="stmt"/>
-            <line num="65" count="433" type="stmt"/>
+            <line complexity="1" visibility="public" signature="propertyDescriptors(T) : PropertyDescriptor[]" num="55" count="422" type="method"/>
+            <line num="56" count="422" type="stmt"/>
+            <line complexity="1" visibility="private" signature="propertyDescriptors(Class&lt;?&gt;) : PropertyDescriptor[]" num="59" count="451" type="method"/>
+            <line num="60" count="451" type="stmt"/>
+            <line complexity="2" visibility="private" signature="beanInfo(Class) : BeanInfo" num="63" count="451" type="method"/>
+            <line num="64" count="451" type="stmt"/>
+            <line num="65" count="451" type="stmt"/>
             <line num="67" count="0" type="stmt"/>
-            <line complexity="2" visibility="public" signature="invokeGetter(Object,PropertyDescriptor) : Object" num="71" count="77" type="method"/>
-            <line num="72" count="77" type="stmt"/>
-            <line num="73" count="77" type="stmt"/>
-            <line falsecount="75" truecount="2" num="73" type="cond"/>
+            <line complexity="2" visibility="public" signature="invokeGetter(Object,PropertyDescriptor) : Object" num="71" count="83" type="method"/>
+            <line num="72" count="83" type="stmt"/>
+            <line num="73" count="83" type="stmt"/>
+            <line falsecount="81" truecount="2" num="73" type="cond"/>
             <line num="74" count="2" type="stmt"/>
-            <line num="76" count="75" type="stmt"/>
-            <line complexity="2" visibility="public" signature="invokeSetter(Object,PropertyDescriptor,Object) : void" num="79" count="368" type="method"/>
-            <line num="80" count="368" type="stmt"/>
-            <line num="81" count="368" type="stmt"/>
-            <line falsecount="366" truecount="2" num="81" type="cond"/>
+            <line num="76" count="81" type="stmt"/>
+            <line complexity="2" visibility="public" signature="invokeSetter(Object,PropertyDescriptor,Object) : void" num="79" count="398" type="method"/>
+            <line num="80" count="398" type="stmt"/>
+            <line num="81" count="398" type="stmt"/>
+            <line falsecount="396" truecount="2" num="81" type="cond"/>
             <line num="82" count="2" type="stmt"/>
-            <line num="84" count="366" type="stmt"/>
-            <line complexity="2" visibility="private" signature="invokeMethod(Object,Method,Object) : Object" num="87" count="441" type="method"/>
-            <line num="88" count="441" type="stmt"/>
-            <line num="89" count="441" type="stmt"/>
+            <line num="84" count="396" type="stmt"/>
+            <line complexity="2" visibility="private" signature="invokeMethod(Object,Method,Object) : Object" num="87" count="477" type="method"/>
+            <line num="88" count="477" type="stmt"/>
+            <line num="89" count="477" type="stmt"/>
             <line num="91" count="0" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/BooleanGenerator.java" name="BooleanGenerator.java">
@@ -345,8 +345,8 @@
             </class>
             <line complexity="1" visibility="public" signature="BooleanGenerator(Random)" num="9" count="2" type="method"/>
             <line num="10" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="generate() : Boolean" num="13" count="23" type="method"/>
-            <line num="14" count="23" type="stmt"/>
+            <line complexity="1" visibility="public" signature="generate() : Boolean" num="13" count="18" type="method"/>
+            <line num="14" count="18" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/ByteGenerator.java" name="ByteGenerator.java">
             <metrics coveredelements="6" coveredconditionals="0" complexity="2" loc="18" coveredmethods="2" methods="2" elements="6" classes="1" ncloc="13" statements="4" conditionals="0" coveredstatements="4"/>
@@ -383,17 +383,17 @@
             <line num="17" count="6" type="stmt"/>
             <line num="18" count="6" type="stmt"/>
             <line num="19" count="6" type="stmt"/>
-            <line complexity="5" visibility="public" signature="generate(Class&lt;T&gt;) : T" num="22" count="282" type="method"/>
-            <line num="23" count="282" type="stmt"/>
-            <line num="24" count="282" type="stmt"/>
-            <line falsecount="91" truecount="191" num="24" type="cond"/>
-            <line num="25" count="191" type="stmt"/>
-            <line num="27" count="91" type="stmt"/>
-            <line falsecount="40" truecount="51" num="27" type="cond"/>
+            <line complexity="5" visibility="public" signature="generate(Class&lt;T&gt;) : T" num="22" count="297" type="method"/>
+            <line num="23" count="297" type="stmt"/>
+            <line num="24" count="297" type="stmt"/>
+            <line falsecount="87" truecount="210" num="24" type="cond"/>
+            <line num="25" count="210" type="stmt"/>
+            <line num="27" count="87" type="stmt"/>
+            <line falsecount="36" truecount="51" num="27" type="cond"/>
             <line num="28" count="51" type="stmt"/>
-            <line num="30" count="40" type="stmt"/>
-            <line falsecount="27" truecount="13" num="30" type="cond"/>
-            <line num="31" count="13" type="stmt"/>
+            <line num="30" count="36" type="stmt"/>
+            <line falsecount="27" truecount="9" num="30" type="cond"/>
+            <line num="31" count="9" type="stmt"/>
             <line num="33" count="27" type="stmt"/>
             <line falsecount="2" truecount="25" num="33" type="cond"/>
             <line num="34" count="25" type="stmt"/>
@@ -404,13 +404,13 @@
             <class name="DistinctValues">
                <metrics coveredelements="7" coveredconditionals="0" complexity="3" coveredmethods="3" methods="3" elements="7" statements="4" conditionals="0" coveredstatements="4"/>
             </class>
-            <line complexity="1" visibility="public" signature="DistinctValues(T,T)" num="7" count="76" type="method"/>
-            <line num="8" count="76" type="stmt"/>
-            <line num="9" count="76" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getValueOne() : T" num="12" count="121" type="method"/>
-            <line num="13" count="121" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getValueTwo() : T" num="16" count="76" type="method"/>
-            <line num="17" count="76" type="stmt"/>
+            <line complexity="1" visibility="public" signature="DistinctValues(T,T)" num="7" count="82" type="method"/>
+            <line num="8" count="82" type="stmt"/>
+            <line num="9" count="82" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getValueOne() : T" num="12" count="130" type="method"/>
+            <line num="13" count="130" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getValueTwo() : T" num="16" count="82" type="method"/>
+            <line num="17" count="82" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/DoubleGenerator.java" name="DoubleGenerator.java">
             <metrics coveredelements="4" coveredconditionals="0" complexity="2" loc="16" coveredmethods="2" methods="2" elements="4" classes="1" ncloc="11" statements="2" conditionals="0" coveredstatements="2"/>
@@ -429,10 +429,10 @@
             </class>
             <line complexity="1" visibility="public" signature="EnumBasedValueGenerator(Random)" num="9" count="3" type="method"/>
             <line num="10" count="3" type="stmt"/>
-            <line complexity="1" visibility="public" signature="generate(Class&lt;T&gt;) : T" num="13" count="14" type="method"/>
-            <line num="14" count="14" type="stmt"/>
-            <line num="15" count="14" type="stmt"/>
-            <line num="16" count="14" type="stmt"/>
+            <line complexity="1" visibility="public" signature="generate(Class&lt;T&gt;) : T" num="13" count="10" type="method"/>
+            <line num="14" count="10" type="stmt"/>
+            <line num="15" count="10" type="stmt"/>
+            <line num="16" count="10" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/FloatGenerator.java" name="FloatGenerator.java">
             <metrics coveredelements="4" coveredconditionals="0" complexity="2" loc="16" coveredmethods="2" methods="2" elements="4" classes="1" ncloc="11" statements="2" conditionals="0" coveredstatements="2"/>
@@ -606,8 +606,8 @@
             <line complexity="1" visibility="public" signature="registerValueGenerator(ValueGenerator&lt;T&gt;,Class&lt;T&gt;,Class&lt;T&gt;) : void" num="15" count="9" type="method"/>
             <line num="17" count="9" type="stmt"/>
             <line num="18" count="9" type="stmt"/>
-            <line complexity="1" visibility="public" signature="retrieveValueGenerator(Class&lt;T&gt;) : ValueGenerator&lt;T&gt;" num="21" count="281" type="method"/>
-            <line num="23" count="281" type="stmt"/>
+            <line complexity="1" visibility="public" signature="retrieveValueGenerator(Class&lt;T&gt;) : ValueGenerator&lt;T&gt;" num="21" count="296" type="method"/>
+            <line num="23" count="296" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/InstantiatingMatcherDecorator.java" name="InstantiatingMatcherDecorator.java">
             <metrics coveredelements="10" coveredconditionals="0" complexity="4" loc="32" coveredmethods="4" methods="4" elements="10" classes="1" ncloc="24" statements="6" conditionals="0" coveredstatements="6"/>
@@ -640,44 +640,46 @@
             <class name="JavaBean">
                <metrics coveredelements="32" coveredconditionals="4" complexity="13" coveredmethods="11" methods="11" elements="32" statements="17" conditionals="4" coveredstatements="17"/>
             </class>
-            <line complexity="1" visibility="public" signature="JavaBean(Object)" num="16" count="399" type="method"/>
-            <line num="17" count="399" type="stmt"/>
-            <line num="18" count="399" type="stmt"/>
-            <line complexity="1" visibility="public" signature="JavaBean(Class)" num="21" count="362" type="method"/>
-            <line num="22" count="362" type="stmt"/>
+            <line complexity="1" visibility="public" signature="JavaBean(Object)" num="16" count="417" type="method"/>
+            <line num="17" count="417" type="stmt"/>
+            <line num="18" count="417" type="stmt"/>
+            <line complexity="1" visibility="public" signature="JavaBean(Class)" num="21" count="380" type="method"/>
+            <line num="22" count="380" type="stmt"/>
             <line complexity="1" visibility="public" signature="beanType() : Class" num="25" count="13" type="method"/>
             <line num="26" count="13" type="stmt"/>
-            <line complexity="1" visibility="public" signature="propertyType(String) : Class&lt;?&gt;" num="29" count="226" type="method"/>
-            <line num="30" count="226" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setProperty(String,Object) : void" num="33" count="367" type="method"/>
-            <line num="34" count="367" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getProperty(String) : Object" num="37" count="76" type="method"/>
-            <line num="38" count="76" type="stmt"/>
-            <line complexity="2" visibility="private" signature="descriptorForName(String) : PropertyDescriptor" num="41" count="669" type="method"/>
-            <line num="42" count="669" type="stmt"/>
-            <line num="43" count="5744" type="stmt"/>
-            <line falsecount="5078" truecount="666" num="43" type="cond"/>
-            <line num="44" count="666" type="stmt"/>
+            <line complexity="1" visibility="public" signature="propertyType(String) : Class&lt;?&gt;" num="29" count="244" type="method"/>
+            <line num="30" count="244" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setProperty(String,Object) : void" num="33" count="397" type="method"/>
+            <line num="34" count="397" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getProperty(String) : Object" num="37" count="82" type="method"/>
+            <line num="38" count="82" type="stmt"/>
+            <line complexity="2" visibility="private" signature="descriptorForName(String) : PropertyDescriptor" num="41" count="723" type="method"/>
+            <line num="42" count="723" type="stmt"/>
+            <line num="43" count="7140" type="stmt"/>
+            <line falsecount="6420" truecount="720" num="43" type="cond"/>
+            <line num="44" count="720" type="stmt"/>
             <line num="47" count="3" type="stmt"/>
             <line complexity="1" visibility="public" signature="properties() : List&lt;String&gt;" num="51" count="20" type="method"/>
             <line num="52" count="20" type="stmt"/>
-            <line complexity="1" visibility="public" signature="toString() : String" num="55" count="59" type="method"/>
-            <line num="56" count="59" type="stmt"/>
-            <line complexity="1" visibility="public" signature="hashCode() : int" num="59" count="59" type="method"/>
-            <line num="61" count="59" type="stmt"/>
-            <line complexity="2" visibility="public" signature="equals(Object) : boolean" num="64" count="238" type="method"/>
-            <line num="66" count="238" type="stmt"/>
-            <line falsecount="56" truecount="182" num="66" type="cond"/>
-            <line num="67" count="182" type="stmt"/>
+            <line complexity="1" visibility="public" signature="toString() : String" num="55" count="62" type="method"/>
+            <line num="56" count="62" type="stmt"/>
+            <line complexity="1" visibility="public" signature="hashCode() : int" num="59" count="65" type="method"/>
+            <line num="61" count="65" type="stmt"/>
+            <line complexity="2" visibility="public" signature="equals(Object) : boolean" num="64" count="250" type="method"/>
+            <line num="66" count="250" type="stmt"/>
+            <line falsecount="56" truecount="194" num="66" type="cond"/>
+            <line num="67" count="194" type="stmt"/>
             <line num="69" count="56" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/ListGenerator.java" name="ListGenerator.java">
-            <metrics coveredelements="2" coveredconditionals="0" complexity="1" loc="11" coveredmethods="1" methods="1" elements="2" classes="1" ncloc="8" statements="1" conditionals="0" coveredstatements="1"/>
+            <metrics coveredelements="4" coveredconditionals="0" complexity="2" loc="19" coveredmethods="2" methods="2" elements="4" classes="1" ncloc="13" statements="2" conditionals="0" coveredstatements="2"/>
             <class name="ListGenerator">
-               <metrics coveredelements="2" coveredconditionals="0" complexity="1" coveredmethods="1" methods="1" elements="2" statements="1" conditionals="0" coveredstatements="1"/>
+               <metrics coveredelements="4" coveredconditionals="0" complexity="2" coveredmethods="2" methods="2" elements="4" statements="2" conditionals="0" coveredstatements="2"/>
             </class>
-            <line complexity="1" visibility="public" signature="generate() : List" num="8" count="3" type="method"/>
-            <line num="9" count="3" type="stmt"/>
+            <line complexity="1" visibility="public" signature="ListGenerator(Random)" num="12" count="3" type="method"/>
+            <line num="13" count="3" type="stmt"/>
+            <line complexity="1" visibility="public" signature="generate() : List" num="16" count="27" type="method"/>
+            <line num="17" count="27" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/main/java/com/google/code/beanmatchers/LongGenerator.java" name="LongGenerator.java">
             <metrics coveredelements="4" coveredconditionals="0" complexity="2" loc="16" coveredmethods="2" methods="2" elements="4" classes="1" ncloc="11" statements="2" conditionals="0" coveredstatements="2"/>
@@ -750,25 +752,25 @@
                <metrics coveredelements="14" coveredconditionals="4" complexity="4" coveredmethods="1" methods="2" elements="15" statements="9" conditionals="4" coveredstatements="9"/>
             </class>
             <line complexity="1" visibility="private" signature="ValueGenerators()" num="6" count="0" type="method"/>
-            <line complexity="3" visibility="public" signature="generateTwoDistinctValues(TypeBasedValueGenerator,Class&lt;T&gt;) : DistinctValues&lt;T&gt;" num="9" count="77" type="method"/>
-            <line num="11" count="77" type="stmt"/>
-            <line num="12" count="77" type="stmt"/>
-            <line num="13" count="77" type="stmt"/>
-            <line num="14" count="77" type="stmt"/>
-            <line num="15" count="217" type="stmt"/>
-            <line falsecount="216" truecount="1" num="15" type="cond"/>
+            <line complexity="3" visibility="public" signature="generateTwoDistinctValues(TypeBasedValueGenerator,Class&lt;T&gt;) : DistinctValues&lt;T&gt;" num="9" count="83" type="method"/>
+            <line num="11" count="83" type="stmt"/>
+            <line num="12" count="83" type="stmt"/>
+            <line num="13" count="83" type="stmt"/>
+            <line num="14" count="83" type="stmt"/>
+            <line num="15" count="214" type="stmt"/>
+            <line falsecount="213" truecount="1" num="15" type="cond"/>
             <line num="16" count="1" type="stmt"/>
-            <line num="19" count="216" type="stmt"/>
-            <line num="20" count="216" type="stmt"/>
-            <line falsecount="76" truecount="140" num="21" type="cond"/>
-            <line num="22" count="76" type="stmt"/>
+            <line num="19" count="213" type="stmt"/>
+            <line num="20" count="213" type="stmt"/>
+            <line falsecount="82" truecount="131" num="21" type="cond"/>
+            <line num="22" count="82" type="stmt"/>
          </file>
       </package>
    </project>
-   <testproject name="Bean Matchers 0.12" timestamp="1573293352438">
-      <metrics coveredelements="1275" complexity="400" loc="3807" methods="341" classes="63" statements="938" packages="2" coveredconditionals="67" coveredmethods="311" elements="1383" ncloc="2545" files="63" conditionals="104" coveredstatements="897"/>
+   <testproject name="Bean Matchers 0.13" timestamp="1610227898378">
+      <metrics coveredelements="1293" complexity="409" loc="3846" methods="348" classes="64" statements="946" packages="2" coveredconditionals="70" coveredmethods="318" elements="1402" ncloc="2574" files="63" conditionals="108" coveredstatements="905"/>
       <package name="com.google.code.beanmatchers">
-         <metrics coveredelements="938" complexity="201" loc="2945" methods="199" classes="32" statements="741" coveredconditionals="2" coveredmethods="197" elements="942" ncloc="1889" files="32" conditionals="2" coveredstatements="739"/>
+         <metrics coveredelements="938" complexity="201" loc="2944" methods="199" classes="32" statements="741" coveredconditionals="2" coveredmethods="197" elements="942" ncloc="1887" files="32" conditionals="2" coveredstatements="739"/>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/ArrayTypeBasedValueGeneratorTest.java" name="ArrayTypeBasedValueGeneratorTest.java">
             <metrics coveredelements="12" coveredconditionals="0" complexity="3" loc="54" coveredmethods="3" methods="3" elements="12" classes="1" ncloc="36" statements="9" conditionals="0" coveredstatements="9"/>
             <class name="ArrayTypeBasedValueGeneratorTest">
@@ -790,13 +792,13 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/BeanMatchersExceptionTest.java" name="BeanMatchersExceptionTest.java">
             <metrics coveredelements="14" coveredconditionals="0" complexity="3" loc="47" coveredmethods="3" methods="3" elements="14" classes="1" ncloc="26" statements="11" conditionals="0" coveredstatements="11"/>
             <class name="BeanMatchersExceptionTest">
-               <metrics coveredelements="14" complexity="3" methods="3" testruns="3" statements="11" coveredconditionals="0" coveredmethods="3" elements="14" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="11" testpasses="3"/>
+               <metrics coveredelements="14" complexity="3" methods="3" testruns="3" statements="11" coveredconditionals="0" coveredmethods="3" elements="14" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="11" testpasses="3"/>
             </class>
             <line complexity="1" visibility="public" signature="canCreateExceptionWithMessage() : void" num="10" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="13" count="1" type="stmt"/>
             <line num="16" count="1" type="stmt"/>
             <line num="19" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="canCreateExceptionWithCause() : void" num="22" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="canCreateExceptionWithCause() : void" num="22" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="25" count="1" type="stmt"/>
             <line num="28" count="1" type="stmt"/>
             <line num="31" count="1" type="stmt"/>
@@ -810,43 +812,43 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/BeanMatchersTest.java" name="BeanMatchersTest.java">
             <metrics coveredelements="39" coveredconditionals="0" complexity="19" loc="121" coveredmethods="19" methods="19" elements="39" classes="1" ncloc="99" statements="20" conditionals="0" coveredstatements="20"/>
             <class name="BeanMatchersTest">
-               <metrics coveredelements="39" complexity="19" methods="19" testruns="19" statements="20" coveredconditionals="0" coveredmethods="19" elements="39" testfailures="0" testduration="0.10200000000000001" conditionals="0" coveredstatements="20" testpasses="19"/>
+               <metrics coveredelements="39" complexity="19" methods="19" testruns="19" statements="20" coveredconditionals="0" coveredmethods="19" elements="39" testfailures="0" testduration="0.105" conditionals="0" coveredstatements="20" testpasses="19"/>
             </class>
             <line complexity="1" visibility="public" signature="testHasValidBeanConstructor() : void" num="26" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="28" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testBeanHasValidGettersAndSettersFor() : void" num="31" testsuccess="true" count="1" testduration="0.002" type="method"/>
+            <line complexity="1" visibility="public" signature="testBeanHasValidGettersAndSettersFor() : void" num="31" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="33" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testHasValidGettersAndSettersFor() : void" num="36" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="38" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testBeanHasValidGettersAndSettersExcluding() : void" num="41" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="43" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidGettersAndSettersExcluding() : void" num="46" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidGettersAndSettersExcluding() : void" num="46" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="48" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testBeanHasValidGettersAndSetters() : void" num="51" testsuccess="true" count="1" testduration="0.044" type="method"/>
+            <line complexity="1" visibility="public" signature="testBeanHasValidGettersAndSetters() : void" num="51" testsuccess="true" count="1" testduration="0.043" type="method"/>
             <line num="53" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidGettersAndSetters() : void" num="56" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidGettersAndSetters() : void" num="56" testsuccess="true" count="1" testduration="0.002" type="method"/>
             <line num="58" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanHashCode() : void" num="61" testsuccess="true" count="1" testduration="0.002" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanHashCode() : void" num="61" testsuccess="true" count="1" testduration="0.004" type="method"/>
             <line num="63" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanHashCodeFor() : void" num="66" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanHashCodeFor() : void" num="66" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="68" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testHasValidBeanHashCodeExcluding() : void" num="71" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="73" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanEquals() : void" num="76" testsuccess="true" count="1" testduration="0.015" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanEquals() : void" num="76" testsuccess="true" count="1" testduration="0.014" type="method"/>
             <line num="78" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testHasValidBeanEqualsOnNonReflectedEquals() : void" num="81" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="83" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testHasValidBeanEqualsExcluding() : void" num="86" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="88" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanEqualsFor() : void" num="91" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanEqualsFor() : void" num="91" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="93" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanToString() : void" num="96" testsuccess="true" count="1" testduration="0.016" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanToString() : void" num="96" testsuccess="true" count="1" testduration="0.021" type="method"/>
             <line num="98" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="testHasValidBeanToStringExcluding() : void" num="101" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="103" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="testHasValidBeanToStringFor() : void" num="106" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="testHasValidBeanToStringFor() : void" num="106" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="108" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() : void" num="111" testsuccess="true" count="1" testduration="0.014" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldThrowExceptionOnBeanWithPropertyNeedingCustomValueGenerator() : void" num="111" testsuccess="true" count="1" testduration="0.012" type="method"/>
             <line num="113" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="canRegisterCustomValueGenerator() : void" num="116" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="118" count="1" type="stmt"/>
@@ -855,7 +857,7 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/BeanOperationsTest.java" name="BeanOperationsTest.java">
             <metrics coveredelements="43" coveredconditionals="2" complexity="10" loc="119" coveredmethods="9" methods="9" elements="44" classes="1" ncloc="77" statements="33" conditionals="2" coveredstatements="32"/>
             <class name="BeanOperationsTest">
-               <metrics coveredelements="43" complexity="10" methods="9" testruns="8" statements="33" coveredconditionals="2" coveredmethods="9" elements="44" testfailures="0" testduration="0.004" conditionals="2" coveredstatements="32" testpasses="8"/>
+               <metrics coveredelements="43" complexity="10" methods="9" testruns="8" statements="33" coveredconditionals="2" coveredmethods="9" elements="44" testfailures="0" testduration="0.006" conditionals="2" coveredstatements="32" testpasses="8"/>
             </class>
             <line complexity="1" visibility="public" signature="canInstantiateClassUsingNoArgsConstructor() : void" num="20" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="23" count="1" type="stmt"/>
@@ -877,7 +879,7 @@
             <line num="65" count="1" type="stmt"/>
             <line num="68" count="1" type="stmt"/>
             <line num="71" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldThrowExceptionIfGetterIsMissing() : void" num="74" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldThrowExceptionIfGetterIsMissing() : void" num="74" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="77" count="1" type="stmt"/>
             <line num="78" count="1" type="stmt"/>
             <line num="79" count="1" type="stmt"/>
@@ -889,7 +891,7 @@
             <line num="91" count="1" type="stmt"/>
             <line num="94" count="1" type="stmt"/>
             <line num="97" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldThrowExceptionIfSetterIsMissing() : void" num="100" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldThrowExceptionIfSetterIsMissing() : void" num="100" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="103" count="1" type="stmt"/>
             <line num="104" count="1" type="stmt"/>
             <line num="105" count="1" type="stmt"/>
@@ -918,11 +920,11 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/ByteGeneratorTest.java" name="ByteGeneratorTest.java">
             <metrics coveredelements="9" coveredconditionals="0" complexity="3" loc="40" coveredmethods="3" methods="3" elements="9" classes="1" ncloc="27" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="ByteGeneratorTest">
-               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="2"/>
+               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="2"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="17" count="2" type="method"/>
             <line num="19" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldProvideValue() : void" num="22" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldProvideValue() : void" num="22" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="25" count="1" type="stmt"/>
             <line num="28" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="shouldProvideDifferingValueOnSubsequentCall() : void" num="31" testsuccess="true" count="1" testduration="0.0" type="method"/>
@@ -953,13 +955,13 @@
             <line complexity="1" visibility="public" signature="setUp() : void" num="33" count="5" type="method"/>
             <line num="35" count="5" type="stmt"/>
             <line num="36" count="5" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDelegateGeneration() : void" num="43" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldDelegateGeneration() : void" num="43" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="46" count="1" type="stmt"/>
             <line num="47" count="1" type="stmt"/>
             <line num="48" count="1" type="stmt"/>
             <line num="51" count="1" type="stmt"/>
             <line num="54" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldUseNonFinalGeneratorWhenNoGeneratorRegisteredForTypeAndTypeIsNotFinal() : void" num="57" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldUseNonFinalGeneratorWhenNoGeneratorRegisteredForTypeAndTypeIsNotFinal() : void" num="57" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="60" count="1" type="stmt"/>
             <line num="61" count="1" type="stmt"/>
             <line num="62" count="1" type="stmt"/>
@@ -983,12 +985,12 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/DoubleGeneratorTest.java" name="DoubleGeneratorTest.java">
             <metrics coveredelements="8" coveredconditionals="0" complexity="2" loc="38" coveredmethods="2" methods="2" elements="8" classes="1" ncloc="26" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="DoubleGeneratorTest">
-               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="1"/>
+               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="1"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="20" count="1" type="method"/>
             <line num="22" count="1" type="stmt"/>
             <line num="23" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldGenerateRandomValue() : void" num="26" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldGenerateRandomValue() : void" num="26" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="29" count="1" type="stmt"/>
             <line num="30" count="1" type="stmt"/>
             <line num="33" count="1" type="stmt"/>
@@ -997,15 +999,15 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/EnumBasedValueGeneratorTest.java" name="EnumBasedValueGeneratorTest.java">
             <metrics coveredelements="10" coveredconditionals="0" complexity="3" loc="49" coveredmethods="3" methods="3" elements="10" classes="1" ncloc="32" statements="7" conditionals="0" coveredstatements="7"/>
             <class name="EnumBasedValueGeneratorTest">
-               <metrics coveredelements="10" complexity="3" methods="3" testruns="2" statements="7" coveredconditionals="0" coveredmethods="3" elements="10" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="7" testpasses="2"/>
+               <metrics coveredelements="10" complexity="3" methods="3" testruns="2" statements="7" coveredconditionals="0" coveredmethods="3" elements="10" testfailures="0" testduration="0.016" conditionals="0" coveredstatements="7" testpasses="2"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="22" count="2" type="method"/>
             <line num="24" count="2" type="stmt"/>
             <line num="25" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldObtainEnumValue() : void" num="28" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldObtainEnumValue() : void" num="28" testsuccess="true" count="1" testduration="0.013" type="method"/>
             <line num="32" count="1" type="stmt"/>
             <line num="35" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldObtainRandomEnumValue() : void" num="38" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldObtainRandomEnumValue() : void" num="38" testsuccess="true" count="1" testduration="0.003" type="method"/>
             <line num="41" count="1" type="stmt"/>
             <line num="44" count="1" type="stmt"/>
             <line num="47" count="1" type="stmt"/>
@@ -1040,7 +1042,7 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasToStringDescribingPropertiesExcludingMatcherTest.java" name="HasToStringDescribingPropertiesExcludingMatcherTest.java">
             <metrics coveredelements="76" coveredconditionals="0" complexity="13" loc="205" coveredmethods="13" methods="13" elements="76" classes="1" ncloc="125" statements="63" conditionals="0" coveredstatements="63"/>
             <class name="HasToStringDescribingPropertiesExcludingMatcherTest">
-               <metrics coveredelements="76" complexity="13" methods="13" testruns="12" statements="63" coveredconditionals="0" coveredmethods="13" elements="76" testfailures="0" testduration="0.003" conditionals="0" coveredstatements="63" testpasses="12"/>
+               <metrics coveredelements="76" complexity="13" methods="13" testruns="12" statements="63" coveredconditionals="0" coveredmethods="13" elements="76" testfailures="0" testduration="0.008" conditionals="0" coveredstatements="63" testpasses="12"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="31" count="12" type="method"/>
             <line num="33" count="12" type="stmt"/>
@@ -1070,7 +1072,7 @@
             <line num="85" count="1" type="stmt"/>
             <line num="88" count="1" type="stmt"/>
             <line num="91" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutPropertyNameInToStringShouldBeDiagnosed() : void" num="94" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutPropertyNameInToStringShouldBeDiagnosed() : void" num="94" testsuccess="true" count="1" testduration="0.002" type="method"/>
             <line num="97" count="1" type="stmt"/>
             <line num="98" count="1" type="stmt"/>
             <line num="101" count="1" type="stmt"/>
@@ -1093,13 +1095,13 @@
             <line num="136" count="1" type="stmt"/>
             <line num="137" count="1" type="stmt"/>
             <line num="138" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutArrayPropertyValueInToStringShouldNotMatch() : void" num="141" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutArrayPropertyValueInToStringShouldNotMatch() : void" num="141" testsuccess="true" count="1" testduration="0.002" type="method"/>
             <line num="144" count="1" type="stmt"/>
             <line num="145" count="1" type="stmt"/>
             <line num="146" count="1" type="stmt"/>
             <line num="149" count="1" type="stmt"/>
             <line num="152" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldNotMatch() : void" num="155" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldNotMatch() : void" num="155" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="158" count="1" type="stmt"/>
             <line num="159" count="1" type="stmt"/>
             <line num="162" count="1" type="stmt"/>
@@ -1109,7 +1111,7 @@
             <line num="172" count="1" type="stmt"/>
             <line num="175" count="1" type="stmt"/>
             <line num="178" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDescribeExpectation() : void" num="181" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldDescribeExpectation() : void" num="181" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="184" count="1" type="stmt"/>
             <line num="187" count="1" type="stmt"/>
             <line num="190" count="1" type="stmt"/>
@@ -1122,14 +1124,14 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasToStringDescribingPropertiesMatcherTest.java" name="HasToStringDescribingPropertiesMatcherTest.java">
             <metrics coveredelements="72" coveredconditionals="0" complexity="12" loc="193" coveredmethods="12" methods="12" elements="72" classes="1" ncloc="119" statements="60" conditionals="0" coveredstatements="60"/>
             <class name="HasToStringDescribingPropertiesMatcherTest">
-               <metrics coveredelements="72" complexity="12" methods="12" testruns="11" statements="60" coveredconditionals="0" coveredmethods="12" elements="72" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="60" testpasses="11"/>
+               <metrics coveredelements="72" complexity="12" methods="12" testruns="11" statements="60" coveredconditionals="0" coveredmethods="12" elements="72" testfailures="0" testduration="0.003" conditionals="0" coveredstatements="60" testpasses="11"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="31" count="11" type="method"/>
             <line num="33" count="11" type="stmt"/>
             <line num="34" count="11" type="stmt"/>
             <line num="35" count="11" type="stmt"/>
             <line num="36" count="11" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithValidToStringShouldMatch() : void" num="39" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithValidToStringShouldMatch() : void" num="39" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="42" count="1" type="stmt"/>
             <line num="43" count="1" type="stmt"/>
             <line num="46" count="1" type="stmt"/>
@@ -1166,7 +1168,7 @@
             <line num="115" count="1" type="stmt"/>
             <line num="118" count="1" type="stmt"/>
             <line num="121" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldBeDiagnosed() : void" num="124" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldBeDiagnosed() : void" num="124" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="127" count="1" type="stmt"/>
             <line num="128" count="1" type="stmt"/>
             <line num="131" count="1" type="stmt"/>
@@ -1175,13 +1177,13 @@
             <line num="136" count="1" type="stmt"/>
             <line num="137" count="1" type="stmt"/>
             <line num="138" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutArrayPropertyValueInToStringShouldNotMatch() : void" num="141" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutArrayPropertyValueInToStringShouldNotMatch() : void" num="141" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="144" count="1" type="stmt"/>
             <line num="145" count="1" type="stmt"/>
             <line num="146" count="1" type="stmt"/>
             <line num="149" count="1" type="stmt"/>
             <line num="152" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldNotMatch() : void" num="155" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithoutPropertyValueInToStringShouldNotMatch() : void" num="155" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="158" count="1" type="stmt"/>
             <line num="159" count="1" type="stmt"/>
             <line num="162" count="1" type="stmt"/>
@@ -1200,14 +1202,14 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasValidBeanConstructorMatcherTest.java" name="HasValidBeanConstructorMatcherTest.java">
             <metrics coveredelements="22" coveredconditionals="0" complexity="5" loc="79" coveredmethods="5" methods="5" elements="22" classes="1" ncloc="51" statements="17" conditionals="0" coveredstatements="17"/>
             <class name="HasValidBeanConstructorMatcherTest">
-               <metrics coveredelements="22" complexity="5" methods="5" testruns="4" statements="17" coveredconditionals="0" coveredmethods="5" elements="22" testfailures="0" testduration="0.013" conditionals="0" coveredstatements="17" testpasses="4"/>
+               <metrics coveredelements="22" complexity="5" methods="5" testruns="4" statements="17" coveredconditionals="0" coveredmethods="5" elements="22" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="17" testpasses="4"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="25" count="4" type="method"/>
             <line num="27" count="4" type="stmt"/>
             <line num="28" count="4" type="stmt"/>
             <line num="29" count="4" type="stmt"/>
             <line num="30" count="4" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithNoArgsConstructorShouldMatch() : void" num="33" testsuccess="true" count="1" testduration="0.002" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithNoArgsConstructorShouldMatch() : void" num="33" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="36" count="1" type="stmt"/>
             <line num="39" count="1" type="stmt"/>
             <line num="42" count="1" type="stmt"/>
@@ -1215,7 +1217,7 @@
             <line num="48" count="1" type="stmt"/>
             <line num="51" count="1" type="stmt"/>
             <line num="54" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithInvalidGetterShouldBeDiagnosed() : void" num="57" testsuccess="true" count="1" testduration="0.011" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithInvalidGetterShouldBeDiagnosed() : void" num="57" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="60" count="1" type="stmt"/>
             <line num="63" count="1" type="stmt"/>
             <line num="66" count="1" type="stmt"/>
@@ -1240,12 +1242,12 @@
             <line num="46" count="1" type="stmt"/>
             <line num="49" count="1" type="stmt"/>
             <line num="52" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingSamePropertyValuesShouldNotMatch() : void" num="55" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingSamePropertyValuesShouldNotMatch() : void" num="55" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="58" count="1" type="stmt"/>
             <line num="59" count="1" type="stmt"/>
             <line num="62" count="1" type="stmt"/>
             <line num="65" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingEqualsShouldNotMatch() : void" num="68" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingEqualsShouldNotMatch() : void" num="68" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="71" count="1" type="stmt"/>
             <line num="72" count="1" type="stmt"/>
             <line num="75" count="1" type="stmt"/>
@@ -1269,7 +1271,7 @@
             <line num="115" count="1" type="stmt"/>
             <line num="118" count="1" type="stmt"/>
             <line num="121" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingThatNullPropertyShouldNotMatch() : void" num="124" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingThatNullPropertyShouldNotMatch() : void" num="124" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="127" count="1" type="stmt"/>
             <line num="128" count="1" type="stmt"/>
             <line num="131" count="1" type="stmt"/>
@@ -1305,7 +1307,7 @@
             <line num="199" count="1" type="stmt"/>
             <line num="202" count="1" type="stmt"/>
             <line num="205" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingNullValueShouldBeDiagnosed() : void" num="208" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingNullValueShouldBeDiagnosed() : void" num="208" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="211" count="1" type="stmt"/>
             <line num="212" count="1" type="stmt"/>
             <line num="215" count="1" type="stmt"/>
@@ -1317,7 +1319,7 @@
             <line num="227" count="1" type="stmt"/>
             <line num="230" count="1" type="stmt"/>
             <line num="233" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingDifferingTypeShouldBeDiagnosed() : void" num="236" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingDifferingTypeShouldBeDiagnosed() : void" num="236" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="239" count="1" type="stmt"/>
             <line num="240" count="1" type="stmt"/>
             <line num="243" count="1" type="stmt"/>
@@ -1328,7 +1330,7 @@
             <line num="254" count="1" type="stmt"/>
             <line num="257" count="1" type="stmt"/>
             <line num="260" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="263" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="263" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="266" count="1" type="stmt"/>
             <line num="269" count="1" type="stmt"/>
             <line num="272" count="1" type="stmt"/>
@@ -1374,7 +1376,7 @@
             <line num="102" count="1" type="stmt"/>
             <line num="105" count="1" type="stmt"/>
             <line num="108" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingThisNullPropertyShouldNotMatch() : void" num="111" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingThisNullPropertyShouldNotMatch() : void" num="111" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="114" count="1" type="stmt"/>
             <line num="115" count="1" type="stmt"/>
             <line num="118" count="1" type="stmt"/>
@@ -1427,7 +1429,7 @@
             <line num="227" count="1" type="stmt"/>
             <line num="230" count="1" type="stmt"/>
             <line num="233" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingDifferingTypeShouldBeDiagnosed() : void" num="236" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithEqualsNotHandlingDifferingTypeShouldBeDiagnosed() : void" num="236" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="239" count="1" type="stmt"/>
             <line num="240" count="1" type="stmt"/>
             <line num="243" count="1" type="stmt"/>
@@ -1444,13 +1446,57 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasValidBeanHashCodeExcludingMatcherTest.java" name="HasValidBeanHashCodeExcludingMatcherTest.java">
             <metrics coveredelements="38" coveredconditionals="0" complexity="7" loc="123" coveredmethods="7" methods="7" elements="38" classes="1" ncloc="78" statements="31" conditionals="0" coveredstatements="31"/>
             <class name="HasValidBeanHashCodeExcludingMatcherTest">
-               <metrics coveredelements="38" complexity="7" methods="7" testruns="6" statements="31" coveredconditionals="0" coveredmethods="7" elements="38" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="31" testpasses="6"/>
+               <metrics coveredelements="38" complexity="7" methods="7" testruns="6" statements="31" coveredconditionals="0" coveredmethods="7" elements="38" testfailures="0" testduration="0.002" conditionals="0" coveredstatements="31" testpasses="6"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="35" count="6" type="method"/>
             <line num="37" count="6" type="stmt"/>
             <line num="38" count="6" type="stmt"/>
             <line num="39" count="6" type="stmt"/>
             <line num="40" count="6" type="stmt"/>
+            <line complexity="1" visibility="public" signature="beanWithValidHashCodeShouldMatch() : void" num="43" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line num="46" count="1" type="stmt"/>
+            <line num="47" count="1" type="stmt"/>
+            <line num="50" count="1" type="stmt"/>
+            <line num="53" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldNotMatch() : void" num="56" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="59" count="1" type="stmt"/>
+            <line num="60" count="1" type="stmt"/>
+            <line num="63" count="1" type="stmt"/>
+            <line num="66" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldBeDiagnosed() : void" num="69" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="72" count="1" type="stmt"/>
+            <line num="73" count="1" type="stmt"/>
+            <line num="76" count="1" type="stmt"/>
+            <line num="79" count="1" type="stmt"/>
+            <line num="80" count="1" type="stmt"/>
+            <line num="81" count="1" type="stmt"/>
+            <line num="82" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsExcluded() : void" num="85" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="88" count="1" type="stmt"/>
+            <line num="89" count="1" type="stmt"/>
+            <line num="92" count="1" type="stmt"/>
+            <line num="95" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="shouldDescribeExpectation() : void" num="98" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line num="101" count="1" type="stmt"/>
+            <line num="104" count="1" type="stmt"/>
+            <line num="107" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="110" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="113" count="1" type="stmt"/>
+            <line num="116" count="1" type="stmt"/>
+            <line num="119" count="1" type="stmt"/>
+            <line num="120" count="1" type="stmt"/>
+            <line num="121" count="1" type="stmt"/>
+         </file>
+         <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasValidBeanHashCodeForMatcherTest.java" name="HasValidBeanHashCodeForMatcherTest.java">
+            <metrics coveredelements="34" coveredconditionals="0" complexity="6" loc="111" coveredmethods="6" methods="6" elements="34" classes="1" ncloc="72" statements="28" conditionals="0" coveredstatements="28"/>
+            <class name="HasValidBeanHashCodeForMatcherTest">
+               <metrics coveredelements="34" complexity="6" methods="6" testruns="5" statements="28" coveredconditionals="0" coveredmethods="6" elements="34" testfailures="0" testduration="0.002" conditionals="0" coveredstatements="28" testpasses="5"/>
+            </class>
+            <line complexity="1" visibility="public" signature="setUp() : void" num="35" count="5" type="method"/>
+            <line num="37" count="5" type="stmt"/>
+            <line num="38" count="5" type="stmt"/>
+            <line num="39" count="5" type="stmt"/>
+            <line num="40" count="5" type="stmt"/>
             <line complexity="1" visibility="public" signature="beanWithValidHashCodeShouldMatch() : void" num="43" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="46" count="1" type="stmt"/>
             <line num="47" count="1" type="stmt"/>
@@ -1469,56 +1515,12 @@
             <line num="80" count="1" type="stmt"/>
             <line num="81" count="1" type="stmt"/>
             <line num="82" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsExcluded() : void" num="85" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="88" count="1" type="stmt"/>
-            <line num="89" count="1" type="stmt"/>
-            <line num="92" count="1" type="stmt"/>
-            <line num="95" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDescribeExpectation() : void" num="98" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="101" count="1" type="stmt"/>
-            <line num="104" count="1" type="stmt"/>
-            <line num="107" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="110" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="113" count="1" type="stmt"/>
-            <line num="116" count="1" type="stmt"/>
-            <line num="119" count="1" type="stmt"/>
-            <line num="120" count="1" type="stmt"/>
-            <line num="121" count="1" type="stmt"/>
-         </file>
-         <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasValidBeanHashCodeForMatcherTest.java" name="HasValidBeanHashCodeForMatcherTest.java">
-            <metrics coveredelements="34" coveredconditionals="0" complexity="6" loc="111" coveredmethods="6" methods="6" elements="34" classes="1" ncloc="72" statements="28" conditionals="0" coveredstatements="28"/>
-            <class name="HasValidBeanHashCodeForMatcherTest">
-               <metrics coveredelements="34" complexity="6" methods="6" testruns="5" statements="28" coveredconditionals="0" coveredmethods="6" elements="34" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="28" testpasses="5"/>
-            </class>
-            <line complexity="1" visibility="public" signature="setUp() : void" num="35" count="5" type="method"/>
-            <line num="37" count="5" type="stmt"/>
-            <line num="38" count="5" type="stmt"/>
-            <line num="39" count="5" type="stmt"/>
-            <line num="40" count="5" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithValidHashCodeShouldMatch() : void" num="43" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="46" count="1" type="stmt"/>
-            <line num="47" count="1" type="stmt"/>
-            <line num="50" count="1" type="stmt"/>
-            <line num="53" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldNotMatch() : void" num="56" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="59" count="1" type="stmt"/>
-            <line num="60" count="1" type="stmt"/>
-            <line num="63" count="1" type="stmt"/>
-            <line num="66" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldBeDiagnosed() : void" num="69" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="72" count="1" type="stmt"/>
-            <line num="73" count="1" type="stmt"/>
-            <line num="76" count="1" type="stmt"/>
-            <line num="79" count="1" type="stmt"/>
-            <line num="80" count="1" type="stmt"/>
-            <line num="81" count="1" type="stmt"/>
-            <line num="82" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="beanWithPropertyNotInfluencingHashCodeShouldMatchIfBadPropertyIsNotIncluded() : void" num="85" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="88" count="1" type="stmt"/>
             <line num="89" count="1" type="stmt"/>
             <line num="92" count="1" type="stmt"/>
             <line num="95" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="98" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldDescribeExpectationForExcludedProperties() : void" num="98" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="101" count="1" type="stmt"/>
             <line num="104" count="1" type="stmt"/>
             <line num="107" count="1" type="stmt"/>
@@ -1528,7 +1530,7 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/HasValidGettersAndSettersExcludingMatcherTest.java" name="HasValidGettersAndSettersExcludingMatcherTest.java">
             <metrics coveredelements="52" coveredconditionals="0" complexity="10" loc="157" coveredmethods="10" methods="10" elements="52" classes="1" ncloc="95" statements="42" conditionals="0" coveredstatements="42"/>
             <class name="HasValidGettersAndSettersExcludingMatcherTest">
-               <metrics coveredelements="52" complexity="10" methods="10" testruns="9" statements="42" coveredconditionals="0" coveredmethods="10" elements="52" testfailures="0" testduration="0.003" conditionals="0" coveredstatements="42" testpasses="9"/>
+               <metrics coveredelements="52" complexity="10" methods="10" testruns="9" statements="42" coveredconditionals="0" coveredmethods="10" elements="52" testfailures="0" testduration="0.007" conditionals="0" coveredstatements="42" testpasses="9"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="31" count="9" type="method"/>
             <line num="33" count="9" type="stmt"/>
@@ -1545,7 +1547,7 @@
             <line num="56" count="1" type="stmt"/>
             <line num="59" count="1" type="stmt"/>
             <line num="62" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="beanWithInvalidGetterShouldBeDiagnosed() : void" num="65" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="beanWithInvalidGetterShouldBeDiagnosed() : void" num="65" testsuccess="true" count="1" testduration="0.005" type="method"/>
             <line num="68" count="1" type="stmt"/>
             <line num="69" count="1" type="stmt"/>
             <line num="72" count="1" type="stmt"/>
@@ -1665,22 +1667,22 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/InstantiatingMatcherDecoratorTest.java" name="InstantiatingMatcherDecoratorTest.java">
             <metrics coveredelements="22" coveredconditionals="0" complexity="5" loc="82" coveredmethods="5" methods="5" elements="22" classes="1" ncloc="53" statements="17" conditionals="0" coveredstatements="17"/>
             <class name="InstantiatingMatcherDecoratorTest">
-               <metrics coveredelements="22" complexity="5" methods="5" testruns="4" statements="17" coveredconditionals="0" coveredmethods="5" elements="22" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="17" testpasses="4"/>
+               <metrics coveredelements="22" complexity="5" methods="5" testruns="4" statements="17" coveredconditionals="0" coveredmethods="5" elements="22" testfailures="0" testduration="0.002" conditionals="0" coveredstatements="17" testpasses="4"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="28" count="4" type="method"/>
             <line num="30" count="4" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldInstantiateBeanAndDelegate() : void" num="33" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldInstantiateBeanAndDelegate() : void" num="33" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="36" count="1" type="stmt"/>
             <line num="39" count="1" type="stmt"/>
             <line num="40" count="1" type="stmt"/>
             <line num="43" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldReturnDelegatesResponse() : void" num="46" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldReturnDelegatesResponse() : void" num="46" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="49" count="1" type="stmt"/>
             <line num="50" count="1" type="stmt"/>
             <line num="53" count="1" type="stmt"/>
             <line num="54" count="1" type="stmt"/>
             <line num="57" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldDelegateDescribingMismatch() : void" num="60" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldDelegateDescribingMismatch() : void" num="60" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="63" count="1" type="stmt"/>
             <line num="66" count="1" type="stmt"/>
             <line num="67" count="1" type="stmt"/>
@@ -1693,12 +1695,12 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/IntegerGeneratorTest.java" name="IntegerGeneratorTest.java">
             <metrics coveredelements="8" coveredconditionals="0" complexity="2" loc="38" coveredmethods="2" methods="2" elements="8" classes="1" ncloc="26" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="IntegerGeneratorTest">
-               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="1"/>
+               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="1"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="20" count="1" type="method"/>
             <line num="22" count="1" type="stmt"/>
             <line num="23" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldGenerateRandomInteger() : void" num="26" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldGenerateRandomInteger() : void" num="26" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="29" count="1" type="stmt"/>
             <line num="30" count="1" type="stmt"/>
             <line num="33" count="1" type="stmt"/>
@@ -1707,7 +1709,7 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/JavaBeanTest.java" name="JavaBeanTest.java">
             <metrics coveredelements="82" coveredconditionals="0" complexity="14" loc="205" coveredmethods="14" methods="14" elements="82" classes="1" ncloc="123" statements="68" conditionals="0" coveredstatements="68"/>
             <class name="JavaBeanTest">
-               <metrics coveredelements="82" complexity="14" methods="14" testruns="14" statements="68" coveredconditionals="0" coveredmethods="14" elements="82" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="68" testpasses="14"/>
+               <metrics coveredelements="82" complexity="14" methods="14" testruns="14" statements="68" coveredconditionals="0" coveredmethods="14" elements="82" testfailures="0" testduration="0.002" conditionals="0" coveredstatements="68" testpasses="14"/>
             </class>
             <line complexity="1" visibility="public" signature="canObtainBeanType() : void" num="18" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="21" count="1" type="stmt"/>
@@ -1752,7 +1754,7 @@
             <line num="112" count="1" type="stmt"/>
             <line num="115" count="1" type="stmt"/>
             <line num="116" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="toStringShouldObtainTheToStringValueFromTargetBean() : void" num="119" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="toStringShouldObtainTheToStringValueFromTargetBean() : void" num="119" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="122" count="1" type="stmt"/>
             <line num="123" count="1" type="stmt"/>
             <line num="126" count="1" type="stmt"/>
@@ -1793,29 +1795,29 @@
             <line num="203" count="1" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/ListGeneratorTest.java" name="ListGeneratorTest.java">
-            <metrics coveredelements="9" coveredconditionals="0" complexity="3" loc="40" coveredmethods="3" methods="3" elements="9" classes="1" ncloc="27" statements="6" conditionals="0" coveredstatements="6"/>
+            <metrics coveredelements="9" coveredconditionals="0" complexity="3" loc="39" coveredmethods="3" methods="3" elements="9" classes="1" ncloc="25" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="ListGeneratorTest">
-               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="2"/>
+               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="2"/>
             </class>
-            <line complexity="1" visibility="public" signature="setUp() : void" num="17" count="2" type="method"/>
-            <line num="19" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldProvideUuid() : void" num="22" testsuccess="true" count="1" testduration="0.0" type="method"/>
-            <line num="25" count="1" type="stmt"/>
-            <line num="28" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldProvideDifferingUuidOnSubsequentCall() : void" num="31" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="setUp() : void" num="16" count="2" type="method"/>
+            <line num="18" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="shouldProvideList() : void" num="21" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="24" count="1" type="stmt"/>
+            <line num="27" count="1" type="stmt"/>
+            <line complexity="1" visibility="public" signature="shouldProvideDifferingValueOnSubsequentCall() : void" num="30" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line num="33" count="1" type="stmt"/>
             <line num="34" count="1" type="stmt"/>
-            <line num="35" count="1" type="stmt"/>
-            <line num="38" count="1" type="stmt"/>
+            <line num="37" count="1" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/LongGeneratorTest.java" name="LongGeneratorTest.java">
             <metrics coveredelements="8" coveredconditionals="0" complexity="2" loc="38" coveredmethods="2" methods="2" elements="8" classes="1" ncloc="26" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="LongGeneratorTest">
-               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="1"/>
+               <metrics coveredelements="8" complexity="2" methods="2" testruns="1" statements="6" coveredconditionals="0" coveredmethods="2" elements="8" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="1"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="20" count="1" type="method"/>
             <line num="22" count="1" type="stmt"/>
             <line num="23" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldGenerateRandomValue() : void" num="26" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldGenerateRandomValue() : void" num="26" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="29" count="1" type="stmt"/>
             <line num="30" count="1" type="stmt"/>
             <line num="33" count="1" type="stmt"/>
@@ -1849,11 +1851,11 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/StringGeneratorTest.java" name="StringGeneratorTest.java">
             <metrics coveredelements="9" coveredconditionals="0" complexity="3" loc="39" coveredmethods="3" methods="3" elements="9" classes="1" ncloc="26" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="StringGeneratorTest">
-               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.002" conditionals="0" coveredstatements="6" testpasses="2"/>
+               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="2"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="16" count="2" type="method"/>
             <line num="18" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldProvideString() : void" num="21" testsuccess="true" count="1" testduration="0.001" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldProvideString() : void" num="21" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="24" count="1" type="stmt"/>
             <line num="27" count="1" type="stmt"/>
             <line complexity="1" visibility="public" signature="shouldProvideDifferingStringOnSubsequentCall() : void" num="30" testsuccess="true" count="1" testduration="0.001" type="method"/>
@@ -1864,14 +1866,14 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/UuidGeneratorTest.java" name="UuidGeneratorTest.java">
             <metrics coveredelements="9" coveredconditionals="0" complexity="3" loc="41" coveredmethods="3" methods="3" elements="9" classes="1" ncloc="27" statements="6" conditionals="0" coveredstatements="6"/>
             <class name="UuidGeneratorTest">
-               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.0" conditionals="0" coveredstatements="6" testpasses="2"/>
+               <metrics coveredelements="9" complexity="3" methods="3" testruns="2" statements="6" coveredconditionals="0" coveredmethods="3" elements="9" testfailures="0" testduration="0.001" conditionals="0" coveredstatements="6" testpasses="2"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="18" count="2" type="method"/>
             <line num="20" count="2" type="stmt"/>
             <line complexity="1" visibility="public" signature="shouldProvideUuid() : void" num="23" testsuccess="true" count="1" testduration="0.0" type="method"/>
             <line num="26" count="1" type="stmt"/>
             <line num="29" count="1" type="stmt"/>
-            <line complexity="1" visibility="public" signature="shouldProvideDifferingUuidOnSubsequentCall() : void" num="32" testsuccess="true" count="1" testduration="0.0" type="method"/>
+            <line complexity="1" visibility="public" signature="shouldProvideDifferingUuidOnSubsequentCall() : void" num="32" testsuccess="true" count="1" testduration="0.001" type="method"/>
             <line num="35" count="1" type="stmt"/>
             <line num="36" count="1" type="stmt"/>
             <line num="39" count="1" type="stmt"/>
@@ -1879,7 +1881,7 @@
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/ValueGeneratorsTest.java" name="ValueGeneratorsTest.java">
             <metrics coveredelements="20" coveredconditionals="0" complexity="5" loc="68" coveredmethods="4" methods="4" elements="20" classes="1" ncloc="47" statements="16" conditionals="0" coveredstatements="16"/>
             <class name="ValueGeneratorsTest">
-               <metrics coveredelements="20" complexity="5" methods="4" testruns="3" statements="16" coveredconditionals="0" coveredmethods="4" elements="20" testfailures="0" testduration="0.003" conditionals="0" coveredstatements="16" testpasses="3"/>
+               <metrics coveredelements="20" complexity="5" methods="4" testruns="3" statements="16" coveredconditionals="0" coveredmethods="4" elements="20" testfailures="0" testduration="0.005" conditionals="0" coveredstatements="16" testpasses="3"/>
             </class>
             <line complexity="1" visibility="public" signature="setUp() : void" num="22" count="3" type="method"/>
             <line num="24" count="3" type="stmt"/>
@@ -1895,7 +1897,7 @@
             <line num="50" count="1" type="stmt"/>
             <line num="51" count="1" type="stmt"/>
             <line num="52" count="1" type="stmt"/>
-            <line complexity="2" visibility="public" signature="shouldThrowExceptionGivenCannotGenerateTwoDistinctValuesAfterXAttempts() : void" num="55" testsuccess="true" count="1" testduration="0.003" type="method"/>
+            <line complexity="2" visibility="public" signature="shouldThrowExceptionGivenCannotGenerateTwoDistinctValuesAfterXAttempts() : void" num="55" testsuccess="true" count="1" testduration="0.005" type="method"/>
             <line num="58" count="1" type="stmt"/>
             <line num="61" count="1" type="stmt"/>
             <line num="62" count="1" type="stmt"/>
@@ -1904,7 +1906,7 @@
          </file>
       </package>
       <package name="com.google.code.beanmatchers.data">
-         <metrics coveredelements="337" complexity="199" loc="862" methods="142" classes="31" statements="197" coveredconditionals="65" coveredmethods="114" elements="441" ncloc="656" files="31" conditionals="102" coveredstatements="158"/>
+         <metrics coveredelements="355" complexity="208" loc="902" methods="149" classes="32" statements="205" coveredconditionals="68" coveredmethods="121" elements="460" ncloc="687" files="31" conditionals="106" coveredstatements="166"/>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/data/CustomValueGenerator.java" name="CustomValueGenerator.java">
             <metrics coveredelements="2" coveredconditionals="0" complexity="1" loc="9" coveredmethods="1" methods="1" elements="2" classes="1" ncloc="7" statements="1" conditionals="0" coveredstatements="1"/>
             <class name="CustomValueGenerator">
@@ -2184,108 +2186,128 @@
             <line num="43" count="0" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/data/TestBeanWithManyProperties.java" name="TestBeanWithManyProperties.java">
-            <metrics coveredelements="98" coveredconditionals="0" complexity="49" loc="233" coveredmethods="49" methods="49" elements="98" classes="1" ncloc="180" statements="49" conditionals="0" coveredstatements="49"/>
+            <metrics coveredelements="116" coveredconditionals="3" complexity="58" loc="273" coveredmethods="56" methods="56" elements="117" classes="2" ncloc="211" statements="57" conditionals="4" coveredstatements="57"/>
             <class name="TestBeanWithManyProperties">
-               <metrics coveredelements="98" coveredconditionals="0" complexity="49" coveredmethods="49" methods="49" elements="98" statements="49" conditionals="0" coveredstatements="49"/>
+               <metrics coveredelements="113" coveredconditionals="3" complexity="57" coveredmethods="55" methods="55" elements="114" statements="55" conditionals="4" coveredstatements="55"/>
             </class>
-            <line complexity="1" visibility="public" signature="getObject() : Object" num="35" count="2" type="method"/>
-            <line num="36" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setObject(Object) : void" num="39" count="10" type="method"/>
-            <line num="40" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getString() : String" num="43" count="2" type="method"/>
-            <line num="44" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setString(String) : void" num="47" count="10" type="method"/>
-            <line num="48" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getIntegerObject() : Integer" num="51" count="2" type="method"/>
-            <line num="52" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setIntegerObject(Integer) : void" num="55" count="10" type="method"/>
-            <line num="56" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getIntegerObjectArray() : Integer[]" num="59" count="2" type="method"/>
-            <line num="60" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setIntegerObjectArray(Integer[]) : void" num="63" count="10" type="method"/>
-            <line num="64" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getIntegerPrimitive() : int" num="67" count="2" type="method"/>
-            <line num="68" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setIntegerPrimitive(int) : void" num="71" count="8" type="method"/>
-            <line num="72" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getIntegerPrimitiveArray() : int[]" num="75" count="2" type="method"/>
-            <line num="76" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setIntegerPrimitiveArray(int[]) : void" num="79" count="10" type="method"/>
-            <line num="80" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getDate() : Date" num="83" count="2" type="method"/>
-            <line num="84" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setDate(Date) : void" num="87" count="10" type="method"/>
-            <line num="88" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getDateArray() : Date[]" num="91" count="2" type="method"/>
-            <line num="92" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setDateArray(Date[]) : void" num="95" count="10" type="method"/>
-            <line num="96" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getEnumProperty() : EnumWithThreeValues" num="99" count="2" type="method"/>
-            <line num="100" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setEnumProperty(EnumWithThreeValues) : void" num="103" count="10" type="method"/>
-            <line num="104" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getDoubleObject() : Double" num="107" count="2" type="method"/>
-            <line num="108" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setDoubleObject(Double) : void" num="111" count="10" type="method"/>
-            <line num="112" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getDoublePrimitive() : double" num="115" count="2" type="method"/>
-            <line num="116" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setDoublePrimitive(double) : void" num="119" count="8" type="method"/>
-            <line num="120" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getBooleanObject() : Boolean" num="123" count="2" type="method"/>
-            <line num="124" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setBooleanObject(Boolean) : void" num="127" count="10" type="method"/>
-            <line num="128" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="isBooleanPrimitive() : boolean" num="131" count="2" type="method"/>
-            <line num="132" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setBooleanPrimitive(boolean) : void" num="135" count="8" type="method"/>
-            <line num="136" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getLongObject() : Long" num="139" count="2" type="method"/>
-            <line num="140" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setLongObject(Long) : void" num="143" count="10" type="method"/>
-            <line num="144" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getLongPrimitive() : long" num="147" count="2" type="method"/>
-            <line num="148" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setLongPrimitive(long) : void" num="151" count="8" type="method"/>
-            <line num="152" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getFloatObject() : Float" num="155" count="2" type="method"/>
-            <line num="156" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setFloatObject(Float) : void" num="159" count="10" type="method"/>
-            <line num="160" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getFloatPrimitive() : float" num="163" count="2" type="method"/>
-            <line num="164" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setFloatPrimitive(float) : void" num="167" count="8" type="method"/>
-            <line num="168" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getByteObject() : Byte" num="171" count="2" type="method"/>
-            <line num="172" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setByteObject(Byte) : void" num="175" count="10" type="method"/>
-            <line num="176" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getBytePrimitive() : byte" num="179" count="2" type="method"/>
-            <line num="180" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setBytePrimitive(byte) : void" num="183" count="8" type="method"/>
-            <line num="184" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getCharObject() : Character" num="187" count="2" type="method"/>
-            <line num="188" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setCharObject(Character) : void" num="191" count="10" type="method"/>
-            <line num="192" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getCharPrimitive() : char" num="195" count="2" type="method"/>
-            <line num="196" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setCharPrimitive(char) : void" num="199" count="8" type="method"/>
-            <line num="200" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getShortObject() : Short" num="203" count="2" type="method"/>
-            <line num="204" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setShortObject(Short) : void" num="207" count="10" type="method"/>
-            <line num="208" count="10" type="stmt"/>
-            <line complexity="1" visibility="public" signature="getShortPrimitive() : short" num="211" count="2" type="method"/>
-            <line num="212" count="2" type="stmt"/>
-            <line complexity="1" visibility="public" signature="setShortPrimitive(short) : void" num="215" count="8" type="method"/>
-            <line num="216" count="8" type="stmt"/>
-            <line complexity="1" visibility="public" signature="hashCode() : int" num="219" count="118" type="method"/>
-            <line num="221" count="118" type="stmt"/>
-            <line complexity="1" visibility="public" signature="equals(Object) : boolean" num="224" count="79" type="method"/>
-            <line num="226" count="79" type="stmt"/>
-            <line complexity="1" visibility="public" signature="toString() : String" num="229" count="24" type="method"/>
-            <line num="231" count="24" type="stmt"/>
+            <class name="TestBeanWithManyProperties.TestingToStringStyle">
+               <metrics coveredelements="3" coveredconditionals="0" complexity="1" coveredmethods="1" methods="1" elements="3" statements="2" conditionals="0" coveredstatements="2"/>
+            </class>
+            <line complexity="1" visibility="public" signature="getObject() : Object" num="42" count="2" type="method"/>
+            <line num="43" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setObject(Object) : void" num="46" count="10" type="method"/>
+            <line num="47" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getString() : String" num="50" count="2" type="method"/>
+            <line num="51" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setString(String) : void" num="54" count="10" type="method"/>
+            <line num="55" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getIntegerObject() : Integer" num="58" count="2" type="method"/>
+            <line num="59" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setIntegerObject(Integer) : void" num="62" count="10" type="method"/>
+            <line num="63" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getIntegerObjectArray() : Integer[]" num="66" count="2" type="method"/>
+            <line num="67" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setIntegerObjectArray(Integer[]) : void" num="70" count="10" type="method"/>
+            <line num="71" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getIntegerPrimitive() : int" num="74" count="2" type="method"/>
+            <line num="75" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setIntegerPrimitive(int) : void" num="78" count="8" type="method"/>
+            <line num="79" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getIntegerPrimitiveArray() : int[]" num="82" count="2" type="method"/>
+            <line num="83" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setIntegerPrimitiveArray(int[]) : void" num="86" count="10" type="method"/>
+            <line num="87" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getDate() : Date" num="90" count="2" type="method"/>
+            <line num="91" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setDate(Date) : void" num="94" count="10" type="method"/>
+            <line num="95" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getDateArray() : Date[]" num="98" count="2" type="method"/>
+            <line num="99" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setDateArray(Date[]) : void" num="102" count="10" type="method"/>
+            <line num="103" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getEnumProperty() : EnumWithThreeValues" num="106" count="2" type="method"/>
+            <line num="107" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setEnumProperty(EnumWithThreeValues) : void" num="110" count="10" type="method"/>
+            <line num="111" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getDoubleObject() : Double" num="114" count="2" type="method"/>
+            <line num="115" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setDoubleObject(Double) : void" num="118" count="10" type="method"/>
+            <line num="119" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getDoublePrimitive() : double" num="122" count="2" type="method"/>
+            <line num="123" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setDoublePrimitive(double) : void" num="126" count="8" type="method"/>
+            <line num="127" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getBooleanObject() : Boolean" num="130" count="2" type="method"/>
+            <line num="131" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setBooleanObject(Boolean) : void" num="134" count="10" type="method"/>
+            <line num="135" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="isBooleanPrimitive() : boolean" num="138" count="2" type="method"/>
+            <line num="139" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setBooleanPrimitive(boolean) : void" num="142" count="8" type="method"/>
+            <line num="143" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getLongObject() : Long" num="146" count="2" type="method"/>
+            <line num="147" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setLongObject(Long) : void" num="150" count="10" type="method"/>
+            <line num="151" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getLongPrimitive() : long" num="154" count="2" type="method"/>
+            <line num="155" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setLongPrimitive(long) : void" num="158" count="8" type="method"/>
+            <line num="159" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getFloatObject() : Float" num="162" count="2" type="method"/>
+            <line num="163" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setFloatObject(Float) : void" num="166" count="10" type="method"/>
+            <line num="167" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getFloatPrimitive() : float" num="170" count="2" type="method"/>
+            <line num="171" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setFloatPrimitive(float) : void" num="174" count="8" type="method"/>
+            <line num="175" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getByteObject() : Byte" num="178" count="2" type="method"/>
+            <line num="179" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setByteObject(Byte) : void" num="182" count="10" type="method"/>
+            <line num="183" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getBytePrimitive() : byte" num="186" count="2" type="method"/>
+            <line num="187" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setBytePrimitive(byte) : void" num="190" count="8" type="method"/>
+            <line num="191" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getCharObject() : Character" num="194" count="2" type="method"/>
+            <line num="195" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setCharObject(Character) : void" num="198" count="10" type="method"/>
+            <line num="199" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getCharPrimitive() : char" num="202" count="2" type="method"/>
+            <line num="203" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setCharPrimitive(char) : void" num="206" count="8" type="method"/>
+            <line num="207" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getShortObject() : Short" num="210" count="2" type="method"/>
+            <line num="211" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setShortObject(Short) : void" num="214" count="10" type="method"/>
+            <line num="215" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getShortPrimitive() : short" num="218" count="2" type="method"/>
+            <line num="219" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setShortPrimitive(short) : void" num="222" count="8" type="method"/>
+            <line num="223" count="8" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getListOfString() : List&lt;String&gt;" num="226" count="2" type="method"/>
+            <line num="227" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setListOfString(List&lt;String&gt;) : void" num="230" count="10" type="method"/>
+            <line num="231" count="10" type="stmt"/>
+            <line complexity="1" visibility="public" signature="getListOfLong() : List&lt;Long&gt;" num="234" count="2" type="method"/>
+            <line num="235" count="2" type="stmt"/>
+            <line complexity="1" visibility="public" signature="setListOfLong(List&lt;Long&gt;) : void" num="238" count="10" type="method"/>
+            <line num="239" count="10" type="stmt"/>
+            <line complexity="2" visibility="public" signature="getUnmodifiableList() : List&lt;Boolean&gt;" num="242" count="2" type="method"/>
+            <line num="243" count="2" type="stmt"/>
+            <line falsecount="2" truecount="0" num="243" type="cond"/>
+            <line complexity="2" visibility="public" signature="setUnmodifiableList(List&lt;Boolean&gt;) : void" num="246" count="10" type="method"/>
+            <line num="247" count="10" type="stmt"/>
+            <line falsecount="9" truecount="1" num="247" type="cond"/>
+            <line complexity="1" visibility="public" signature="hashCode() : int" num="250" count="133" type="method"/>
+            <line num="252" count="133" type="stmt"/>
+            <line complexity="1" visibility="public" signature="equals(Object) : boolean" num="255" count="91" type="method"/>
+            <line num="257" count="91" type="stmt"/>
+            <line complexity="1" visibility="public" signature="toString() : String" num="260" count="27" type="method"/>
+            <line num="262" count="27" type="stmt"/>
+            <line complexity="1" visibility="package" signature="TestingToStringStyle()" num="268" count="27" type="method"/>
+            <line num="269" count="27" type="stmt"/>
+            <line num="270" count="27" type="stmt"/>
          </file>
          <file path="/Users/orien/src/libraries/bean-matchers/src/test/java/com/google/code/beanmatchers/data/TestBeanWithMissingGetter.java" name="TestBeanWithMissingGetter.java">
             <metrics coveredelements="2" coveredconditionals="0" complexity="3" loc="19" coveredmethods="1" methods="3" elements="6" classes="1" ncloc="14" statements="3" conditionals="0" coveredstatements="1"/>
