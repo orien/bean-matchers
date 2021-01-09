@@ -18,8 +18,10 @@ public class TestBeanWithManyProperties {
   private Integer[] integerObjectArray;
   private int integerPrimitive;
   private int[] integerPrimitiveArray;
+  private int[] clonedIntegerPrimitiveArray;
   private Date date;
   private Date[] dateArray;
+  private Date[] clonedDateArray;
   private EnumWithThreeValues enumProperty;
   private Double doubleObject;
   private double doublePrimitive;
@@ -87,6 +89,14 @@ public class TestBeanWithManyProperties {
     this.integerPrimitiveArray = integerPrimitiveArray;
   }
 
+  public int[] getClonedIntegerPrimitiveArray() {
+    return clonedIntegerPrimitiveArray == null ? null : clonedIntegerPrimitiveArray.clone();
+  }
+
+  public void setClonedIntegerPrimitiveArray(int[] clonedIntegerPrimitiveArray) {
+    this.clonedIntegerPrimitiveArray = clonedIntegerPrimitiveArray == null ? null : clonedIntegerPrimitiveArray.clone();
+  }
+
   public Date getDate() {
     return date;
   }
@@ -101,6 +111,14 @@ public class TestBeanWithManyProperties {
 
   public void setDateArray(Date[] dateArray) {
     this.dateArray = dateArray;
+  }
+
+  public Date[] getClonedDateArray() {
+    return clonedDateArray == null ? null : clonedDateArray.clone();
+  }
+
+  public void setClonedDateArray(Date[] clonedDateArray) {
+    this.clonedDateArray = clonedDateArray == null ? null : clonedDateArray.clone();
   }
 
   public EnumWithThreeValues getEnumProperty() {
