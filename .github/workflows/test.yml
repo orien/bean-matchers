@@ -13,5 +13,7 @@ jobs:
         run: "mvn cobertura:cobertura --file pom.xml"
       - name: CodeCov
         run: "bash <(curl -s https://codecov.io/bash)"
+      - name: SpotBugs
+        run: "mvn com.github.spotbugs:spotbugs-maven-plugin:check"
       - name: Checkstyle
         run: "mvn checkstyle:check -Dcheckstyle.violationSeverity=warning -Dcheckstyle.violation.ignore=AbbreviationAsWordInName,MissingJavadocType,SummaryJavadoc"

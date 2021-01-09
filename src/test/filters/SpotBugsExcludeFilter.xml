@@ -1,0 +1,17 @@
+<FindBugsFilter>
+  <Match>
+    <Class name="com.google.code.beanmatchers.AbstractBeanEqualsMatcher" />
+    <Method name="equalsDoesNotHandleNullValue" />
+    <Bug pattern="EC_NULL_ARG" />
+  </Match>
+  <Match>
+    <Class name="com.google.code.beanmatchers.AbstractBeanEqualsMatcher" />
+    <Method name="equalsDoesNotHandleDifferingType" />
+    <Bug pattern="EC_UNRELATED_TYPES" />
+  </Match>
+  <Match>
+    <Class name="com.google.code.beanmatchers.AbstractBeanEqualsMatcher" />
+    <Method name="equalsDoesNotHandleSameInstance" />
+    <Bug pattern="SA_LOCAL_SELF_COMPARISON" />
+  </Match>
+</FindBugsFilter>
