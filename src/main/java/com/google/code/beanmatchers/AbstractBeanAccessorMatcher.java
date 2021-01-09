@@ -1,5 +1,7 @@
 package com.google.code.beanmatchers;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -39,32 +41,27 @@ abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
 
       // for arrays fall back to compare element by element
       // to allow cloned arrays in bean properties
-      if (!valid) {
-        if (propertyType.isArray()) {
-          if (propertyType.getComponentType().equals(Byte.TYPE)) {
-            valid = Arrays.equals((byte[]) testValue, (byte[]) result);
-          } else if (propertyType.getComponentType().equals(Short.TYPE)) {
-            valid = Arrays.equals((short[]) testValue, (short[]) result);
-          } else if (propertyType.getComponentType().equals(Integer.TYPE)) {
-            valid = Arrays.equals((int[]) testValue, (int[]) result);
-          } else if (propertyType.getComponentType().equals(Long.TYPE)) {
-            valid = Arrays.equals((long[]) testValue, (long[]) result);
-          } else if (propertyType.getComponentType().equals(Character.TYPE)) {
-            valid = Arrays.equals((char[]) testValue, (char[]) result);
-          } else if (propertyType.getComponentType().equals(Boolean.TYPE)) {
-            valid = Arrays.equals((boolean[]) testValue, (boolean[]) result);
-          } else if (propertyType.getComponentType().equals(Float.TYPE)) {
-            valid = Arrays.equals((float[]) testValue, (float[]) result);
-          } else if (propertyType.getComponentType().equals(Double.TYPE)) {
-            valid = Arrays.equals((double[]) testValue, (double[]) result);
-          } else {
-            valid = Arrays.equals((Object[]) testValue, (Object[]) result);
-          }
-        }
+      if (!valid && propertyType.isArray()) {
+        valid = arrayEquals(propertyType, testValue, result);
       }
+
       return !valid;
     } catch (AccessorMissingException exception) {
       return true;
+    }
+  }
+
+  private boolean arrayEquals(Class<?> arrayType, Object testValue, Object result) {
+    try {
+      Class klass = Arrays.class;
+      Method method = klass.getDeclaredMethod("equals", new Class[] {arrayType, arrayType});
+      return (boolean) method.invoke(null, new Object[] {testValue, result});
+    } catch (NoSuchMethodException exception) {
+      return false;
+    } catch (IllegalAccessException exception) {
+      throw new BeanMatchersException(exception);
+    } catch (InvocationTargetException exception) {
+      throw new BeanMatchersException(exception);
     }
   }
 }
