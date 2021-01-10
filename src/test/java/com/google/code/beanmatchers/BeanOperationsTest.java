@@ -1,11 +1,7 @@
 package com.google.code.beanmatchers;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItemInArray;
-import static org.hamcrest.Matchers.hasProperty;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 import com.google.code.beanmatchers.data.TestBeanWithMissingGetter;
 import com.google.code.beanmatchers.data.TestBeanWithMissingSetter;
@@ -13,6 +9,8 @@ import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import com.google.code.beanmatchers.data.TestBeanWithPrivateConstructor;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
 import org.testng.annotations.Test;
 
 public class BeanOperationsTest {
@@ -115,5 +113,51 @@ public class BeanOperationsTest {
       }
     }
     throw new AssertionError("No property descriptor for property " + propertyName);
+  }
+
+  @Test
+  public void canGetMethod() {
+    // given
+    Class<String> type = String.class;
+    String methodName = "toString";
+
+    // when
+    Method method = BeanOperations.getDeclaredMethod(type, methodName);
+
+    // then
+    assertThat(method, is(notNullValue()));
+  }
+
+  @Test(expectedExceptions = BeanMatchersException.class)
+  public void throwsExceptionGivenMethodDoesNotExist() {
+    // given
+    Class<String> type = String.class;
+    String methodName = "methodDoesNotExist";
+
+    // when
+    BeanOperations.getDeclaredMethod(type, methodName);
+  }
+
+  @Test
+  public void canInvokeMethod() throws Exception {
+    // given
+    String object = "the instance";
+    Method method = String.class.getMethod("hashCode", new Class[] {});
+
+    // when
+    Object result = BeanOperations.invokeMethod(object, method);
+
+    // then
+    assertThat(result, isA(Integer.class));
+  }
+
+  @Test(expectedExceptions = BeanMatchersException.class)
+  public void throwsExceptionGivenObjectIsNullAndInstanceMethod() throws Exception {
+    // given
+    String object = null;
+    Method method = String.class.getMethod("hashCode", new Class[] {});
+
+    // when
+    BeanOperations.invokeMethod(object, method);
   }
 }

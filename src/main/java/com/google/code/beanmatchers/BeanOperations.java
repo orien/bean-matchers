@@ -84,7 +84,15 @@ final class BeanOperations {
     invokeMethod(bean, method, value);
   }
 
-  private static Object invokeMethod(Object bean, Method method, Object... args) {
+  public static Method getDeclaredMethod(Class type, String methodName, Class... argTypes) {
+    try {
+      return type.getDeclaredMethod(methodName, argTypes);
+    } catch (Exception exception) {
+      throw new BeanMatchersException(exception);
+    }
+  }
+
+  public static Object invokeMethod(Object bean, Method method, Object... args) {
     try {
       return method.invoke(bean, args);
     } catch (Exception exception) {
