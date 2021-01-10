@@ -1,5 +1,9 @@
 package com.google.code.beanmatchers;
 
+import static com.google.code.beanmatchers.BeanOperations.getDeclaredMethod;
+import static com.google.code.beanmatchers.BeanOperations.invokeMethod;
+
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -37,34 +41,20 @@ abstract class AbstractBeanAccessorMatcher<T> extends DiagnosingMatcher<T> {
       Object result = bean.getProperty(property);
       boolean valid = Objects.equals(testValue, result);
 
-      // for arrays fall back to compare element by element
-      // to allow cloned arrays in bean properties
-      if (!valid) {
-        if (propertyType.isArray()) {
-          if (propertyType.getComponentType().equals(Byte.TYPE)) {
-            valid = Arrays.equals((byte[]) testValue, (byte[]) result);
-          } else if (propertyType.getComponentType().equals(Short.TYPE)) {
-            valid = Arrays.equals((short[]) testValue, (short[]) result);
-          } else if (propertyType.getComponentType().equals(Integer.TYPE)) {
-            valid = Arrays.equals((int[]) testValue, (int[]) result);
-          } else if (propertyType.getComponentType().equals(Long.TYPE)) {
-            valid = Arrays.equals((long[]) testValue, (long[]) result);
-          } else if (propertyType.getComponentType().equals(Character.TYPE)) {
-            valid = Arrays.equals((char[]) testValue, (char[]) result);
-          } else if (propertyType.getComponentType().equals(Boolean.TYPE)) {
-            valid = Arrays.equals((boolean[]) testValue, (boolean[]) result);
-          } else if (propertyType.getComponentType().equals(Float.TYPE)) {
-            valid = Arrays.equals((float[]) testValue, (float[]) result);
-          } else if (propertyType.getComponentType().equals(Double.TYPE)) {
-            valid = Arrays.equals((double[]) testValue, (double[]) result);
-          } else {
-            valid = Arrays.equals((Object[]) testValue, (Object[]) result);
-          }
-        }
+      // for arrays fall back to compare element by element to allow for cloned arrays
+      if (!valid && propertyType.isArray()) {
+        valid = arraysEqual(propertyType, testValue, result);
       }
+
       return !valid;
     } catch (AccessorMissingException exception) {
       return true;
     }
+  }
+
+  private boolean arraysEqual(Class<?> arrayType, Object testValue, Object result) {
+    Class<?> argumentType = arrayType.getComponentType().isPrimitive() ? arrayType : Object[].class;
+    Method method = getDeclaredMethod(Arrays.class, "equals", argumentType, argumentType);
+    return (boolean) invokeMethod(null, method, testValue, result);
   }
 }
