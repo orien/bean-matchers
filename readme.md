@@ -4,7 +4,7 @@ Bean Matchers
 [![Maven Central](https://img.shields.io/maven-central/v/com.google.code.bean-matchers/bean-matchers.svg)](https://search.maven.org/search?q=g:com.google.code.bean-matchers%20AND%20a:bean-matchers)
 [![License](https://img.shields.io/github/license/orien/bean-matchers.svg)](https://github.com/orien/bean-matchers/blob/main/LICENSE)
 [![Build Status](https://github.com/orien/bean-matchers/workflows/Build/badge.svg?branch=main)](https://github.com/orien/bean-matchers/actions?query=workflow%3ABuild+branch%3Amain)
-[![Codecov](https://img.shields.io/codecov/c/github/orien/bean-matchers.svg)](https://codecov.io/gh/orien/bean-matchers)
+[![Codecov](https://codecov.io/gh/orien/bean-matchers/branch/main/graph/badge.svg?token=8s9HyDeakh)](https://codecov.io/gh/orien/bean-matchers)
 
 * [JavaBeans Spec](https://www.oracle.com/java/technologies/javase/javabeans-spec.html)
 * [JavaBeans Tutorial](https://docs.oracle.com/javase/tutorial/javabeans/)
