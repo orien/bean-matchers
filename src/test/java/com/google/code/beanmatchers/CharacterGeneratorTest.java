@@ -14,9 +14,11 @@ public class CharacterGeneratorTest {
 
   private CharacterGenerator unitUnderTest;
 
+  private final Random random = new Random();
+
   @BeforeMethod
   public void setUp() {
-    unitUnderTest = new CharacterGenerator(new Random());
+    unitUnderTest = new CharacterGenerator(random);
   }
 
   @Test

@@ -13,9 +13,11 @@ public class ListGeneratorTest {
 
   private ListGenerator unitUnderTest;
 
+  private final Random random = new Random();
+
   @BeforeMethod
   public void setUp() {
-    unitUnderTest = new ListGenerator(new Random());
+    unitUnderTest = new ListGenerator(random);
   }
 
   @Test

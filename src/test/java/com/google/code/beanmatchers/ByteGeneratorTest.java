@@ -14,9 +14,11 @@ public class ByteGeneratorTest {
 
   private ByteGenerator unitUnderTest;
 
+  private final Random random = new Random();
+
   @BeforeMethod
   public void setUp() {
-    unitUnderTest = new ByteGenerator(new Random());
+    unitUnderTest = new ByteGenerator(random);
   }
 
   @Test

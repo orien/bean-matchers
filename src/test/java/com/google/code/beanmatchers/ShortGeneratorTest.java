@@ -14,9 +14,11 @@ public class ShortGeneratorTest {
 
   private ShortGenerator unitUnderTest;
 
+  private final Random random = new Random();
+
   @BeforeMethod
   public void setUp() {
-    unitUnderTest = new ShortGenerator(new Random());
+    unitUnderTest = new ShortGenerator(random);
   }
 
   @Test
