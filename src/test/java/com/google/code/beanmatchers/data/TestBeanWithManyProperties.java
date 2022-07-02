@@ -9,6 +9,7 @@ import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToStrin
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class TestBeanWithManyProperties {
 
@@ -40,6 +41,7 @@ public class TestBeanWithManyProperties {
   private List<String> listOfString;
   private List<Long> listOfLong;
   private List<Boolean> unmodifiableList;
+  private Set<String> unmodifiableSet;
 
   public Object getObject() {
     return object;
@@ -263,6 +265,14 @@ public class TestBeanWithManyProperties {
 
   public void setUnmodifiableList(List<Boolean> unmodifiableList) {
     this.unmodifiableList = unmodifiableList == null ? null : Collections.unmodifiableList(unmodifiableList);
+  }
+
+  public Set<String> getUnmodifiableSet() {
+    return unmodifiableSet == null ? null : Collections.unmodifiableSet(unmodifiableSet);
+  }
+
+  public void setUnmodifiableSet(Set<String> unmodifiableSet) {
+    this.unmodifiableSet = unmodifiableSet == null ? null : Collections.unmodifiableSet(unmodifiableSet);
   }
 
   @Override
