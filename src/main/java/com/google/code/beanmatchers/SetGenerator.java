@@ -1,6 +1,7 @@
 package com.google.code.beanmatchers;
 
-import java.util.HashSet;
+import static java.util.Collections.singleton;
+
 import java.util.Random;
 import java.util.Set;
 
@@ -13,11 +14,6 @@ class SetGenerator implements ValueGenerator<Set> {
   }
 
   public Set generate() {
-    HashSet<Integer> hash = new HashSet<>();
-    for (int count = 1; count <= 3; count++) {
-      hash.add(1 + random.nextInt());
-    }
-
-    return hash;
+    return singleton(random.nextInt());
   }
 }
