@@ -12,7 +12,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <currentVersion>${project.version}</currentVersion>
-        <clover.version>4.4.1</clover.version>
         <jdk.version>1.7</jdk.version>
     </properties>
     <licenses>
@@ -186,19 +185,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.openclover</groupId>
-                <artifactId>clover-maven-plugin</artifactId>
-                <version>${clover.version}</version>
-                <executions>
-                    <execution>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>instrument-test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
@@ -310,11 +296,6 @@
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.22.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.openclover</groupId>
-                <artifactId>clover-maven-plugin</artifactId>
-                <version>${clover.version}</version>
             </plugin>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
