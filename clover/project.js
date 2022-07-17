@@ -1,2 +1,0 @@
-processClover (  {"children":["com/google/code/beanmatchers/"],"name":"Clover database Sun Jan 10 2021 08:31:34 AEDT","stats":{"AvgMethodComplexity":1.3769231,"Complexity":179,"ErroneousTests":0,"FailingTests":0,"FilteredElements":0,"PassingTests":0,"PcErroneousTests":-1,"PcFailingTests":-1,"PcPassingTests":-1,"TestExecutionTime":0,"Tests":0,"TotalChildren":1,"TotalPercentageCovered":98.563736,"TotalStatements":349,"UncoveredElements":8},"title":"Bean Matchers 0.13"}
- ); 

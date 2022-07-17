@@ -23,9 +23,9 @@ under the License.
     <link>https://github.com/orien/bean-matchers</link>
     <description>Bean Matchers - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2012 - 2021</copyright>
+    <copyright>&#169;2012 - 2022</copyright>
     <item>
-      <title>File: 42,
+      <title>File: 44,
              Errors: 0,
              Warnings: 17,
              Infos: 0
@@ -144,6 +144,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#target.nexus-staging.staging.24eed7bcc97ce5.properties">target/nexus-staging/staging/24eed7bcc97ce5.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.DefaultTypeBasedValueGenerator.java">com/google/code/beanmatchers/DefaultTypeBasedValueGenerator.java</a>
                 </td>
                 <td>
@@ -173,6 +187,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.MockingTypeBasedValueGenerator.java">com/google/code/beanmatchers/MockingTypeBasedValueGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.SetGenerator.java">com/google/code/beanmatchers/SetGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -257,6 +285,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.ShortGenerator.java">com/google/code/beanmatchers/ShortGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#target.maven-archiver.pom.properties">target/maven-archiver/pom.properties</a>
                 </td>
                 <td>
                   0
@@ -523,20 +565,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/orien/bean-matchers/checkstyle.html#com.google.code.beanmatchers.JavaBean.java">com/google/code/beanmatchers/JavaBean.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/orien/bean-matchers/checkstyle.html#target.clover.surefire-reports.old.Surefire suite.Surefire test.properties">target/clover/surefire-reports/old/Surefire suite/Surefire test.properties</a>
                 </td>
                 <td>
                   0
