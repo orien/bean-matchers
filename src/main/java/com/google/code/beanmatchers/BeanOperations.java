@@ -1,6 +1,9 @@
 package com.google.code.beanmatchers;
 
 import static java.beans.Introspector.getBeanInfo;
+import static org.hamcrest.Matchers.*;
+
+import org.hamcrest.Matcher;
 
 import java.beans.BeanInfo;
 import java.beans.PropertyDescriptor;
@@ -55,11 +58,16 @@ final class BeanOperations {
     return propertyDescriptors(bean.getClass());
   }
 
-  private static List<PropertyDescriptor> propertyDescriptors(Class<?> beanType) {
-    List propertyDescriptors = new ArrayList<>();
-    for (PropertyDescriptor propertyDescriptor : beanInfo(beanType).getPropertyDescriptors()) {
-      if (!"class".equals(propertyDescriptor.getName())) {
-        propertyDescriptors.add(propertyDescriptor);
+  public static <T> List<PropertyDescriptor> propertyDescriptors(Class<T> bean) {
+    return propertyDescriptors(bean, anything());
+  }
+
+  public static <T> List<PropertyDescriptor> propertyDescriptors(Class<T> bean, Matcher matcher) {
+    Matcher m = allOf(matcher, hasProperty("name", not("class")));
+    List<PropertyDescriptor> propertyDescriptors = new ArrayList<PropertyDescriptor>();
+    for (PropertyDescriptor i : beanInfo(bean).getPropertyDescriptors()) {
+      if (m.matches(i)) {
+        propertyDescriptors.add(i);
       }
     }
     return propertyDescriptors;

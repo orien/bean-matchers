@@ -92,6 +92,19 @@ public class HasValidGettersAndSettersExcludingMatcherTest {
   }
 
   @Test
+  public void beanWithMissingGetterShouldMatch() {
+    // given
+    unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock, true);
+    Object bean = new TestBeanWithMissingGetter();
+
+    // when
+    boolean match = unitUnderTest.matches(bean);
+
+    // then
+    assertThat(match, is(true));
+  }
+
+  @Test
   public void beanWithInvalidSetterShouldNotMatch() {
     // given
     unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock);
@@ -115,6 +128,19 @@ public class HasValidGettersAndSettersExcludingMatcherTest {
 
     // then
     assertThat(match, is(false));
+  }
+
+  @Test
+  public void beanWithMissingSetterShouldMatch() {
+    // given
+    unitUnderTest = new HasValidGettersAndSettersExcludingMatcher(valueGeneratorMock, true);
+    Object bean = new TestBeanWithMissingSetter();
+
+    // when
+    boolean match = unitUnderTest.matches(bean);
+
+    // then
+    assertThat(match, is(true));
   }
 
   @Test

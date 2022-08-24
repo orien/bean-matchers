@@ -4,6 +4,10 @@ import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
 import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
 import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
 import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.notNullValue;
+
+import org.hamcrest.Matchers;
 
 import java.beans.PropertyDescriptor;
 import java.util.List;
@@ -13,13 +17,21 @@ class JavaBean {
   private final Object targetBean;
   private final List<PropertyDescriptor> descriptors;
 
-  public JavaBean(Object targetBean) {
+  public JavaBean(Object targetBean, boolean excludeAsynAccessors) {
     this.targetBean = targetBean;
-    descriptors = propertyDescriptors(targetBean);
+    if (excludeAsynAccessors) {
+      descriptors = propertyDescriptors(beanType(), allOf(Matchers.<PropertyDescriptor>hasProperty("readMethod", notNullValue()), Matchers.<PropertyDescriptor>hasProperty("writeMethod", notNullValue())));
+    } else {
+      descriptors = propertyDescriptors(beanType());
+    }
+  }
+
+  public JavaBean(Object targetBean) {
+    this(targetBean, false);
   }
 
   public JavaBean(Class targetBeanType) {
-    this(instantiateBean(targetBeanType));
+    this(instantiateBean(targetBeanType), false);
   }
 
   public Class beanType() {
