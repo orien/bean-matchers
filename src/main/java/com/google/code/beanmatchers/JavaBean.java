@@ -11,7 +11,7 @@ import java.util.List;
 class JavaBean {
 
   private final Object targetBean;
-  private final PropertyDescriptor[] descriptors;
+  private final List<PropertyDescriptor> descriptors;
 
   public JavaBean(Object targetBean) {
     this.targetBean = targetBean;

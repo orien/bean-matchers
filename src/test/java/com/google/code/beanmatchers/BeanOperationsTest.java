@@ -10,7 +10,9 @@ import com.google.code.beanmatchers.data.TestBeanWithPrivateConstructor;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.List;
 
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 public class BeanOperationsTest {
@@ -48,10 +50,10 @@ public class BeanOperationsTest {
     TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
 
     // when
-    PropertyDescriptor[] properties = BeanOperations.propertyDescriptors(bean);
+    List<PropertyDescriptor> properties = BeanOperations.propertyDescriptors(bean);
 
     // then
-    assertThat(properties, hasItemInArray(hasProperty("name", equalTo("field1"))));
+    assertThat(properties, Matchers.<PropertyDescriptor>hasItem(hasProperty("name", equalTo("field1"))));
   }
 
   @Test

@@ -8,6 +8,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 final class BeanOperations {
@@ -43,8 +44,8 @@ final class BeanOperations {
     return properties(propertyDescriptors(beanType));
   }
 
-  public static List<String> properties(PropertyDescriptor[] descriptors) {
-    List<String> properties = new ArrayList<String>(descriptors.length);
+  public static List<String> properties(List<PropertyDescriptor> descriptors) {
+    List<String> properties = new ArrayList<String>(descriptors.size());
     for (PropertyDescriptor descriptor : descriptors) {
       properties.add(descriptor.getName());
     }
@@ -52,12 +53,12 @@ final class BeanOperations {
     return properties;
   }
 
-  public static <T> PropertyDescriptor[] propertyDescriptors(T bean) {
+  public static <T> List<PropertyDescriptor> propertyDescriptors(T bean) {
     return propertyDescriptors(bean.getClass());
   }
 
-  private static PropertyDescriptor[] propertyDescriptors(Class<?> beanType) {
-    return beanInfo(beanType).getPropertyDescriptors();
+  private static List<PropertyDescriptor>  propertyDescriptors(Class<?> beanType) {
+    return Arrays.asList(beanInfo(beanType).getPropertyDescriptors());
   }
 
   private static BeanInfo beanInfo(Class targetClass) {
