@@ -43,7 +43,7 @@ final class BeanOperations {
   }
 
   public static List<String> properties(Class<?> beanType) {
-    return properties(propertyDescriptors(beanType));
+    return properties(propertyDescriptors(beanType, anything()));
   }
 
   public static List<String> properties(List<PropertyDescriptor> descriptors) {
@@ -52,14 +52,6 @@ final class BeanOperations {
       properties.add(descriptor.getName());
     }
     return properties;
-  }
-
-  public static <T> List<PropertyDescriptor> propertyDescriptors(T bean) {
-    return propertyDescriptors(bean.getClass());
-  }
-
-  public static <T> List<PropertyDescriptor> propertyDescriptors(Class<T> bean) {
-    return propertyDescriptors(bean, anything());
   }
 
   public static <T> List<PropertyDescriptor> propertyDescriptors(Class<T> bean, Matcher matcher) {

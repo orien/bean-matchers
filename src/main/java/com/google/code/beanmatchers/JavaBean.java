@@ -4,8 +4,7 @@ import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
 import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
 import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
 import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 import org.hamcrest.Matchers;
 
@@ -22,7 +21,7 @@ class JavaBean {
     if (excludeAsynAccessors) {
       descriptors = propertyDescriptors(beanType(), allOf(Matchers.<PropertyDescriptor>hasProperty("readMethod", notNullValue()), Matchers.<PropertyDescriptor>hasProperty("writeMethod", notNullValue())));
     } else {
-      descriptors = propertyDescriptors(beanType());
+      descriptors = propertyDescriptors(beanType(), anything());
     }
   }
 
