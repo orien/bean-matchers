@@ -6,6 +6,7 @@ import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
 import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.notNullValue;
 
 import java.beans.PropertyDescriptor;
@@ -20,7 +21,9 @@ class JavaBean {
   public JavaBean(Object targetBean, boolean excludeAsynAccessors) {
     this.targetBean = targetBean;
     if (excludeAsynAccessors) {
-      descriptors = propertyDescriptors(beanType(), allOf(Matchers.<PropertyDescriptor>hasProperty("readMethod", notNullValue()), Matchers.<PropertyDescriptor>hasProperty("writeMethod", notNullValue())));
+      descriptors = propertyDescriptors(beanType(), allOf(
+              hasProperty("readMethod", notNullValue()),
+              hasProperty("writeMethod", notNullValue())));
     } else {
       descriptors = propertyDescriptors(beanType(), anything());
     }
