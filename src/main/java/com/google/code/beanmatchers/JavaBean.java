@@ -4,12 +4,14 @@ import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
 import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
 import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
 import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
-import static org.hamcrest.Matchers.*;
-
-import org.hamcrest.Matchers;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.notNullValue;
 
 import java.beans.PropertyDescriptor;
 import java.util.List;
+
+import org.hamcrest.Matchers;
 
 class JavaBean {
 
