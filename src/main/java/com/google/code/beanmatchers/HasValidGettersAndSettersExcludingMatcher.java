@@ -15,7 +15,8 @@ public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAc
   }
 
   HasValidGettersAndSettersExcludingMatcher(
-      TypeBasedValueGenerator valueGenerator, boolean excludeAsymmetricAccessors, String... excludedProperties) {
+      TypeBasedValueGenerator valueGenerator, boolean excludeAsymmetricAccessors,
+      String... excludedProperties) {
     super(valueGenerator);
     this.excludeAsymmetricAccessors = excludeAsymmetricAccessors;
     this.excludedProperties = asList(excludedProperties);
