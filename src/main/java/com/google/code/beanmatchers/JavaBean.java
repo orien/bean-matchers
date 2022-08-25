@@ -10,7 +10,6 @@ import static org.hamcrest.Matchers.notNullValue;
 
 import java.beans.PropertyDescriptor;
 import java.util.List;
-
 import org.hamcrest.Matchers;
 
 class JavaBean {

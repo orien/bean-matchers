@@ -3,7 +3,6 @@ package com.google.code.beanmatchers;
 import static java.util.Arrays.asList;
 
 import java.util.List;
-
 import org.hamcrest.Description;
 
 public class HasValidGettersAndSettersExcludingMatcher<T> extends AbstractBeanAccessorMatcher<T> {

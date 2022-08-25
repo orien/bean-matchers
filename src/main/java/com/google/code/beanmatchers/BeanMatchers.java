@@ -97,49 +97,13 @@ public final class BeanMatchers {
     return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
   }
 
-  public static <T> Matcher<T> isABeanWithValidBeanToString(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
   public static Matcher<Class> hasValidBeanToStringFor(String... properties) {
-    return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static <T> Matcher<T> isABeanWithValidBeanToStringFor(String... properties) {
     return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
   }
 
   public static Matcher<Class> hasValidBeanToStringExcluding(String... properties) {
     return new HasToStringDescribingPropertiesExcludingMatcher(
         TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static <T> Matcher<T> isABeanWithValidBeanToStringExcluding(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static Matcher<Class> hasValidToString() {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR);
-  }
-
-  public static <T> Matcher<T> isWithValidBeanToString(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static Matcher<Object> hasValidToStringFor(String... properties) {
-    return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static <T> Matcher<T> isWithValidBeanToStringFor(String... properties) {
-    return new HasToStringDescribingPropertiesMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static Matcher<Class> hasValidToStringExcluding(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
-  }
-
-  public static <T> Matcher<T> isWithValidBeanToStringExcluding(String... properties) {
-    return new HasToStringDescribingPropertiesExcludingMatcher(TYPE_BASED_VALUE_GENERATOR, properties);
   }
 
   public static <T> void registerValueGenerator(ValueGenerator<T> generator, Class<T> type) {
