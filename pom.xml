@@ -303,7 +303,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.17.0</version>
+                <version>3.19.0</version>
                 <configuration>
                     <sourceEncoding>UTF-8</sourceEncoding>
                     <targetJdk>${jdk.version}</targetJdk>
