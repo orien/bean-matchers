@@ -9,6 +9,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'oracle'
+          cache: 'maven'
       - name: Test
         run: "mvn cobertura:cobertura --file pom.xml"
       - name: CodeCov
