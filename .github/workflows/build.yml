@@ -11,9 +11,7 @@ jobs:
           distribution: 'oracle'
           cache: 'maven'
       - name: Test
-        run: "mvn cobertura:cobertura --file pom.xml"
-      - name: CodeCov
-        run: "bash <(curl -s https://codecov.io/bash)"
+        run: "mvn -B package --file pom.xml"
       - name: SpotBugs
         run: "mvn com.github.spotbugs:spotbugs-maven-plugin:check"
       - name: Checkstyle
