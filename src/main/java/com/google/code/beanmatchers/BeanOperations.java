@@ -1,6 +1,10 @@
 package com.google.code.beanmatchers;
 
 import static java.beans.Introspector.getBeanInfo;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.not;
 
 import java.beans.BeanInfo;
 import java.beans.PropertyDescriptor;
@@ -9,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import org.hamcrest.Matcher;
 
 final class BeanOperations {
   private BeanOperations() {
@@ -40,24 +45,26 @@ final class BeanOperations {
   }
 
   public static List<String> properties(Class<?> beanType) {
-    return properties(propertyDescriptors(beanType));
+    return properties(propertyDescriptors(beanType, anything()));
   }
 
-  public static List<String> properties(PropertyDescriptor[] descriptors) {
-    List<String> properties = new ArrayList<String>(descriptors.length);
+  public static List<String> properties(List<PropertyDescriptor> descriptors) {
+    List<String> properties = new ArrayList<String>(descriptors.size());
     for (PropertyDescriptor descriptor : descriptors) {
       properties.add(descriptor.getName());
     }
-    properties.remove("class");
     return properties;
   }
 
-  public static <T> PropertyDescriptor[] propertyDescriptors(T bean) {
-    return propertyDescriptors(bean.getClass());
-  }
-
-  private static PropertyDescriptor[] propertyDescriptors(Class<?> beanType) {
-    return beanInfo(beanType).getPropertyDescriptors();
+  public static <T> List<PropertyDescriptor> propertyDescriptors(Class<T> bean, Matcher matcher) {
+    Matcher m = allOf(matcher, hasProperty("name", not("class")));
+    List<PropertyDescriptor> propertyDescriptors = new ArrayList<PropertyDescriptor>();
+    for (PropertyDescriptor i : beanInfo(bean).getPropertyDescriptors()) {
+      if (m.matches(i)) {
+        propertyDescriptors.add(i);
+      }
+    }
+    return propertyDescriptors;
   }
 
   private static BeanInfo beanInfo(Class targetClass) {
