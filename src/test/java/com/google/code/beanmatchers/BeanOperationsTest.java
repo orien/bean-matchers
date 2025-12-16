@@ -1,17 +1,19 @@
 package com.google.code.beanmatchers;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
 import com.google.code.beanmatchers.data.TestBeanWithMissingGetter;
 import com.google.code.beanmatchers.data.TestBeanWithMissingSetter;
 import com.google.code.beanmatchers.data.TestBeanWithOneProperty;
 import com.google.code.beanmatchers.data.TestBeanWithPrivateConstructor;
+import org.hamcrest.Matchers;
+import org.testng.annotations.Test;
+
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.List;
 
-import org.testng.annotations.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class BeanOperationsTest {
 
@@ -48,10 +50,10 @@ public class BeanOperationsTest {
     TestBeanWithOneProperty bean = new TestBeanWithOneProperty();
 
     // when
-    PropertyDescriptor[] properties = BeanOperations.propertyDescriptors(bean);
+    List<PropertyDescriptor> properties = BeanOperations.propertyDescriptors(bean.getClass(), anything());
 
     // then
-    assertThat(properties, hasItemInArray(hasProperty("name", equalTo("field1"))));
+    assertThat(properties, Matchers.<PropertyDescriptor>hasItem(hasProperty("name", equalTo("field1"))));
   }
 
   @Test
@@ -107,7 +109,7 @@ public class BeanOperationsTest {
   }
 
   private PropertyDescriptor propertyDescriptor(Object bean, String propertyName) {
-    for (PropertyDescriptor propertyDescriptor : BeanOperations.propertyDescriptors(bean)) {
+    for (PropertyDescriptor propertyDescriptor : BeanOperations.propertyDescriptors(bean.getClass(), anything())) {
       if (propertyDescriptor.getName().equals(propertyName)) {
         return propertyDescriptor;
       }
@@ -142,7 +144,7 @@ public class BeanOperationsTest {
   public void canInvokeMethod() throws Exception {
     // given
     String object = "the instance";
-    Method method = String.class.getMethod("hashCode", new Class[] {});
+    Method method = String.class.getMethod("hashCode", new Class[]{});
 
     // when
     Object result = BeanOperations.invokeMethod(object, method);
@@ -155,7 +157,7 @@ public class BeanOperationsTest {
   public void throwsExceptionGivenObjectIsNullAndInstanceMethod() throws Exception {
     // given
     String object = null;
-    Method method = String.class.getMethod("hashCode", new Class[] {});
+    Method method = String.class.getMethod("hashCode", new Class[]{});
 
     // when
     BeanOperations.invokeMethod(object, method);

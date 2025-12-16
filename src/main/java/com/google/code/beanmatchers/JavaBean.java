@@ -4,22 +4,37 @@ import static com.google.code.beanmatchers.BeanOperations.instantiateBean;
 import static com.google.code.beanmatchers.BeanOperations.invokeGetter;
 import static com.google.code.beanmatchers.BeanOperations.invokeSetter;
 import static com.google.code.beanmatchers.BeanOperations.propertyDescriptors;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.notNullValue;
 
 import java.beans.PropertyDescriptor;
 import java.util.List;
+import org.hamcrest.Matchers;
 
 class JavaBean {
 
   private final Object targetBean;
-  private final PropertyDescriptor[] descriptors;
+  private final List<PropertyDescriptor> descriptors;
+
+  public JavaBean(Object targetBean, boolean excludeAsynAccessors) {
+    this.targetBean = targetBean;
+    if (excludeAsynAccessors) {
+      descriptors = propertyDescriptors(beanType(), allOf(
+              hasProperty("readMethod", notNullValue()),
+              hasProperty("writeMethod", notNullValue())));
+    } else {
+      descriptors = propertyDescriptors(beanType(), anything());
+    }
+  }
 
   public JavaBean(Object targetBean) {
-    this.targetBean = targetBean;
-    descriptors = propertyDescriptors(targetBean);
+    this(targetBean, false);
   }
 
   public JavaBean(Class targetBeanType) {
-    this(instantiateBean(targetBeanType));
+    this(instantiateBean(targetBeanType), false);
   }
 
   public Class beanType() {
