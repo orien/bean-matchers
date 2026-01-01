@@ -1,5 +1,3 @@
-I :heart: pull requests. Here's a quick guide:
-
 1. Fork the repo.
 
 2. Run the tests. Pull requests will only be accepted when all tests pass,
@@ -13,12 +11,10 @@ a test!
 
 5. Push to your fork and submit a pull request.
 
+At this point, you're waiting on me. I'm not working with Java much these days,
+so I may be slow to respond.
 
-At this point you're waiting on me. I like to at least comment on, if not
-accept, pull requests within three business days (and, typically, one business
-day). I may suggest some changes or improvements or alternatives.
-
-If it's your first time contributing don't forget to add your details to the
+If it's your first time contributing, don't forget to add your details to the
 contributors section of our [project file](pom.xml#L55). (Specification [here](http://maven.apache.org/pom.html#Contributors).)
 
 Some things that will increase the chance that your pull request is accepted:
