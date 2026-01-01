@@ -12,6 +12,12 @@ jobs:
           cache: 'maven'
       - name: Test
         run: "mvn -B package --file pom.xml"
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./target/site/jacoco/jacoco.xml
+          fail_ci_if_error: false
       - name: SpotBugs
         run: "mvn com.github.spotbugs:spotbugs-maven-plugin:check"
       - name: Checkstyle
