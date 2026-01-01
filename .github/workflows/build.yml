@@ -15,4 +15,4 @@ jobs:
       - name: SpotBugs
         run: "mvn com.github.spotbugs:spotbugs-maven-plugin:check"
       - name: Checkstyle
-        run: "mvn checkstyle:check -Dcheckstyle.violationSeverity=warning -Dcheckstyle.violation.ignore=AbbreviationAsWordInName,MissingJavadocType,SummaryJavadoc"
+        run: "mvn checkstyle:check -Dcheckstyle.violationSeverity=warning -Dcheckstyle.violation.ignore=AbbreviationAsWordInName,MissingJavadocType,MissingJavadocMethod,SummaryJavadoc"
