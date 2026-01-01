@@ -7,7 +7,6 @@ import org.hamcrest.Description;
 
 public class HasToStringDescribingPropertiesMatcher<T> extends AbstractBeanToStringMatcher<T> {
 
-
   private final List<String> properties;
 
   public HasToStringDescribingPropertiesMatcher(
